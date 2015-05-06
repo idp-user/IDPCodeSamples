@@ -11,6 +11,12 @@
 #include "IDPDefineSamples.h"
 #include "IDPPrimitiveTypeOutputTests.h"
 
+#define performTest(testName) \
+    printf(#testName " started...\n"); \
+    testName(); \
+    printf(#testName " finished\n");
+
+
 int main(int argc, const char * argv[]) {
     // insert code here...
 //    printf("Hello, World!\n");
@@ -24,7 +30,8 @@ int main(int argc, const char * argv[]) {
     // agrumented macro
     IDPArgumentedMacro(text1, text2, int 1234);
     
-    IDPPrimitiveTypeOutputTests();
+    performTest(IDPPrimitiveTypeOutputTests);
+//    IDPPrimitiveTypeOutputTests();
     
     return 0;
 }

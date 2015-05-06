@@ -15,6 +15,11 @@ IDPValueOutput(short, %d)
 IDPValueOutput(char, %c)
 IDPValueOutput(float, %5.4f)
 
+#define performTest(testName) \
+    printf(#testName " started...\n"); \
+    testName(); \
+    printf(#testName " finished\n");
+
 #pragma mark -
 #pragma mark Private Declarations
 
@@ -28,8 +33,11 @@ void IDPPrimitiveTypeCallingMacroTests(void);
 #pragma mark Public
 
 void IDPPrimitiveTypeOutputTests(void) {
-    IDPPrimitiveTypeOutputMethodTests();
-    IDPPrimitiveTypeCallingMacroTests();
+    performTest(IDPPrimitiveTypeOutputMethodTests);
+    performTest(IDPPrimitiveTypeCallingMacroTests);
+    
+//    IDPPrimitiveTypeOutputMethodTests();
+//    IDPPrimitiveTypeCallingMacroTests();
 }
 
 #pragma mark -
