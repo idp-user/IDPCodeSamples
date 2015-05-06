@@ -35,9 +35,6 @@ void IDPPrimitiveTypeCallingMacroTests(void);
 void IDPPrimitiveTypeOutputTests(void) {
     performTest(IDPPrimitiveTypeOutputMethodTests);
     performTest(IDPPrimitiveTypeCallingMacroTests);
-    
-//    IDPPrimitiveTypeOutputMethodTests();
-//    IDPPrimitiveTypeCallingMacroTests();
 }
 
 #pragma mark -

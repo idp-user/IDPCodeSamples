@@ -35,3 +35,22 @@ int main(int argc, const char * argv[]) {
     
     return 0;
 }
+
+
+// function syntax
+char fuction(int value) {
+    
+    return '\0';
+}
+
+// procedure syntax
+void procedure(int value) {
+    if (0 == value) {
+        return;
+    }
+    
+    // code will not be executed if value is zero
+    value++;
+    
+    return;
+}
