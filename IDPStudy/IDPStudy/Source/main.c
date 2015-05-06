@@ -24,5 +24,7 @@ int main(int argc, const char * argv[]) {
     // agrumented macro
     IDPArgumentedMacro(text1, text2, int 1234);
     
+    IDPPrimitiveTypeOutputTests();
+    
     return 0;
 }

@@ -21,21 +21,25 @@
 
  */
 
-void output_int(int value) {
-    printf("int value = %d", value);
-}
-
-void output_short(short value) {
-    printf("short value = %d", value);
-}
-
-void output_long(long value) {
-    printf("long value = %d", value);
-}
+//void output_int(int value) {
+//    printf("int value = %d", value);
+//}
+//
+//void output_short(short value) {
+//    printf("short value = %d", value);
+//}
+//
+//void output_long(long value) {
+//    printf("long value = %d", value);
+//}
 
 #define IDPValueOutput(type, specifier) \
     void output_##type(type value) { \
-    printf(#type " value = " #specifier, value); \
+    printf(#type " value = " #specifier "\n", value); \
     }
+
+
+#define IDPTypeOutput(type, value) \
+ output_##type(value)
 
 #endif

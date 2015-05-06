@@ -11,4 +11,7 @@
 
 #include <stdio.h>
 
+extern
+void IDPPrimitiveTypeOutputTests(void);
+
 #endif /* defined(__IDPStudy__IDPPrimitiveTypeOutputTests__) */
