@@ -11,16 +11,13 @@
 #include "IDPDefineSamples.h"
 #include "IDPPrimitiveTypeOutputTests.h"
 
+// Call the procedure |testName| covered by the log messages
 #define performTest(testName) \
     printf(#testName " started...\n"); \
     testName(); \
     printf(#testName " finished\n");
 
-
 int main(int argc, const char * argv[]) {
-    // insert code here...
-//    printf("Hello, World!\n");
-    
     // one line macro
     IDPNoArgOneLineMacro;
     
@@ -31,11 +28,15 @@ int main(int argc, const char * argv[]) {
     IDPArgumentedMacro(text1, text2, int 1234);
     
     performTest(IDPPrimitiveTypeOutputTests);
-//    IDPPrimitiveTypeOutputTests();
     
-    return 0;
+    return 0; // program finished execution
 }
 
+/***********
+ 
+ "Method" declaration syntax examples
+ 
+ ***********/
 
 // function syntax
 char fuction(int value) {
