@@ -57,6 +57,7 @@
 		5A6957671AFA05AE00FF2FDB /* IDPStudy */ = {
 			isa = PBXGroup;
 			children = (
+				5A6957721AFA0BA900FF2FDB /* Tests */,
 				5A69576F1AFA09E900FF2FDB /* Source */,
 			);
 			path = IDPStudy;
@@ -68,6 +69,13 @@
 				5A6957701AFA0A8100FF2FDB /* main.c */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		5A6957721AFA0BA900FF2FDB /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
