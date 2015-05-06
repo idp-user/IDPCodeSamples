@@ -30,6 +30,7 @@
 		5A4A7A971AFA22DA00CA5A3A /* IDPPrimitiveTypeOutputTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPPrimitiveTypeOutputTests.h; sourceTree = "<group>"; };
 		5A6957651AFA05AE00FF2FDB /* IDPStudy */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = IDPStudy; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A6957701AFA0A8100FF2FDB /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		5AA5675F1AFA48240094451F /* IDPStudyPlan */ = {isa = PBXFileReference; lastKnownFileType = text; path = IDPStudyPlan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +63,7 @@
 		5A69575C1AFA05AE00FF2FDB = {
 			isa = PBXGroup;
 			children = (
+				5AA5675F1AFA48240094451F /* IDPStudyPlan */,
 				5A6957671AFA05AE00FF2FDB /* IDPStudy */,
 				5A6957661AFA05AE00FF2FDB /* Products */,
 			);
