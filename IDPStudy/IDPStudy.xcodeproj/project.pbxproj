@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A4A7A981AFA22DA00CA5A3A /* IDPPrimitiveTypeOutputTests.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A4A7A961AFA22DA00CA5A3A /* IDPPrimitiveTypeOutputTests.c */; };
 		5A6957711AFA0A8100FF2FDB /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A6957701AFA0A8100FF2FDB /* main.c */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5A4A7A931AFA11C000CA5A3A /* IDPDefineSamples.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPDefineSamples.h; sourceTree = "<group>"; };
+		5A4A7A951AFA201500CA5A3A /* IDPPrimitiveTypeOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPPrimitiveTypeOutput.h; sourceTree = "<group>"; };
+		5A4A7A961AFA22DA00CA5A3A /* IDPPrimitiveTypeOutputTests.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = IDPPrimitiveTypeOutputTests.c; sourceTree = "<group>"; };
+		5A4A7A971AFA22DA00CA5A3A /* IDPPrimitiveTypeOutputTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPPrimitiveTypeOutputTests.h; sourceTree = "<group>"; };
 		5A6957651AFA05AE00FF2FDB /* IDPStudy */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = IDPStudy; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A6957701AFA0A8100FF2FDB /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -38,6 +43,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A4A7A921AFA114A00CA5A3A /* IDPDefineSamples */ = {
+			isa = PBXGroup;
+			children = (
+				5A4A7A931AFA11C000CA5A3A /* IDPDefineSamples.h */,
+			);
+			path = IDPDefineSamples;
+			sourceTree = "<group>";
+		};
+		5A4A7A941AFA1FBE00CA5A3A /* IDPPrimitiveTypeOutput */ = {
+			isa = PBXGroup;
+			children = (
+				5A4A7A951AFA201500CA5A3A /* IDPPrimitiveTypeOutput.h */,
+			);
+			path = IDPPrimitiveTypeOutput;
+			sourceTree = "<group>";
+		};
 		5A69575C1AFA05AE00FF2FDB = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +87,8 @@
 		5A69576F1AFA09E900FF2FDB /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				5A4A7A941AFA1FBE00CA5A3A /* IDPPrimitiveTypeOutput */,
+				5A4A7A921AFA114A00CA5A3A /* IDPDefineSamples */,
 				5A6957701AFA0A8100FF2FDB /* main.c */,
 			);
 			path = Source;
@@ -74,6 +97,8 @@
 		5A6957721AFA0BA900FF2FDB /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				5A4A7A961AFA22DA00CA5A3A /* IDPPrimitiveTypeOutputTests.c */,
+				5A4A7A971AFA22DA00CA5A3A /* IDPPrimitiveTypeOutputTests.h */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -134,6 +159,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A4A7A981AFA22DA00CA5A3A /* IDPPrimitiveTypeOutputTests.c in Sources */,
 				5A6957711AFA0A8100FF2FDB /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,6 +277,7 @@
 				5A69576E1AFA05AE00FF2FDB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
