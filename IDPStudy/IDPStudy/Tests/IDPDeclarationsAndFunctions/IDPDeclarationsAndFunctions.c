@@ -91,10 +91,10 @@ void IDPStaticArrayTest(void) {
                         'A', 'A', 'A', 'A', 'A',
                         'A', 'A', 'A', 'A', 0}; // 20 char on stack. And |surname| is pointer to first element of this data ON STACK
     char *surnameString = "0123456789";
-    size_t length = strlen(surnameString);
+    size_t length = strlen(surnameString); // returns count of significant chars, without terminating zero
     
-    // surname[index] = *(surname + index)
-    // surname[i] = surname plus (i * sizeof(char)) bytes
+    // surname[index] is equal to expression *(surname + index)
+    // surname[i] == |surname| pointer value shifted by (i * sizeof(char)) bytes
     
     for (int index = 0; index < length ; index++) {
         surname[index] = surnameString[index];
@@ -118,9 +118,9 @@ int IDPAgrumentedFunctionCallTest(int value) {
         return 0;
     }
     
-    return (value++);
+    return value++; // returns not incremented |value|
     
-    // neved be executed because of return called before
+    // never be executed because of return called before
     value += kIDPStaticConstant;
 }
 
