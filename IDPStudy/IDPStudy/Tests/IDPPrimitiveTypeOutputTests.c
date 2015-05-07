@@ -40,7 +40,7 @@ void IDPPrimitiveTypeOutputTests(void) {
 #pragma mark -
 #pragma mark Private Implementations
 
-void IDPPrimitiveTypeOutputMethodTests(void) {
+void IDPPrimitiveTypeOutputMethodTests() {
     output_int(50);
     output_char('B');
     output_short(12);

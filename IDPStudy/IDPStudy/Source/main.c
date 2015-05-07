@@ -10,6 +10,7 @@
 
 #include "IDPDefineSamples.h"
 #include "IDPPrimitiveTypeOutputTests.h"
+#include "IDPDeclarationsAndFunctions.h"
 
 // Call the procedure |testName| covered by the log messages
 #define performTest(testName) \
@@ -28,6 +29,10 @@ int main(int argc, const char * argv[]) {
     IDPArgumentedMacro(text1, text2, int 1234);
     
     performTest(IDPPrimitiveTypeOutputTests);
+    
+    performTest(IDPDeclarationsAndFunctionsTest);
+
+    
     
     return 0; // program finished execution
 }
