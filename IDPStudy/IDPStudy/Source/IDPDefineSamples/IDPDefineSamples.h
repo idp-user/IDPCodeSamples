@@ -10,7 +10,6 @@
 #define IDPStudy_IDPDefineSamples_h
 
 // header body
-int value = 1;
 
 #define IDPStringify(arg) \
     #arg
