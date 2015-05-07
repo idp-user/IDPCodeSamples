@@ -29,12 +29,9 @@ int main(int argc, const char * argv[]) {
     IDPArgumentedMacro(text1, text2, int 1234);
     
     performTest(IDPPrimitiveTypeOutputTests);
-    
     performTest(IDPDeclarationsAndFunctionsTest);
-
     
-    
-    return 0; // program finished execution
+    return 0; // program will finish execution
 }
 
 /***********
@@ -44,9 +41,8 @@ int main(int argc, const char * argv[]) {
  ***********/
 
 // function syntax
-char fuction(int value) {
-    
-    return '\0';
+char fuction(int value) {    
+    return '\0'; // must return value of declared type (char)
 }
 
 // procedure syntax
@@ -58,5 +54,5 @@ void procedure(int value) {
     // code will not be executed if value is zero
     value++;
     
-    return;
+    return; // may be ommited because |procedure| doesn't return result (because of |void|)
 }
