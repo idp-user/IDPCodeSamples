@@ -43,16 +43,18 @@ void IDPIncrementFunctionTest(int *value, int incrementValue);
 #pragma mark Public Implementations
 
 void IDPDeclarationsAndFunctionsTest() {
-    int initialValue = globalValue; // initialValue is equal to globalValue, is 123
+    int initialValue = globalValue; // |initialValue| is equal to |globalValue| which is equal to 123
     
     IDPVariablesTest();
     
-    // globalValue is equal to 123
-    globalValue = globalValue + 1; // globalValue++; globalValue is equal to 124
+    // |globalValue| is equal to 123
+    globalValue = globalValue + 1; // is equal to expression 'globalValue++;' or 'globalValue += 1;'.
     
-    initialValue = globalValue++; // initialValue is equal to 124, globalValue is equal to 125
+    // |globalValue| is equal to 124
     
-    initialValue = ++globalValue; // initialValue AND globalValue are equal to 126
+    initialValue = globalValue++; // |initialValue| is equal to 124, |globalValue| is equal to 125
+    
+    initialValue = ++globalValue; // |initialValue| AND |globalValue| are equal to 126
     
     int result = IDPStaticVariableTest(); // result == 1
     result = IDPStaticVariableTest(); // result == 2
@@ -65,7 +67,7 @@ void IDPDeclarationsAndFunctionsTest() {
     IDPSumFunctionTest(4, 8); // we do not use result. its OK. Example for no reason
     
     int sum = IDPSumFunctionTest(2, 5); // sum == 7
-    int *sumPtr = &sum; // sumPtr is a pointer of sum data field
+    int *sumPtr = &sum; // |sumPtr| is a pointer of |sum| data field which is integer
     
     IDPIncrementFunctionTest(sumPtr, 123); // sum == 130
     
