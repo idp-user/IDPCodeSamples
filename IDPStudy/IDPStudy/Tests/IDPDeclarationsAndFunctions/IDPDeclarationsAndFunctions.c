@@ -31,6 +31,9 @@ static
 int IDPStaticVariableTest(void);
 
 static
+int IDPTernarTest(void);
+
+static
 int IDPAgrumentedFunctionCallTest(int value);
 
 static
@@ -38,6 +41,12 @@ int IDPSumFunctionTest(int value1, int value2);
 
 static
 void IDPIncrementFunctionTest(int *value, int incrementValue);
+
+static
+void IDPReverseArray(char *array, uint64_t size);
+
+static
+void IDPReverseArrayTest(void);
 
 #pragma mark -
 #pragma mark Public Implementations
@@ -72,6 +81,8 @@ void IDPDeclarationsAndFunctionsTest() {
     IDPIncrementFunctionTest(sumPtr, 123); // sum == 130
     
     IDPStaticArrayTest();
+    
+    IDPReverseArrayTest();
 }
 
 #pragma mark -
@@ -133,4 +144,34 @@ int IDPSumFunctionTest(int value1, int value2) {
 void IDPIncrementFunctionTest(int *valuePointer, int incrementValue) {
     int value = *valuePointer;
     *valuePointer = value + incrementValue;
+}
+
+// value += expression; is equal to: value = value + expression
+
+//value <<= expression; is equal to: value = value << expression
+
+//    value = condition ? (var1) : (var2);
+//    
+//    is equal to:
+//    
+//    if (condition) {
+//        value = var1;
+//    } else {
+//        value = var2;
+//    }
+
+void IDPReverseArrayTest(void) {
+    char chars[5] = {'A', 'B', 'c', 'd', 'E'};
+    
+//    IDPReverseArray(chars, 5);
+    IDPReverseArray(&chars[0], sizeof(chars));
+    
+}
+
+void IDPReverseArray(char *array, uint64_t count) {
+    for (uint64_t i = 0, j = count - 1; i < j; i++, j--) {
+        char buffer = array[j];
+        array[j] = array[i];
+        array[i] = buffer;
+    }
 }
