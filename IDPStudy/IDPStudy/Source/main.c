@@ -11,6 +11,9 @@
 #include "IDPDefineSamples.h"
 #include "IDPPrimitiveTypeOutputTests.h"
 #include "IDPDeclarationsAndFunctions.h"
+#include "IDPStructuresTest.h"
+#include "IDPBitOutputTests.h"
+
 
 // Call the procedure |testName| covered by the log messages
 #define performTest(testName) \
@@ -19,17 +22,20 @@
     printf(#testName " finished\n");
 
 int main(int argc, const char * argv[]) {
-    // one line macro
-    IDPNoArgOneLineMacro;
-    
-    // multi line macro
-    IDPNoArgMultiLineMacro;
-    
-    // agrumented macro
-    IDPArgumentedMacro(text1, text2, int 1234);
-    
-    performTest(IDPPrimitiveTypeOutputTests);
-    performTest(IDPDeclarationsAndFunctionsTest);
+//    // one line macro
+//    IDPNoArgOneLineMacro;
+//    
+//    // multi line macro
+//    IDPNoArgMultiLineMacro;
+//    
+//    // agrumented macro
+//    IDPArgumentedMacro(text1, text2, int 1234);
+//    
+//    performTest(IDPPrimitiveTypeOutputTests);
+//    performTest(IDPDeclarationsAndFunctionsTest);
+//    performTest(IDPHumanStructuresTest);
+
+    performTest(IDPBitOutputPerformTests);
     
     return 0; // program will finish execution
 }
