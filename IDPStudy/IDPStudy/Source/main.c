@@ -13,7 +13,7 @@
 #include "IDPDeclarationsAndFunctions.h"
 #include "IDPStructuresTest.h"
 #include "IDPBitOutputTests.h"
-
+#include "IDPHeapUsageTests.h"
 
 // Call the procedure |testName| covered by the log messages
 #define performTest(testName) \
@@ -36,6 +36,8 @@ int main(int argc, const char * argv[]) {
 //    performTest(IDPHumanStructuresTest);
 
     performTest(IDPBitOutputPerformTests);
+    
+    performTest(IDPPerformHeapUsageTests);
     
     return 0; // program will finish execution
 }
