@@ -11,35 +11,37 @@
 // Создать универсальный метод для вывода битов числа (различных типов) в консоль.
 
 #pragma mark -
-#pragma mark Private Declarations
+#pragma mark Public Implementations
 
-static const uint8_t kIDPBitCount = 8;
-
-#pragma mark -
-#pragma mark Public
-
-void IDPBitFieldValueOutput(void *byteAddress, size_t size) {
-    printf("{");
-    char *bitfieldAddress = (char *)byteAddress + size - 1;
+IDPByteOrderType IDPByteOrderGetCurrentType(void) {
+    int value = 1;
     
-    for (uint16_t index = 0; index < size; index++) {
-        IDPByteValueOutput(bitfieldAddress);
+    return 0 == (value & 1) ? kIDPByteOrderTypeLittleEndian : kIDPByteOrderTypeBigEndian;
+}
+
+void IDPPrintValueBits(void *value, size_t valueSize, IDPByteOrderType order) {
+    printf("{ ");
+    for (ptrdiff_t offset = 0; offset < valueSize; offset++) {
+        uint8_t byte = *((uint8_t *)value + (kIDPByteOrderTypeBigEndian != order
+                                             ? offset
+                                             : (valueSize - 1) - offset));
         
-        bitfieldAddress--;
-        printf(", ");
+        IDPByteOutput(byte);
+        printf(" ");
     }
     
     printf("}");
 }
 
-void IDPByteValueOutput(char *byteAddress) {
-    uint8_t value = *byteAddress;
-    for (uint8_t shiftBitCount = kIDPBitCount; shiftBitCount > 0; shiftBitCount--) {
-        uint8_t shiftedValue = value >> (shiftBitCount - 1);
-        printf("%d", (shiftedValue & 1));
-        if (shiftBitCount != 1) {
-            printf(" ");
-        }
-    }
+#pragma mark -
+#pragma mark Private Implementations
+
+void IDPByteOutput(unsigned char byteValue) {
+    uint8_t bitCount = 8;
     
+    for (int bitShift = (bitCount - 1); bitShift >= 0; bitShift-- ) {
+        uint8_t bitValue = ((byteValue >> bitShift) & 1);
+        
+        printf("%0d", bitValue);
+    };
 }

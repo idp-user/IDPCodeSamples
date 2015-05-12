@@ -11,10 +11,18 @@
 
 #include <stdio.h>
 
-extern
-void IDPBitFieldValueOutput(void *byteAddress, size_t size);
+typedef enum {
+    kIDPByteOrderTypeBigEndian,
+    kIDPByteOrderTypeLittleEndian,
+} IDPByteOrderType;
 
 extern
-void IDPByteValueOutput(char *byteAddress);
+IDPByteOrderType IDPByteOrderGetCurrentType(void);
+
+extern
+void IDPPrintValueBits(void *value, size_t valueSize, IDPByteOrderType order);
+
+extern
+void IDPByteOutput(unsigned char byteValue);
 
 #endif /* defined(__IDPStudy__IDPBitOutput__) */

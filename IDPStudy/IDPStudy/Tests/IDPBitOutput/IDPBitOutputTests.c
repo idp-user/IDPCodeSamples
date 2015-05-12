@@ -10,64 +10,77 @@
 
 #include "IDPBitOutput.h"
 
+#define performTest(testName) \
+printf(#testName " started...\n"); \
+testName(); \
+printf(#testName " finished\n");
+
 static
 void IDPByteOutputTest(void);
 
 static
-void IDPBitFieldOutputTest(void);
+void IDPBitOutputPerformCurrentEndianTest();
+
+static
+void IDPBitOutputPerformBigEndianTest();
+
+static
+void IDPBitOutputPerformLittleEndianTest();
 
 #pragma mark -
-#pragma mark Public
+#pragma mark Public Implementations
 
 void IDPBitOutputPerformTests() {
     IDPByteOutputTest();
-    IDPBitFieldOutputTest();
+    performTest(IDPBitOutputPerformCurrentEndianTest);
+    performTest(IDPBitOutputPerformBigEndianTest);
+    performTest(IDPBitOutputPerformLittleEndianTest);
 }
 
-
 #pragma mark -
-#pragma mark Private Impl
+#pragma mark Private Implementations
 
 void IDPByteOutputTest(void) {
     char testValue = 5;
     
-    IDPByteValueOutput(&testValue);
+    IDPByteOutput(testValue);
+    
     printf(".\n");
-
+    
     testValue <<= 6;
-    IDPByteValueOutput(&testValue);
+    IDPByteOutput(testValue);
     printf(".\n");
     
     testValue = UINT8_MAX;
-    IDPByteValueOutput(&testValue);
+    IDPByteOutput(testValue);
     printf(".\n");
     
     testValue = UINT8_MAX >> 4;
-    IDPByteValueOutput(&testValue);
+    IDPByteOutput(testValue);
     printf(".\n");
     
     testValue = 0;
-    IDPByteValueOutput(&testValue);
+    IDPByteOutput(testValue);
     printf(".\n");
 }
 
-void IDPBitFieldOutputTest(void) {
-    
-    int value1 = 1;
+void IDPBitOutputPerformCurrentEndianTest() {
+    printf("current byte order type: %s\n",
+           (kIDPByteOrderTypeBigEndian == IDPByteOrderGetCurrentType()
+            ? "kIDPByteOrderTypeBigEndian"
+            : "kIDPByteOrderTypeLittleEndian"));
+}
 
-    printf("value 1\n");
-    IDPBitFieldValueOutput(&value1, sizeof(value1));
+void IDPBitOutputPerformBigEndianTest(void) {
+    short value = 0x7F51;
     
-    printf("value 1\n");
-    value1 = 0x7fFFF;
-    IDPBitFieldValueOutput(&value1, sizeof(value1));
-    
-    uint64_t value = UINT64_MAX;
-    printf("value \n");
-    IDPBitFieldValueOutput(&value, sizeof(value));
+    printf("Big Endian\t\t0x%x = ", value);
+    IDPPrintValueBits(&value, sizeof(value), kIDPByteOrderTypeBigEndian);
+}
 
-    value = value & 0x70F;
-    printf("value \n");
-    IDPBitFieldValueOutput(&value, sizeof(value));
+void IDPBitOutputPerformLittleEndianTest() {
+    short value = 0x7F51;
     
+    printf("Little Endian\t0x%x = ", value);
+    IDPPrintValueBits(&value, sizeof(value), kIDPByteOrderTypeLittleEndian);
 }
