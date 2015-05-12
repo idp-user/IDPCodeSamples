@@ -11,6 +11,7 @@
 		5A6957711AFA0A8100FF2FDB /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A6957701AFA0A8100FF2FDB /* main.c */; };
 		5A6ABE171B0202C6003EA6EB /* IDPHeapUsageTests.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A6ABE151B0202C6003EA6EB /* IDPHeapUsageTests.c */; };
 		5A6ABE271B021B9C003EA6EB /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A6ABE251B021B9C003EA6EB /* main.c */; };
+		5A6ABE2B1B021BF6003EA6EB /* IDPObject.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A6ABE291B021BF6003EA6EB /* IDPObject.c */; };
 		5A6C3A3B1AFB531C00BAD5D4 /* IDPDeclarationsAndFunctions.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A6C3A391AFB531C00BAD5D4 /* IDPDeclarationsAndFunctions.c */; };
 		5ABC95681B00AA43007CBBA5 /* IDPStructures.c in Sources */ = {isa = PBXBuildFile; fileRef = 5ABC95661B00AA43007CBBA5 /* IDPStructures.c */; };
 		5ABC956C1B00AC74007CBBA5 /* IDPStructuresTest.c in Sources */ = {isa = PBXBuildFile; fileRef = 5ABC956A1B00AC74007CBBA5 /* IDPStructuresTest.c */; };
@@ -50,6 +51,8 @@
 		5A6ABE161B0202C6003EA6EB /* IDPHeapUsageTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPHeapUsageTests.h; sourceTree = "<group>"; };
 		5A6ABE1D1B021B69003EA6EB /* IDPObjects */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = IDPObjects; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A6ABE251B021B9C003EA6EB /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		5A6ABE291B021BF6003EA6EB /* IDPObject.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = IDPObject.c; sourceTree = "<group>"; };
+		5A6ABE2A1B021BF6003EA6EB /* IDPObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPObject.h; sourceTree = "<group>"; };
 		5A6C3A391AFB531C00BAD5D4 /* IDPDeclarationsAndFunctions.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = IDPDeclarationsAndFunctions.c; sourceTree = "<group>"; };
 		5A6C3A3A1AFB531C00BAD5D4 /* IDPDeclarationsAndFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPDeclarationsAndFunctions.h; sourceTree = "<group>"; };
 		5AA5675F1AFA48240094451F /* IDPStudyPlan */ = {isa = PBXFileReference; lastKnownFileType = text; path = IDPStudyPlan; sourceTree = "<group>"; };
@@ -179,6 +182,7 @@
 		5A6ABE241B021B9C003EA6EB /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				5A6ABE281B021BD3003EA6EB /* IDPObject */,
 				5A6ABE251B021B9C003EA6EB /* main.c */,
 			);
 			path = Source;
@@ -189,6 +193,15 @@
 			children = (
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		5A6ABE281B021BD3003EA6EB /* IDPObject */ = {
+			isa = PBXGroup;
+			children = (
+				5A6ABE291B021BF6003EA6EB /* IDPObject.c */,
+				5A6ABE2A1B021BF6003EA6EB /* IDPObject.h */,
+			);
+			path = IDPObject;
 			sourceTree = "<group>";
 		};
 		5A6C3A381AFB52F500BAD5D4 /* IDPDeclarationsAndFunctions */ = {
@@ -279,6 +292,7 @@
 		5A69575D1AFA05AE00FF2FDB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = IDP;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "IDAP College";
 				TargetAttributes = {
@@ -328,6 +342,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A6ABE2B1B021BF6003EA6EB /* IDPObject.c in Sources */,
 				5A6ABE271B021B9C003EA6EB /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
