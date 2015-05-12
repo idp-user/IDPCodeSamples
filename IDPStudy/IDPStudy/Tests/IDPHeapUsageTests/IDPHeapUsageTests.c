@@ -10,6 +10,7 @@
 #include <assert.h>
 
 #include "IDPHeapUsageTests.h"
+#include "IDPTestMacros.h"
 
 #pragma mark -
 #pragma mark Private
@@ -21,7 +22,7 @@ void IDPMultipleAllocationsTest(void);
 #pragma mark Public
 
 void IDPPerformHeapUsageTests() {
-    IDPMultipleAllocationsTest();
+    performTest(IDPMultipleAllocationsTest);
 }
 
 
