@@ -15,11 +15,7 @@
 #include "IDPBitOutputTests.h"
 #include "IDPHeapUsageTests.h"
 
-// Call the procedure |testName| covered by the log messages
-#define performTest(testName) \
-    printf(#testName " started...\n"); \
-    testName(); \
-    printf(#testName " finished\n");
+#include "IDPTestMacros.h"
 
 int main(int argc, const char * argv[]) {
 //    // one line macro
