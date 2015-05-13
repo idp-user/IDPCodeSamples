@@ -14,6 +14,7 @@
 #include "IDPStructuresTest.h"
 #include "IDPBitOutputTests.h"
 #include "IDPHeapUsageTests.h"
+#include "IDPFunctionPointersTests.h"
 
 #include "IDPTestMacros.h"
 
@@ -30,10 +31,13 @@ int main(int argc, const char * argv[]) {
 //    performTest(IDPPrimitiveTypeOutputTests);
 //    performTest(IDPDeclarationsAndFunctionsTest);
 //    performTest(IDPHumanStructuresTest);
+//
+//    performTest(IDPBitOutputPerformTests);
+//    
+//    performTest(IDPPerformHeapUsageTests);
+//    
+    performTest(IDPFunctionPointersTestsPerform);
 
-    performTest(IDPBitOutputPerformTests);
-    
-    performTest(IDPPerformHeapUsageTests);
     
     return 0; // program will finish execution
 }
