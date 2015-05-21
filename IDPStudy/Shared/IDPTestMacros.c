@@ -13,6 +13,7 @@
 
 static uint8_t kIDPTestLevel = 0;
 
+static
 void IDPPrintMinusSymbolCountOf(uint8_t count);
 
 #pragma mark -
