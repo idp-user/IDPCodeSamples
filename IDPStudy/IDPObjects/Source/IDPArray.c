@@ -57,9 +57,11 @@ void __IDPArrayDeallocate(void *object) {
 void IDPArrayAddObject(IDPArray *array, void *object) {
     if (NULL != array && NULL != object) {
         uint64_t count = IDPArrayGetCount(array);
-        if (true == IDPArrayShouldResize(array)) {
-            IDPArrayResize(array, count + 1);
-        }
+
+//  place this code in IDPArraySetCount()
+//        if (true == IDPArrayShouldResize(array)) {
+//            IDPArrayResize(array, count + 1);
+//        }
         
         IDPArraySetCount(array, count + 1);
         IDPArraySetObjectAtIndex(array, object, count);
@@ -113,12 +115,13 @@ void IDPArrayRemoveObjectAtIndex(IDPArray *array, uint64_t index) {
         IDPArraySetObjectAtIndex(array, NULL, index);
         uint64_t count = IDPArrayGetCount(array);
         
+        void **data = array->_data;
         if (index < (count - 1)) {
             uint64_t elementsCount = count - (index + 1);
-            void **data = array->_data;
             
-            memmove(data[index], data[index + 1], elementsCount);
+            memmove(&data[index], &data[index + 1], elementsCount * sizeof(*data));
         }
+        data[count - 1] = NULL;
         
         IDPArraySetCount(array, count - 1);
     }
