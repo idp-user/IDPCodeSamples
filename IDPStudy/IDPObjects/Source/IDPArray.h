@@ -28,7 +28,7 @@ void *IDPArrayCreateWithCapacity(uint64_t capacity);
 
 /// returns index of added object. Otherwise kIDPNotFound
 extern
-uint64_t IDPArrayAddObject(IDPArray *array, void *object);
+void IDPArrayAddObject(IDPArray *array, void *object);
 
 extern
 uint64_t IDPArrayGetCount(IDPArray *array);
@@ -47,5 +47,8 @@ void IDPArrayRemoveObjectAtIndex(IDPArray *array, uint64_t index);
 
 extern
 void IDPArrayRemoveAllObjects(IDPArray *array);
+
+extern
+void __IDPArrayDeallocate(void *object);
 
 #endif /* defined(__IDPStudy__IDPArray__) */
