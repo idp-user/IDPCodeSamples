@@ -41,8 +41,14 @@ void *IDPArrayCreateWithCapacity(uint64_t capacity) {
 }
 
 void __IDPArrayDeallocate(void *object) {
-    IDPArrayRemoveAllObjects(object);
+    IDPArray *array = object;
+    
+    IDPArrayRemoveAllObjects(array);
 //    IDPArraySetCapacity(object, 0);
+    if (NULL != array->_data) {
+        free(array->_data);
+        array->_data = NULL;
+    }
     
     __IDPObjectDeallocate(object);
 }
