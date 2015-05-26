@@ -11,8 +11,13 @@
 
 #include "IDPArray.h"
 
+static const uint64_t kIDPArrayMaximumCapacity = UINT64_MAX - 1;
+
 #pragma mark -
 #pragma mark Private Declarations
+
+static
+uint64_t IDPArrayGetCapacity(IDPArray *array);
 
 static
 void IDPArraySetCapacity(IDPArray *array, uint64_t capacity);
@@ -142,8 +147,33 @@ void IDPArrayRemoveAllObjects(IDPArray *array) {
 #pragma mark -
 #pragma mark Private Implementations
 
+uint64_t IDPArrayGetCapacity(IDPArray *array) {
+    return (NULL != array) ? array->_capacity : 0;
+}
+
 void IDPArraySetCapacity(IDPArray *array, uint64_t capacity) {
-    
+    if (NULL != array && array->_capacity != capacity) {
+        assert(kIDPArrayMaximumCapacity >= capacity);
+        
+        size_t size = capacity * sizeof(*array->_data);
+        if (0 == size && NULL != array->_data) {
+            free(array->_data);
+            array->_data = NULL;
+        } else {
+            array->_data = realloc(array->_data, size);
+            
+            assert(NULL != array->_data);
+        }
+        
+        if (capacity > array->_capacity) {
+            void *startPointer = array->_data + array->_capacity;
+            size_t numberOfBytes = (capacity - array->_capacity) * sizeof(*array->_data);
+            
+            memset(startPointer, 0, numberOfBytes);
+        }
+        
+        array->_capacity = capacity;
+    }
 }
 
 bool IDPArrayShouldResize(IDPArray *array) {
@@ -156,7 +186,11 @@ void IDPArrayResize(IDPArray *array, uint64_t requiredCapacity) {
 
 void IDPArraySetCount(IDPArray *array, uint64_t count) {
     if (NULL != array) {
+        assert(kIDPArrayMaximumCapacity >= count);
+        
         array->_count = count;
+        
+        // resize here
     }
 }
 
