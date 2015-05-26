@@ -23,10 +23,13 @@ static
 void IDPArraySetCapacity(IDPArray *array, uint64_t capacity);
 
 static
+void IDPArrayResizeIfNeeded(IDPArray *array);
+
+static
 bool IDPArrayShouldResize(IDPArray *array);
 
 static
-void IDPArrayResize(IDPArray *array, uint64_t requiredCapacity);
+uint64_t IDPArrayPrefferedCapacity(IDPArray *array);
 
 static
 void IDPArraySetCount(IDPArray *array, uint64_t count);
@@ -62,11 +65,6 @@ void __IDPArrayDeallocate(void *object) {
 void IDPArrayAddObject(IDPArray *array, void *object) {
     if (NULL != array && NULL != object) {
         uint64_t count = IDPArrayGetCount(array);
-
-//  place this code in IDPArraySetCount()
-//        if (true == IDPArrayShouldResize(array)) {
-//            IDPArrayResize(array, count + 1);
-//        }
         
         IDPArraySetCount(array, count + 1);
         IDPArraySetObjectAtIndex(array, object, count);
@@ -126,11 +124,11 @@ void IDPArrayRemoveObjectAtIndex(IDPArray *array, uint64_t index) {
             
             memmove(&data[index], &data[index + 1], elementsCount * sizeof(*data));
         }
+        
         data[count - 1] = NULL;
         
         IDPArraySetCount(array, count - 1);
     }
-    
 }
 
 void IDPArrayRemoveAllObjects(IDPArray *array) {
@@ -176,15 +174,28 @@ void IDPArraySetCapacity(IDPArray *array, uint64_t capacity) {
     }
 }
 
-bool IDPArrayShouldResize(IDPArray *array) {
-    return false;
+void IDPArrayResizeIfNeeded(IDPArray *array) {
+    if (IDPArrayShouldResize(array)) {
+        IDPArraySetCapacity(array, IDPArrayPrefferedCapacity(array));
+    }
 }
 
-void IDPArrayResize(IDPArray *array, uint64_t requiredCapacity) {
-    if (IDPArrayShouldResize(array)) {
-#warning set new capacity here
+bool IDPArrayShouldResize(IDPArray *array) {
+    return (NULL != array) && (array->_capacity != IDPArrayPrefferedCapacity(array));
+}
+
+uint64_t IDPArrayPrefferedCapacity(IDPArray *array) {
+    if (NULL != array) {
+        uint64_t count = IDPArrayGetCount(array);
+        uint64_t capacity = IDPArrayGetCapacity(array);
+        if (count == capacity) {
+            return capacity;
+        }
         
+        return count < capacity ? count : 2 * count;
     }
+    
+    return 0;
 }
 
 void IDPArraySetCount(IDPArray *array, uint64_t count) {
@@ -192,9 +203,8 @@ void IDPArraySetCount(IDPArray *array, uint64_t count) {
         assert(kIDPArrayMaximumCapacity >= count);
         
         array->_count = count;
-        
-        // resize here
-#warning resize here
+
+        IDPArrayResizeIfNeeded(array);
     }
 }
 

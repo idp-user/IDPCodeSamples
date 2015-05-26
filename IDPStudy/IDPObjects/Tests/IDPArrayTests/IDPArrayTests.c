@@ -6,8 +6,10 @@
 //  Copyright (c) 2015 IDAP College. All rights reserved.
 //
 
+#include <assert.h>
 #include "IDPArrayTests.h"
 
+#include "IDPArray.h"
 #include "IDPTestMacros.h"
 
 #pragma mark -
@@ -19,13 +21,10 @@ void IDPArrayOneObjectBehaviourTest(void);
 static
 void IDPArrayMultipleObjectBehaviourTest(void);
 
-static
-void IDPArrayBehaviourTest(void);
-
 #pragma mark -
 #pragma mark Public
 
-void IDPArrayTestsPerform() {
+void IDPArrayBehaviourTest() {
     performTest(IDPArrayOneObjectBehaviourTest);
     performTest(IDPArrayMultipleObjectBehaviourTest);
 }
@@ -35,7 +34,11 @@ void IDPArrayTestsPerform() {
 
 void IDPArrayOneObjectBehaviourTest(void) {
     //  after array was created
+    IDPArray *array = IDPObjectCreateOfType(IDPArray);
+    
     //      array must not be NULL
+    assert(NULL != array);
+    
     //      array retain count must be equal 1
     //      array objects count muts be equal 0
     // after object was created
@@ -55,6 +58,8 @@ void IDPArrayOneObjectBehaviourTest(void) {
     //      object index in array must be invalid (object not found)
     //      object reference count must be decremented by 1
     //      array must not contain an object
+    
+    IDPObjectRelease(array);
 }
 
 void IDPArrayMultipleObjectBehaviourTest(void) {
