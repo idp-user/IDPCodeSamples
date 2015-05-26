@@ -195,5 +195,17 @@ void IDPArraySetCount(IDPArray *array, uint64_t count) {
 }
 
 void IDPArraySetObjectAtIndex(IDPArray *array, void *object, uint64_t index) {
+    if (NULL == array) {
+        return;
+    }
     
+    assert(index < IDPArrayGetCount(array));
+    
+    IDPObject *currentObject = array->_data[index];
+    if (currentObject != object) {
+        IDPObjectRetain(object);
+        IDPObjectRelease(currentObject);
+        
+        array->_data[index] = object;
+    }
 }
