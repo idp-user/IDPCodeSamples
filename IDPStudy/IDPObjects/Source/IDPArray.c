@@ -181,7 +181,10 @@ bool IDPArrayShouldResize(IDPArray *array) {
 }
 
 void IDPArrayResize(IDPArray *array, uint64_t requiredCapacity) {
-    
+    if (IDPArrayShouldResize(array)) {
+#warning set new capacity here
+        
+    }
 }
 
 void IDPArraySetCount(IDPArray *array, uint64_t count) {
@@ -191,6 +194,7 @@ void IDPArraySetCount(IDPArray *array, uint64_t count) {
         array->_count = count;
         
         // resize here
+#warning resize here
     }
 }
 
