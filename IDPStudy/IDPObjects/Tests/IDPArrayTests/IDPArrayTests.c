@@ -19,8 +19,8 @@ void IDPArrayOneObjectBehaviourTest(void);
 static
 void IDPArrayMultipleObjectBehaviourTest(void);
 
-static
-void IDPArrayBehaviourTest(void);
+//static
+//void IDPArrayBehaviourTest(void);
 
 #pragma mark -
 #pragma mark Public
