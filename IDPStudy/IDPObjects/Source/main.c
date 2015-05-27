@@ -16,7 +16,7 @@
 int main(int argc, const char * argv[]) {
     performTest(IDPObjectBehaviorTests);
     
-    performTest(IDPArrayTestsPerform);
+    performTest(IDPArrayBehaviourTest);
     
     performTest(IDPLinkedListNodePerformTests);
     

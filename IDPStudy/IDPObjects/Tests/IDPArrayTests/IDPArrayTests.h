@@ -10,6 +10,6 @@
 #define __IDPStudy__IDPArrayTests__
 
 extern
-void IDPArrayTestsPerform(void);
+void IDPArrayBehaviourTest(void);
 
 #endif /* defined(__IDPStudy__IDPArrayTests__) */
