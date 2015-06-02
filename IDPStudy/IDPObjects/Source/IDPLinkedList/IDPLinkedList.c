@@ -13,6 +13,9 @@
 #pragma mark -
 #pragma mark Private Declarations
 
+//static
+//void IDPLinkedListSetCount(IDPLinkedList *list, uint64_t count);
+
 static
 void IDPLinkedListSetHead(IDPLinkedList *list, IDPLinkedListNode *head);
 
@@ -41,13 +44,24 @@ void IDPLinkedListRemoveFirstObject(IDPLinkedList *list) {
 }
 
 IDPObject *IDPLinkedListGetObjectBeforeObject(IDPLinkedList *list, IDPObject *object) {
-    IDPObject *result = NULL;
-    if (NULL != list) {
+    if (NULL != list && false == IDPLinkedListIsEmpty(list)) {
         // enumerate until object and remember previous on each iteration
+        IDPLinkedListNode *currentNode = IDPLinkedListGetHead(list);
+        IDPObject *previousObject = NULL;
+        
+        do {
+            IDPObject *currentObject = IDPLinkedListNodeGetObject(currentNode);
+            if (object == currentObject) {
+                
+                return previousObject;
+            }
+            
+            previousObject = currentObject;
+        } while (NULL != (currentNode = IDPLinkedListNodeGetNextNode(currentNode)));
 
     }
     
-    return result;
+    return NULL;
 }
 
 bool IDPLinkedListIsEmpty(IDPLinkedList *list) {
@@ -69,6 +83,27 @@ void IDPLinkedListAddObject(IDPLinkedList *list, void *object) {
 
 void IDPLinkedListRemoveObject(IDPLinkedList *list, void *object) {
     // find node with object
+    IDPLinkedListNode *node = IDPLinkedListGetHead(list);
+    IDPLinkedListNode *previousNode = NULL;
+    
+    while (NULL != node) {
+        IDPObject *currentObject = IDPLinkedListNodeGetObject(node);
+        if (object == currentObject) {
+            IDPLinkedListNode *nextNode = IDPLinkedListNodeGetNextNode(node);
+            
+            IDPLinkedListNodeSetNextNode(previousNode, nextNode);
+            
+            list->_count--;
+            
+//            IDPLinkedListSetCount(list, IDPLinkedListGetCount(list) - 1);
+            
+//            break;
+            node = nextNode;
+        }
+        
+        previousNode = node;
+        node = IDPLinkedListNodeGetNextNode(node);
+    }
 }
 
 void IDPLinkedListRemoveAllObjects(IDPLinkedList *list) {
@@ -82,6 +117,16 @@ bool IDPLinkedListContainsObject(IDPLinkedList *list, void *object) {
     bool result = false;
     if (NULL != list) {
         // enumerate all nodes to find node with object
+        IDPLinkedListNode *node = IDPLinkedListGetHead(list);
+        while (NULL != node) {
+            if (object == IDPLinkedListNodeGetObject(node)) {
+                result = true;
+                
+                break;
+            }
+            
+            node = IDPLinkedListNodeGetNextNode(node);
+        }
     }
     
     return result;
