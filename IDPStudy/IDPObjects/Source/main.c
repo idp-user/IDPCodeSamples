@@ -10,16 +10,15 @@
 
 #include "IDPObjectTests.h"
 #include "IDPTestMacros.h"
-#include "IDPLinkedListNodeTests.h"
 #include "IDPLinkedListTests.h"
 #include "IDPArrayTests.h"
+#include "IDPLinkedListTests.h"
 
 int main(int argc, const char * argv[]) {
     performTest(IDPObjectBehaviorTests);
     
     performTest(IDPArrayTestsPerform);
     
-    performTest(IDPLinkedListNodePerformTests);
     performTest(IDPLinkedListBehaviorTest);
     
     return 0;

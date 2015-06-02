@@ -13,8 +13,8 @@
 #pragma mark -
 #pragma mark Private Declarations
 
-//static
-//void IDPLinkedListSetCount(IDPLinkedList *list, uint64_t count);
+static
+void IDPLinkedListSetCount(IDPLinkedList *list, uint64_t count);
 
 static
 void IDPLinkedListSetHead(IDPLinkedList *list, IDPLinkedListNode *head);
@@ -74,8 +74,7 @@ void IDPLinkedListAddObject(IDPLinkedList *list, void *object) {
         IDPLinkedListNodeSetNextNode(node, IDPLinkedListGetHead(list));
         
         IDPLinkedListSetHead(list, node);
-        
-        list->_count++;
+        IDPLinkedListSetCount(list, IDPLinkedListGetCount(list) + 1);
         
         IDPObjectRelease(node);
     }
@@ -92,10 +91,7 @@ void IDPLinkedListRemoveObject(IDPLinkedList *list, void *object) {
             IDPLinkedListNode *nextNode = IDPLinkedListNodeGetNextNode(node);
             
             IDPLinkedListNodeSetNextNode(previousNode, nextNode);
-            
-            list->_count--;
-            
-//            IDPLinkedListSetCount(list, IDPLinkedListGetCount(list) - 1);
+            IDPLinkedListSetCount(list, IDPLinkedListGetCount(list) - 1);
             
 //            break;
             node = nextNode;
@@ -108,8 +104,10 @@ void IDPLinkedListRemoveObject(IDPLinkedList *list, void *object) {
 
 void IDPLinkedListRemoveAllObjects(IDPLinkedList *list) {
     if (NULL != list) {
-        IDPLinkedListSetHead(list, NULL);
-        list->_count = 0;
+        IDPLinkedListSetCount(list, 0);
+//        
+//        IDPLinkedListSetHead(list, NULL);
+//        list->_count = 0;
     }
 }
 
@@ -138,6 +136,16 @@ uint64_t IDPLinkedListGetCount(IDPLinkedList *list) {
 
 #pragma mark -
 #pragma mark Private Implementations
+
+void IDPLinkedListSetCount(IDPLinkedList *list, uint64_t count) {
+    if (NULL != list) {
+        if (0 == count) {
+            IDPLinkedListSetHead(list, NULL);
+        }
+        
+        list->_count = count;
+    }
+}
 
 void IDPLinkedListSetHead(IDPLinkedList *list, IDPLinkedListNode *head) {
     if (NULL != list && list->_head != head) {
