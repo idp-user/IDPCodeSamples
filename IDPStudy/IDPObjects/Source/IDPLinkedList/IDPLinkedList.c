@@ -38,11 +38,10 @@ IDPObject *IDPLinkedListGetFirstObject(IDPLinkedList *list) {
 }
 
 void IDPLinkedListRemoveFirstObject(IDPLinkedList *list) {
-    uint64_t count = IDPLinkedListGetCount(list);
-    if (0 != count) {
+    if (NULL != list && false == IDPLinkedListIsEmpty(list)) {
         IDPLinkedListNode *node =  IDPLinkedListGetHead(list);
         IDPLinkedListSetHead(list, IDPLinkedListNodeGetNextNode(node));
-        IDPLinkedListSetCount(list, count - 1);
+        IDPLinkedListSetCount(list, IDPLinkedListGetCount(list) - 1);
     }
 }
 
