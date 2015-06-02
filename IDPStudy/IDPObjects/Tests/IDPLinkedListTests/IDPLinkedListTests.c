@@ -93,6 +93,12 @@ void IDPLinkedListOneObjectTest(void) {
     //      object referenceCount must be 1
     assert(1 == IDPObjectGetReferenceCount(object));
     
+    //      list should be empty
+    assert(true == IDPLinkedListIsEmpty(list));
+    
+    //      list must not contain object
+    assert(false == IDPLinkedListContainsObject(list, object));
+    
     IDPObjectRelease(object);
     IDPObjectRelease(list);
 }
