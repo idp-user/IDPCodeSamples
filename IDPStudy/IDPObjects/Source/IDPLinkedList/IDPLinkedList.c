@@ -87,18 +87,20 @@ void IDPLinkedListRemoveObject(IDPLinkedList *list, void *object) {
     
     while (NULL != node) {
         IDPObject *currentObject = IDPLinkedListNodeGetObject(node);
+        IDPLinkedListNode *nextNode = IDPLinkedListNodeGetNextNode(node);
+        
         if (object == currentObject) {
-            IDPLinkedListNode *nextNode = IDPLinkedListNodeGetNextNode(node);
-            
-            IDPLinkedListNodeSetNextNode(previousNode, nextNode);
+            if (node == IDPLinkedListGetHead(list)) {
+                IDPLinkedListSetHead(list, nextNode);
+            } else {
+                IDPLinkedListNodeSetNextNode(previousNode, nextNode);
+            }            
+
             IDPLinkedListSetCount(list, IDPLinkedListGetCount(list) - 1);
-            
-//            break;
-            node = nextNode;
         }
         
         previousNode = node;
-        node = IDPLinkedListNodeGetNextNode(node);
+        node = nextNode;
     }
 }
 

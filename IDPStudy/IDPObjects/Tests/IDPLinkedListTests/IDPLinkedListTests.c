@@ -66,6 +66,33 @@ void IDPLinkedListOneObjectTest(void) {
     //      object referenceCount must be 1
     assert(1 == IDPObjectGetReferenceCount(object));
     
+    // after object was added 20 times
+    for (uint64_t iterator = 0; iterator < 2000; iterator++) {
+        IDPLinkedListAddObject(list, object);
+    }
+    
+    //      list must not be empty
+    assert(false == IDPLinkedListIsEmpty(list));
+    
+    //      list must contain object
+    assert(true == IDPLinkedListContainsObject(list, object));
+    
+    //      object referenceCount must be 2001
+    assert(2001 == IDPObjectGetReferenceCount(object));
+    
+    // after object was removed from list
+    IDPLinkedListRemoveFirstObject(list);
+    
+    //      object referenceCount must be 2000
+    assert(2000 == IDPObjectGetReferenceCount(object));
+    
+    // after object was removed from list
+    IDPLinkedListRemoveObject(list, object);
+    
+    
+    //      object referenceCount must be 1
+    assert(1 == IDPObjectGetReferenceCount(object));
+    
     IDPObjectRelease(object);
     IDPObjectRelease(list);
 }
