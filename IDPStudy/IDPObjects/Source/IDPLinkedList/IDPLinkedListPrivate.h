@@ -9,7 +9,7 @@
 #ifndef IDPStudy_IDPLinkedListPrivate_h
 #define IDPStudy_IDPLinkedListPrivate_h
 
-typedef struct IDPLinkedList IDPLinkedList;
+#include "IDPLinkedList.h"
 
 extern
 void IDPLinkedListSetMutationsCount(IDPLinkedList *list, uint64_t count);

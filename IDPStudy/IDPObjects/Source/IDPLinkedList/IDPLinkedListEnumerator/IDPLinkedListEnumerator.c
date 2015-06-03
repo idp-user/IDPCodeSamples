@@ -6,9 +6,8 @@
 //  Copyright (c) 2015 IDAP College. All rights reserved.
 //
 
-#include "IDPLinkedListEnumerator.h"
+#include "IDPLinkedListEnumeratorPrivate.h"
 #include "IDPLinkedListNode.h"
-#include "IDPLinkedList.h"
 #include "IDPLinkedListPrivate.h"
 
 #include "IDPObjectMacros.h"
@@ -44,7 +43,7 @@ void __IDPLinkedListEnumeratorDeallocate(void *object) {
     __IDPObjectDeallocate(object);
 }
 
-IDPLinkedListEnumerator *IDPLinkedListEnumeratorCreateWithList(void *list) {
+IDPLinkedListEnumerator *IDPLinkedListEnumeratorCreateWithList(IDPLinkedList *list) {
     if (NULL == list) {
         return NULL;
     }

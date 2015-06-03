@@ -16,13 +16,15 @@
 typedef struct IDPLinkedListNode IDPLinkedListNode;
 typedef struct IDPLinkedListEnumerator IDPLinkedListEnumerator;
 
-typedef struct {
+typedef struct IDPLinkedList IDPLinkedList;
+
+struct IDPLinkedList {
     IDPObject _super;
     
     IDPLinkedListNode *_head;    
     uint64_t _count;
     uint64_t _mutationsCount;
-} IDPLinkedList;
+};
 
 
 extern

@@ -6,9 +6,8 @@
 //  Copyright (c) 2015 IDAP College. All rights reserved.
 //
 
-#include "IDPLinkedList.h"
-
-#include "IDPLinkedListEnumerator.h"
+#include "IDPLinkedListPrivate.h"
+#include "IDPLinkedListEnumeratorPrivate.h"
 #include "IDPLinkedListNode.h"
 
 #include "IDPObjectMacros.h"

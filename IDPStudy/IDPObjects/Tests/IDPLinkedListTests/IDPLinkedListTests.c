@@ -12,6 +12,7 @@
 
 #include "IDPLinkedList.h"
 #include "IDPLinkedListEnumerator.h"
+
 #include "IDPTestMacros.h"
 
 #pragma mark -

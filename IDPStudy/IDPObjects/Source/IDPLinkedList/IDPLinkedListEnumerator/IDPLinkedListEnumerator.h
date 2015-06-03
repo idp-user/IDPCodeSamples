@@ -13,8 +13,9 @@
 
 #include "IDPObject.h"
 
-typedef struct IDPLinkedListNode IDPLinkedListNode;
 typedef struct IDPLinkedListEnumerator IDPLinkedListEnumerator;
+typedef struct IDPLinkedListNode IDPLinkedListNode;
+typedef struct IDPLinkedList IDPLinkedList;
 
 struct IDPLinkedListEnumerator{
     IDPObject _super;
@@ -28,7 +29,7 @@ struct IDPLinkedListEnumerator{
 
 
 extern
-IDPLinkedListEnumerator *IDPLinkedListEnumeratorCreateWithList(void *list);
+IDPLinkedListEnumerator *IDPLinkedListEnumeratorCreateWithList(IDPLinkedList *list);
 
 extern
 void *IDPLinkedListEnumeratorGetNextObject(IDPLinkedListEnumerator *enumerator);
