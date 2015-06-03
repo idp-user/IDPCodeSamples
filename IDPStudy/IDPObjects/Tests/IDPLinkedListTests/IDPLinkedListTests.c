@@ -11,10 +11,14 @@
 #include "IDPLinkedListTests.h"
 
 #include "IDPLinkedList.h"
+#include "IDPLinkedListEnumerator.h"
 #include "IDPTestMacros.h"
 
 #pragma mark -
 #pragma mark Private Declarations
+
+static
+void IDPLinkedListEnumeratorBehaviorTest(void);
 
 static
 void IDPLinkedListOneObjectTest(void);
@@ -23,11 +27,49 @@ void IDPLinkedListOneObjectTest(void);
 #pragma mark Public Implementations
 
 void IDPLinkedListBehaviorTest(void) {
+    performTest(IDPLinkedListEnumeratorBehaviorTest);
     performTest(IDPLinkedListOneObjectTest);
 }
 
 #pragma mark -
 #pragma mark Private Implementations
+
+void IDPLinkedListEnumeratorBehaviorTest(void) {
+    //  after list was created with 5 objects
+    IDPLinkedList *list = IDPObjectCreateOfType(IDPLinkedList);
+    for (uint index = 0; index < 5; index++) {
+        IDPObject *object = IDPObjectCreateOfType(IDPObject);
+        
+        IDPLinkedListAddObject(list, object);
+        
+        IDPObjectRelease(object);
+    }
+    
+    // list reference count should be 1
+    assert(1 == IDPObjectGetReferenceCount(list));
+    
+    // list count should be 5
+    assert(5 == IDPLinkedListGetCount(list));
+    
+    //  after enumerator was created
+    IDPLinkedListEnumerator *enumerator = IDPLinkedListEnumeratorFromList(list);
+    //      list reference count should be 2
+    assert(2 == IDPObjectGetReferenceCount(list));
+    
+    //      enumerator reference count should be 1
+    assert(1 == IDPObjectGetReferenceCount(enumerator));
+    
+    //      enumerator iterations count should be 5
+    uint64_t iterationsCount = 0;
+    IDPObject *object = IDPLinkedListEnumeratorGetNextObject(enumerator);
+    while (true == IDPLinkedListEnumeratorIsValid(enumerator)) {
+        iterationsCount++;
+        
+        object = IDPLinkedListEnumeratorGetNextObject(enumerator);
+    }
+    
+    assert(5 == iterationsCount);
+}
 
 void IDPLinkedListOneObjectTest(void) {
     //  after list was created

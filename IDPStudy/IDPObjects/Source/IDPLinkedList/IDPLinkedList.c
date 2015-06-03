@@ -8,7 +8,10 @@
 
 #include "IDPLinkedList.h"
 
+#include "IDPLinkedListEnumerator.h"
 #include "IDPLinkedListNode.h"
+
+#include "IDPObjectMacros.h"
 
 #pragma mark -
 #pragma mark Private Declarations
@@ -29,6 +32,10 @@ void __IDPLinkedListDeallocate(void *object) {
     IDPLinkedListSetHead(object, NULL);
     
     __IDPObjectDeallocate(object);
+}
+
+IDPLinkedListEnumerator *IDPLinkedListEnumeratorFromList(IDPLinkedList *list) {
+    return IDPLinkedListEnumeratorCreateWithList(list);
 }
 
 IDPObject *IDPLinkedListGetFirstObject(IDPLinkedList *list) {
@@ -162,4 +169,16 @@ void IDPLinkedListSetHead(IDPLinkedList *list, IDPLinkedListNode *head) {
 
 IDPLinkedListNode *IDPLinkedListGetHead(IDPLinkedList *list) {
     return NULL != list ? list->_head : NULL;
+}
+
+
+#pragma mark -
+#pragma mark IDPLinkedListPrivate
+
+void IDPLinkedListSetMutationsCount(IDPLinkedList *list, uint64_t count) {
+    IDPAssignSetter(list, _mutationsCount, count);
+}
+
+uint64_t IDPLinkedListGetMutationsCount(IDPLinkedList *list) {
+    return NULL != list ? list->_mutationsCount : 0;
 }
