@@ -18,11 +18,11 @@
 static
 void IDPLinkedListSetCount(IDPLinkedList *list, uint64_t count);
 
-static
-void IDPLinkedListSetHead(IDPLinkedList *list, IDPLinkedListNode *head);
 
 static
-IDPLinkedListNode *IDPLinkedListGetHead(IDPLinkedList *list);
+void IDPLinkedListMutate(IDPLinkedList *list);
+
+
 
 #pragma mark -
 #pragma mark Public Implementations
@@ -154,6 +154,7 @@ void IDPLinkedListSetCount(IDPLinkedList *list, uint64_t count) {
         }
         
         list->_count = count;
+        IDPLinkedListMutate(list);
     }
 }
 
@@ -170,14 +171,14 @@ IDPLinkedListNode *IDPLinkedListGetHead(IDPLinkedList *list) {
     return NULL != list ? list->_head : NULL;
 }
 
-
-#pragma mark -
-#pragma mark IDPLinkedListPrivate
-
 void IDPLinkedListSetMutationsCount(IDPLinkedList *list, uint64_t count) {
     IDPAssignSetter(list, _mutationsCount, count);
 }
 
 uint64_t IDPLinkedListGetMutationsCount(IDPLinkedList *list) {
     return NULL != list ? list->_mutationsCount : 0;
+}
+
+void IDPLinkedListMutate(IDPLinkedList *list) {
+    IDPLinkedListSetMutationsCount(list, IDPLinkedListGetMutationsCount(list) + 1);
 }

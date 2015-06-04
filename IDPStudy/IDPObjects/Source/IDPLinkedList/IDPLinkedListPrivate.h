@@ -12,6 +12,12 @@
 #include "IDPLinkedList.h"
 
 extern
+void IDPLinkedListSetHead(IDPLinkedList *list, IDPLinkedListNode *head);
+
+extern
+IDPLinkedListNode *IDPLinkedListGetHead(IDPLinkedList *list);
+
+extern
 void IDPLinkedListSetMutationsCount(IDPLinkedList *list, uint64_t count);
 
 extern

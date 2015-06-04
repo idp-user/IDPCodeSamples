@@ -7,6 +7,7 @@
 //
 
 #include <assert.h>
+#include <string.h>
 
 #include "IDPLinkedListTests.h"
 
@@ -36,12 +37,18 @@ void IDPLinkedListBehaviorTest(void) {
 #pragma mark Private Implementations
 
 void IDPLinkedListEnumeratorBehaviorTest(void) {
+    IDPObject *originObjects[5];
+
+    memset(originObjects, 0, sizeof(originObjects));
+    
     //  after list was created with 5 objects
     IDPLinkedList *list = IDPObjectCreateOfType(IDPLinkedList);
     for (uint index = 0; index < 5; index++) {
         IDPObject *object = IDPObjectCreateOfType(IDPObject);
         
         IDPLinkedListAddObject(list, object);
+        // place object in originObject in reverse order
+        originObjects[4 - index] = object;
         
         IDPObjectRelease(object);
     }
@@ -64,12 +71,19 @@ void IDPLinkedListEnumeratorBehaviorTest(void) {
     uint64_t iterationsCount = 0;
     IDPObject *object = IDPLinkedListEnumeratorGetNextObject(enumerator);
     while (true == IDPLinkedListEnumeratorIsValid(enumerator)) {
+        assert(originObjects[iterationsCount] == object);
+        
         iterationsCount++;
+        
+//        IDPLinkedListAddObject(list, object); // WILL CRASH
         
         object = IDPLinkedListEnumeratorGetNextObject(enumerator);
     }
     
     assert(5 == iterationsCount);
+    
+    IDPObjectRelease(enumerator);
+    IDPObjectRelease(list);
 }
 
 void IDPLinkedListOneObjectTest(void) {

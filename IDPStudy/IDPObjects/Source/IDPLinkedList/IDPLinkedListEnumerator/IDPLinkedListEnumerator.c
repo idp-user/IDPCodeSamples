@@ -6,14 +6,20 @@
 //  Copyright (c) 2015 IDAP College. All rights reserved.
 //
 
+#include <assert.h>
+
 #include "IDPLinkedListEnumeratorPrivate.h"
 #include "IDPLinkedListNode.h"
 #include "IDPLinkedListPrivate.h"
 
 #include "IDPObjectMacros.h"
 
+
 #pragma mark -
 #pragma mark Private Declarations
+
+static
+void IDPLinkedListEnumeratorSetValid(IDPLinkedListEnumerator *enumerator, bool valid);
 
 static
 void IDPLinkedListEnumeratorSetList(IDPLinkedListEnumerator *enumerator, IDPLinkedList *list);
@@ -33,6 +39,10 @@ void IDPLinkedListEnumeratorSetMutationsCount(IDPLinkedListEnumerator *enumerato
 static
 uint64_t IDPLinkedListEnumeratorGetMutationsCount(IDPLinkedListEnumerator *enumerator);
 
+static
+bool IDPLinkedListEnumeratorMutationsValidate(IDPLinkedListEnumerator *enumerator);
+
+
 #pragma mark -
 #pragma mark Piblic Implementations
 
@@ -44,27 +54,47 @@ void __IDPLinkedListEnumeratorDeallocate(void *object) {
 }
 
 IDPLinkedListEnumerator *IDPLinkedListEnumeratorCreateWithList(IDPLinkedList *list) {
-    if (NULL == list) {
+    if (NULL == list || NULL == IDPLinkedListGetHead(list)) {
         return NULL;
     }
     
     IDPLinkedListEnumerator *enumerator = IDPObjectCreateOfType(IDPLinkedListEnumerator);
     IDPLinkedListEnumeratorSetList(enumerator, list);
     IDPLinkedListEnumeratorSetMutationsCount(enumerator, IDPLinkedListGetMutationsCount(list));
+    IDPLinkedListEnumeratorSetValid(enumerator, true);
     
     return enumerator;
 }
 
 void *IDPLinkedListEnumeratorGetNextObject(IDPLinkedListEnumerator *enumerator) {
     if (NULL != enumerator) {
-//        <#statements#>
+//      validations
+        if (true == IDPLinkedListEnumeratorMutationsValidate(enumerator)) {
+            // get current node
+            IDPLinkedListNode *node = IDPLinkedListEnumeratorGetNode(enumerator);
+            IDPLinkedList *list = IDPLinkedListEnumeratorGetList(enumerator);
+            // find next node or get list head while first enumeration
+            node = (NULL != node) ? IDPLinkedListNodeGetNextNode(node) : IDPLinkedListGetHead(list);
+            // set current node
+            IDPLinkedListEnumeratorSetNode(enumerator, node);
+
+            if (NULL == node) {
+                IDPLinkedListEnumeratorSetValid(enumerator, false);
+            }
+            
+            return IDPLinkedListNodeGetObject(node);
+        }
     }
     
     return NULL;
 }
 
+void IDPLinkedListEnumeratorSetValid(IDPLinkedListEnumerator *enumerator, bool valid) {
+    IDPAssignSetter(enumerator, _valid, valid);
+}
+
 bool IDPLinkedListEnumeratorIsValid(IDPLinkedListEnumerator *enumerator) {
-    return NULL != enumerator && enumerator->_isValid;
+    return NULL != enumerator && enumerator->_valid;
 }
 
 #pragma mark -
@@ -92,4 +122,16 @@ void IDPLinkedListEnumeratorSetMutationsCount(IDPLinkedListEnumerator *enumerato
 
 uint64_t IDPLinkedListEnumeratorGetMutationsCount(IDPLinkedListEnumerator *enumerator) {
     return NULL != enumerator ? enumerator->_mutationsCount : 0;
+}
+
+
+bool IDPLinkedListEnumeratorMutationsValidate(IDPLinkedListEnumerator *enumerator) {
+    if (true == IDPLinkedListEnumeratorIsValid(enumerator)) {
+        IDPLinkedList *list = IDPLinkedListEnumeratorGetList(enumerator);
+        assert(IDPLinkedListGetMutationsCount(list) == IDPLinkedListEnumeratorGetMutationsCount(enumerator));
+        
+        return true;
+    }
+    
+    return false;
 }

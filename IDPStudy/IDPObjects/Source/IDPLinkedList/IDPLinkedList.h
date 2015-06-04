@@ -26,7 +26,6 @@ struct IDPLinkedList {
     uint64_t _mutationsCount;
 };
 
-
 extern
 IDPLinkedListEnumerator *IDPLinkedListEnumeratorFromList(IDPLinkedList *list);
 

@@ -24,9 +24,8 @@ struct IDPLinkedListEnumerator{
     IDPLinkedListNode *_node;
     uint64_t _mutationsCount;
     
-    bool _isValid;
+    bool _valid;
 };
-
 
 extern
 IDPLinkedListEnumerator *IDPLinkedListEnumeratorCreateWithList(IDPLinkedList *list);
