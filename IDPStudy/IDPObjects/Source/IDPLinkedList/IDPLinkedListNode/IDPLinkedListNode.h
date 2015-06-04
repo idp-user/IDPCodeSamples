@@ -15,15 +15,15 @@
 
 typedef struct IDPLinkedListNode IDPLinkedListNode;
 
-struct IDPLinkedListNode{
+struct IDPLinkedListNode {
     IDPObject _super;
     
     IDPLinkedListNode *_nextNode;
-    void *_object; // must be  a IDPObject child
+    void *_object; // must be of IDPObject
 };
 
 extern
-IDPLinkedListNode *IDPLinkedListNodeCreateWithObject(IDPObject *object);
+IDPLinkedListNode *IDPLinkedListNodeCreateWithObject(void *object);
 
 extern
 IDPLinkedListNode *IDPLinkedListNodeGetNextNode(IDPLinkedListNode *node);
@@ -36,5 +36,8 @@ IDPObject *IDPLinkedListNodeGetObject(IDPLinkedListNode *node);
 
 extern
 void IDPLinkedListNodeSetObject(IDPLinkedListNode *node, void *object);
+
+extern
+void __IDPLinkedListNodeDeallocate(void *object);
 
 #endif /* defined(__IDPStudy__IDPLinkedListNode__) */

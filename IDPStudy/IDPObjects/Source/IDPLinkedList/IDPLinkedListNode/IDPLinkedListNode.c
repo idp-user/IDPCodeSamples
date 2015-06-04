@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 IDAP College. All rights reserved.
 //
 
+#include <assert.h>
+
 #include "IDPLinkedListNode.h"
 
 #pragma mark -
@@ -15,14 +17,13 @@ void __IDPLinkedListNodeDeallocate(void *object) {
     IDPLinkedListNodeSetObject(object, NULL);
 //    IDPObjectRelease(((IDPLinkedListNode *)object)->_object);
     
-    
     IDPLinkedListNodeSetNextNode(object, NULL);
 //    IDPObjectRelease(((IDPLinkedListNode *)object)->_nextNode);
     
     __IDPObjectDeallocate(object);
 }
 
-IDPLinkedListNode *IDPLinkedListNodeCreateWithObject(IDPObject *object) {
+IDPLinkedListNode *IDPLinkedListNodeCreateWithObject(void *object) {
     IDPLinkedListNode *result = IDPObjectCreateOfType(IDPLinkedListNode);
     IDPLinkedListNodeSetObject(result, object);
     
@@ -43,10 +44,21 @@ void IDPLinkedListNodeSetNextNode(IDPLinkedListNode *node, IDPLinkedListNode *ne
 }
 
 IDPObject *IDPLinkedListNodeGetObject(IDPLinkedListNode *node) {
-    return NULL;
+    return NULL != node ? node->_object : NULL;
 }
 
 
 void IDPLinkedListNodeSetObject(IDPLinkedListNode *node, void *object) {
-    
+    if (NULL != node) {
+        
+        assert(node != object);
+        
+        void *previousObject = node->_object;
+        if (previousObject != object) {
+            IDPObjectRetain(object);
+            IDPObjectRelease(previousObject);
+            
+            node->_object = object;
+        }
+    }
 }

@@ -16,23 +16,23 @@
 #pragma mark Private Declarations
 
 static
-void IDPArrayOneObjectBehaviourTest(void);
+void IDPArrayOneObjectBehaviorTest(void);
 
 static
-void IDPArrayMultipleObjectBehaviourTest(void);
+void IDPArrayMultipleObjectBehaviorTest(void);
 
 #pragma mark -
 #pragma mark Public
 
-void IDPArrayBehaviourTest() {
-    performTest(IDPArrayOneObjectBehaviourTest);
-    performTest(IDPArrayMultipleObjectBehaviourTest);
+void IDPArrayBehaviorTest() {
+    performTest(IDPArrayOneObjectBehaviorTest);
+    performTest(IDPArrayMultipleObjectBehaviorTest);
 }
 
 #pragma mark -
 #pragma mark Private Implementations
 
-void IDPArrayOneObjectBehaviourTest(void) {
+void IDPArrayOneObjectBehaviorTest(void) {
     //  after array was created
     IDPArray *array = IDPObjectCreateOfType(IDPArray);
     
@@ -62,7 +62,7 @@ void IDPArrayOneObjectBehaviourTest(void) {
     IDPObjectRelease(array);
 }
 
-void IDPArrayMultipleObjectBehaviourTest(void) {
+void IDPArrayMultipleObjectBehaviorTest(void) {
     //  after one origin object was added 5 times in array
     //      array count must be equal to 5
     //      objects at indices 0 - 4 must be equal to object
