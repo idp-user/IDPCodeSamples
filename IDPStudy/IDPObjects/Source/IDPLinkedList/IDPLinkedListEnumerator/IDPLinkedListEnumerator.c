@@ -30,8 +30,7 @@ IDPLinkedList *IDPLinkedListEnumeratorGetList(IDPLinkedListEnumerator *enumerato
 static
 void IDPLinkedListEnumeratorSetNode(IDPLinkedListEnumerator *enumerator, IDPLinkedListNode *node);
 
-static
-IDPLinkedListNode *IDPLinkedListEnumeratorGetNode(IDPLinkedListEnumerator *enumerator);
+
 
 static
 void IDPLinkedListEnumeratorSetMutationsCount(IDPLinkedListEnumerator *enumerator, uint64_t mutationsCount);

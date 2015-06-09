@@ -11,6 +11,14 @@
 
 #include "IDPLinkedList.h"
 
+typedef struct {
+    void *previousNode;
+    void *node;
+    void *object;
+} IDPLinkedListNodeContext;
+
+typedef bool (*IDPLinkedListNodeComparisonFunction)(IDPLinkedListNode *node, IDPLinkedListNodeContext context);
+
 extern
 void IDPLinkedListSetHead(IDPLinkedList *list, IDPLinkedListNode *head);
 
@@ -22,5 +30,13 @@ void IDPLinkedListSetMutationsCount(IDPLinkedList *list, uint64_t count);
 
 extern
 uint64_t IDPLinkedListGetMutationsCount(IDPLinkedList *list);
+
+extern
+IDPLinkedListNode *IDPLinkedListGetNodeWithContext(IDPLinkedList *list,
+                                                   IDPLinkedListNodeComparisonFunction comparator,
+                                                   IDPLinkedListNodeContext *context);
+
+extern
+bool IDPLinkedListNodeContainsObject(IDPLinkedListNode *node, IDPLinkedListNodeContext context);
 
 #endif

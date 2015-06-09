@@ -6,6 +6,9 @@
 //  Copyright (c) 2015 IDAP College. All rights reserved.
 //
 
+#include <assert.h>
+#include <strings.h>
+
 #include "IDPLinkedListPrivate.h"
 #include "IDPLinkedListEnumeratorPrivate.h"
 #include "IDPLinkedListNode.h"
@@ -115,28 +118,21 @@ void IDPLinkedListRemoveObject(IDPLinkedList *list, void *object) {
 void IDPLinkedListRemoveAllObjects(IDPLinkedList *list) {
     if (NULL != list) {
         IDPLinkedListSetCount(list, 0);
-//        
-//        IDPLinkedListSetHead(list, NULL);
-//        list->_count = 0;
     }
 }
 
 bool IDPLinkedListContainsObject(IDPLinkedList *list, void *object) {
     bool result = false;
     if (NULL != list) {
-        // enumerate all nodes to find node with object
-        IDPLinkedListNode *node = IDPLinkedListGetHead(list);
-        while (NULL != node) {
-            if (object == IDPLinkedListNodeGetObject(node)) {
-                result = true;
-                
-                break;
-            }
-            
-            node = IDPLinkedListNodeGetNextNode(node);
-        }
+        IDPLinkedListNodeContext context;
+        
+        memset(&context, 0, sizeof(context));
+
+        context.object = object;
+        
+        result = NULL != IDPLinkedListGetNodeWithContext(list, IDPLinkedListNodeContainsObject, &context);
     }
-    
+
     return result;
 }
 
@@ -181,4 +177,37 @@ uint64_t IDPLinkedListGetMutationsCount(IDPLinkedList *list) {
 
 void IDPLinkedListMutate(IDPLinkedList *list) {
     IDPLinkedListSetMutationsCount(list, IDPLinkedListGetMutationsCount(list) + 1);
+}
+
+IDPLinkedListNode *IDPLinkedListGetNodeWithContext(IDPLinkedList *list,
+                                                   IDPLinkedListNodeComparisonFunction comparator,
+                                                   IDPLinkedListNodeContext *context)
+{
+    IDPLinkedListNode *result = NULL;
+    if (NULL != list) {
+        IDPLinkedListEnumerator *enumerator = IDPLinkedListEnumeratorCreateWithList(list);
+        
+        while (true == IDPLinkedListEnumeratorIsValid(enumerator)
+               && (NULL != IDPLinkedListEnumeratorGetNextObject(enumerator)))
+        {
+            IDPLinkedListNode *node = IDPLinkedListEnumeratorGetNode(enumerator);
+            
+            context->node = node;
+            
+            if (true == IDPLinkedListNodeContainsObject(node, *context)) {
+                result = node;
+                break;
+            }
+            
+            context->previousNode = node;
+        }
+        
+        IDPObjectRelease(enumerator);
+    }
+    
+    return result;
+}
+
+bool IDPLinkedListNodeContainsObject(IDPLinkedListNode *node, IDPLinkedListNodeContext context) {
+    return (NULL != node) && context.object == IDPLinkedListNodeGetObject(node);
 }
