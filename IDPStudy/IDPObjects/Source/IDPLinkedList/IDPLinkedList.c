@@ -126,7 +126,7 @@ bool IDPLinkedListContainsObject(IDPLinkedList *list, void *object) {
     if (NULL != list) {
         IDPLinkedListNodeContext context;
         
-        memset(&context, 0, sizeof(context));
+        memset(&context, 0, sizeof(context)); // context = {NULL, NULL, NULL};
 
         context.object = object;
         
