@@ -92,26 +92,20 @@ void IDPLinkedListAddObject(IDPLinkedList *list, void *object) {
 }
 
 void IDPLinkedListRemoveObject(IDPLinkedList *list, void *object) {
-    // find node with object
-    IDPLinkedListNode *node = IDPLinkedListGetHead(list);
-    IDPLinkedListNode *previousNode = NULL;
+    IDPLinkedListNodeContext context;
     
-    while (NULL != node) {
-        IDPObject *currentObject = IDPLinkedListNodeGetObject(node);
-        IDPLinkedListNode *nextNode = IDPLinkedListNodeGetNextNode(node);
-        
-        if (object == currentObject) {
-            if (node == IDPLinkedListGetHead(list)) {
-                IDPLinkedListSetHead(list, nextNode);
-            } else {
-                IDPLinkedListNodeSetNextNode(previousNode, nextNode);
-            }            
-
+    memset(&context, 0, sizeof(context));
+    context.object = object;
+    
+    IDPLinkedListNode *node;
+    while (NULL != (node = IDPLinkedListFindNodeWithContext(list,
+                                                            IDPLinkedListNodeContainsObject,
+                                                            &context)))
+    {
+        if (NULL != node) {
+            IDPLinkedListNodeSetNextNode(context.previousNode, IDPLinkedListNodeGetNextNode(context.node));
             IDPLinkedListSetCount(list, IDPLinkedListGetCount(list) - 1);
         }
-        
-        previousNode = node;
-        node = nextNode;
     }
 }
 
@@ -130,7 +124,7 @@ bool IDPLinkedListContainsObject(IDPLinkedList *list, void *object) {
 
         context.object = object;
         
-        result = NULL != IDPLinkedListGetNodeWithContext(list, IDPLinkedListNodeContainsObject, &context);
+        result = NULL != IDPLinkedListFindNodeWithContext(list, IDPLinkedListNodeContainsObject, &context);
     }
 
     return result;
@@ -179,7 +173,7 @@ void IDPLinkedListMutate(IDPLinkedList *list) {
     IDPLinkedListSetMutationsCount(list, IDPLinkedListGetMutationsCount(list) + 1);
 }
 
-IDPLinkedListNode *IDPLinkedListGetNodeWithContext(IDPLinkedList *list,
+IDPLinkedListNode *IDPLinkedListFindNodeWithContext(IDPLinkedList *list,
                                                    IDPLinkedListNodeComparisonFunction comparator,
                                                    IDPLinkedListNodeContext *context)
 {

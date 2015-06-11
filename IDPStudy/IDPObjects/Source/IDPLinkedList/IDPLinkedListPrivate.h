@@ -32,7 +32,7 @@ extern
 uint64_t IDPLinkedListGetMutationsCount(IDPLinkedList *list);
 
 extern
-IDPLinkedListNode *IDPLinkedListGetNodeWithContext(IDPLinkedList *list,
+IDPLinkedListNode *IDPLinkedListFindNodeWithContext(IDPLinkedList *list,
                                                    IDPLinkedListNodeComparisonFunction comparator,
                                                    IDPLinkedListNodeContext *context);
 
