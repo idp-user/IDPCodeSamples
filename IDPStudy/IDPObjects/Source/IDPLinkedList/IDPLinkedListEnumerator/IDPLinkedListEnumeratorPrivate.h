@@ -11,4 +11,7 @@
 
 #include "IDPLinkedListEnumerator.h"
 
+extern
+IDPLinkedListNode *IDPLinkedListEnumeratorGetNode(IDPLinkedListEnumerator *enumerator);
+
 #endif
