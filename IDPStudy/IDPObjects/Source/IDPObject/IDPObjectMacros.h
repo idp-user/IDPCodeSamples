@@ -21,5 +21,11 @@
         object->ivar = newIvar; \
     }
 
+#define IDPPrimitiveGetter(object, ivar) \
+    return (NULL != object) ? object->_ ##ivar : 0
+
+#define IDPPointerValueGetter(object, ivar) \
+    return (NULL != object) ? object->_ ##ivar : NULL;
+
 
 #endif /* defined(__IDPStudy__IDPObjectMacros__) */
