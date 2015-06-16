@@ -25,6 +25,7 @@
 		5AE2CE2B1B0DE491001CF5E1 /* IDPArray.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AE2CE291B0DE491001CF5E1 /* IDPArray.c */; };
 		5AE2CE2F1B0DE52D001CF5E1 /* IDPArrayTests.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AE2CE2D1B0DE52D001CF5E1 /* IDPArrayTests.c */; };
 		5AE320071B302B00002E21D2 /* IDPAutoreleasingStackTests.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AE320051B302B00002E21D2 /* IDPAutoreleasingStackTests.c */; };
+		5AE3200C1B3031FF002E21D2 /* IDPAutoreleasingStack.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AE3200A1B3031FF002E21D2 /* IDPAutoreleasingStack.c */; };
 		5AF430F71B15A5E8001BE26E /* IDPLinkedList.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AF430F51B15A5E8001BE26E /* IDPLinkedList.c */; };
 		5AF430FB1B15A738001BE26E /* IDPLinkedListTests.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AF430F91B15A738001BE26E /* IDPLinkedListTests.c */; };
 		5AF5F56D1B1F0008001608F4 /* IDPLinkedListEnumerator.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AF5F56B1B1F0008001608F4 /* IDPLinkedListEnumerator.c */; };
@@ -91,6 +92,8 @@
 		5AE2CE2E1B0DE52D001CF5E1 /* IDPArrayTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPArrayTests.h; sourceTree = "<group>"; };
 		5AE320051B302B00002E21D2 /* IDPAutoreleasingStackTests.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = IDPAutoreleasingStackTests.c; sourceTree = "<group>"; };
 		5AE320061B302B00002E21D2 /* IDPAutoreleasingStackTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPAutoreleasingStackTests.h; sourceTree = "<group>"; };
+		5AE3200A1B3031FF002E21D2 /* IDPAutoreleasingStack.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = IDPAutoreleasingStack.c; sourceTree = "<group>"; };
+		5AE3200B1B3031FF002E21D2 /* IDPAutoreleasingStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPAutoreleasingStack.h; sourceTree = "<group>"; };
 		5AF430F51B15A5E8001BE26E /* IDPLinkedList.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = IDPLinkedList.c; sourceTree = "<group>"; };
 		5AF430F61B15A5E8001BE26E /* IDPLinkedList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPLinkedList.h; sourceTree = "<group>"; };
 		5AF430F91B15A738001BE26E /* IDPLinkedListTests.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = IDPLinkedListTests.c; sourceTree = "<group>"; };
@@ -221,6 +224,7 @@
 		5A6ABE241B021B9C003EA6EB /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				5AE320081B3031C7002E21D2 /* IDPAutoreleasePool */,
 				5A99FE951B09E06A00124722 /* IDPLinkedList */,
 				5A6ABE281B021BD3003EA6EB /* IDPObject */,
 				5A6ABE251B021B9C003EA6EB /* main.c */,
@@ -346,6 +350,23 @@
 			path = IDPAutoreleasingStackTests;
 			sourceTree = "<group>";
 		};
+		5AE320081B3031C7002E21D2 /* IDPAutoreleasePool */ = {
+			isa = PBXGroup;
+			children = (
+				5AE320091B3031E8002E21D2 /* IDPAutoreleasingStack */,
+			);
+			path = IDPAutoreleasePool;
+			sourceTree = "<group>";
+		};
+		5AE320091B3031E8002E21D2 /* IDPAutoreleasingStack */ = {
+			isa = PBXGroup;
+			children = (
+				5AE3200A1B3031FF002E21D2 /* IDPAutoreleasingStack.c */,
+				5AE3200B1B3031FF002E21D2 /* IDPAutoreleasingStack.h */,
+			);
+			path = IDPAutoreleasingStack;
+			sourceTree = "<group>";
+		};
 		5AF430F81B15A714001BE26E /* IDPLinkedListTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -469,6 +490,7 @@
 				5A6ABE2E1B021DAA003EA6EB /* IDPObjectTests.c in Sources */,
 				5AE2CE2B1B0DE491001CF5E1 /* IDPArray.c in Sources */,
 				5A99FE991B09E09D00124722 /* IDPLinkedListNode.c in Sources */,
+				5AE3200C1B3031FF002E21D2 /* IDPAutoreleasingStack.c in Sources */,
 				5AE2CE2F1B0DE52D001CF5E1 /* IDPArrayTests.c in Sources */,
 				5AE320071B302B00002E21D2 /* IDPAutoreleasingStackTests.c in Sources */,
 				5AF430F71B15A5E8001BE26E /* IDPLinkedList.c in Sources */,
