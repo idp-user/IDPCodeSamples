@@ -24,6 +24,7 @@
 		5ABC95741B00C52D007CBBA5 /* IDPBitOutputTests.c in Sources */ = {isa = PBXBuildFile; fileRef = 5ABC95721B00C52D007CBBA5 /* IDPBitOutputTests.c */; };
 		5AE2CE2B1B0DE491001CF5E1 /* IDPArray.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AE2CE291B0DE491001CF5E1 /* IDPArray.c */; };
 		5AE2CE2F1B0DE52D001CF5E1 /* IDPArrayTests.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AE2CE2D1B0DE52D001CF5E1 /* IDPArrayTests.c */; };
+		5AE320071B302B00002E21D2 /* IDPAutoreleasingStackTests.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AE320051B302B00002E21D2 /* IDPAutoreleasingStackTests.c */; };
 		5AF430F71B15A5E8001BE26E /* IDPLinkedList.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AF430F51B15A5E8001BE26E /* IDPLinkedList.c */; };
 		5AF430FB1B15A738001BE26E /* IDPLinkedListTests.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AF430F91B15A738001BE26E /* IDPLinkedListTests.c */; };
 		5AF5F56D1B1F0008001608F4 /* IDPLinkedListEnumerator.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AF5F56B1B1F0008001608F4 /* IDPLinkedListEnumerator.c */; };
@@ -88,6 +89,8 @@
 		5AE2CE2A1B0DE491001CF5E1 /* IDPArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPArray.h; sourceTree = "<group>"; };
 		5AE2CE2D1B0DE52D001CF5E1 /* IDPArrayTests.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = IDPArrayTests.c; sourceTree = "<group>"; };
 		5AE2CE2E1B0DE52D001CF5E1 /* IDPArrayTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPArrayTests.h; sourceTree = "<group>"; };
+		5AE320051B302B00002E21D2 /* IDPAutoreleasingStackTests.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = IDPAutoreleasingStackTests.c; sourceTree = "<group>"; };
+		5AE320061B302B00002E21D2 /* IDPAutoreleasingStackTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPAutoreleasingStackTests.h; sourceTree = "<group>"; };
 		5AF430F51B15A5E8001BE26E /* IDPLinkedList.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = IDPLinkedList.c; sourceTree = "<group>"; };
 		5AF430F61B15A5E8001BE26E /* IDPLinkedList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPLinkedList.h; sourceTree = "<group>"; };
 		5AF430F91B15A738001BE26E /* IDPLinkedListTests.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = IDPLinkedListTests.c; sourceTree = "<group>"; };
@@ -230,6 +233,7 @@
 		5A6ABE261B021B9C003EA6EB /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				5AE320041B3029BB002E21D2 /* IDPAutoreleasingStackTests */,
 				5AF430F81B15A714001BE26E /* IDPLinkedListTests */,
 				5AE2CE2C1B0DE503001CF5E1 /* IDPArrayTests */,
 				5A6ABE2C1B021DAA003EA6EB /* IDPObjectTests.c */,
@@ -331,6 +335,15 @@
 				5AE2CE2E1B0DE52D001CF5E1 /* IDPArrayTests.h */,
 			);
 			path = IDPArrayTests;
+			sourceTree = "<group>";
+		};
+		5AE320041B3029BB002E21D2 /* IDPAutoreleasingStackTests */ = {
+			isa = PBXGroup;
+			children = (
+				5AE320051B302B00002E21D2 /* IDPAutoreleasingStackTests.c */,
+				5AE320061B302B00002E21D2 /* IDPAutoreleasingStackTests.h */,
+			);
+			path = IDPAutoreleasingStackTests;
 			sourceTree = "<group>";
 		};
 		5AF430F81B15A714001BE26E /* IDPLinkedListTests */ = {
@@ -457,6 +470,7 @@
 				5AE2CE2B1B0DE491001CF5E1 /* IDPArray.c in Sources */,
 				5A99FE991B09E09D00124722 /* IDPLinkedListNode.c in Sources */,
 				5AE2CE2F1B0DE52D001CF5E1 /* IDPArrayTests.c in Sources */,
+				5AE320071B302B00002E21D2 /* IDPAutoreleasingStackTests.c in Sources */,
 				5AF430F71B15A5E8001BE26E /* IDPLinkedList.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -123,7 +123,7 @@ void IDPLinkedListOneObjectTest(void) {
     //      object referenceCount must be 1
     assert(1 == IDPObjectGetReferenceCount(object));
     
-    // after object was added 20 times
+    // after object was added 2000 times
     for (uint64_t iterator = 0; iterator < 2000; iterator++) {
         IDPLinkedListAddObject(list, object);
     }
