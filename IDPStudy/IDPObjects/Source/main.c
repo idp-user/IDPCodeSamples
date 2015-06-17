@@ -13,6 +13,7 @@
 #include "IDPLinkedListTests.h"
 #include "IDPArrayTests.h"
 #include "IDPLinkedListTests.h"
+#include "IDPAutoreleasingStackTests.h"
 
 int main(int argc, const char * argv[]) {
     performTest(IDPObjectBehaviorTests);
@@ -20,6 +21,7 @@ int main(int argc, const char * argv[]) {
     performTest(IDPArrayBehaviorTest);
     
     performTest(IDPLinkedListBehaviorTest);
+    performTest(IDPAutoreleasingStackPerformTests);
     
     return 0;
 }

@@ -9,6 +9,7 @@
 #include <assert.h>
 
 #include "IDPAutoreleasingStackTests.h"
+#include "IDPAutoreleasingStack.h"
 
 #include "IDPTestMacros.h"
 
@@ -38,31 +39,76 @@ void IDPAutoreleasingStackPerformTests(void) {
 
 void IDPAutoreleasingStackOneObjectPushTest(void) {
     //  after stack was created with size 512 (64 pointers in it)
+    IDPAutoreleasingStack *stack = IDPAutoreleasingStackCreateWithSize(64 * sizeof(IDPObject*));
     //      stack must be empty
+    assert(true == IDPAutoreleasingStackIsEmpty(stack));
+    
     //      stack must not be full
+    assert(false == IDPAutoreleasingStackIsFull(stack));
+    
     //  after object was created
+    IDPObject *object = IDPObjectRetain(IDPObjectCreateOfType(IDPObject));
+    assert(2 == IDPObjectGetReferenceCount(object));
+    
     //      after object pushed to stack
+    IDPAutoreleasingStackPushObject(stack, object);
+    
     //          object referenceCount must not change
+    assert(2 == IDPObjectGetReferenceCount(object));
+    
     //          stack must not be empty
+    assert(false == IDPAutoreleasingStackIsEmpty(stack));
+    
     //          stack must not be full
+    assert(false == IDPAutoreleasingStackIsFull(stack));
+    
     //      after one object was popped
+    IDPAutoreleasingStackPopType type = IDPAutoreleasingStackPopObject(stack);
+    
     //          pop type must be 'PoppedObject'
+    assert(kIDPAutoreleasingStackPoppedObject == type);
+    
     //          object reference count must be decremented
+    assert(1 == IDPObjectGetReferenceCount(object));
+   
     //          stack must be empty
+    assert(true == IDPAutoreleasingStackIsEmpty(stack));
+    
     //          stack must not be full
+    assert(false == IDPAutoreleasingStackIsFull(stack));
+
+    IDPObjectRelease(object);
+    IDPObjectRelease(stack);
 }
 
 void  IDPAutoreleasingStackOneNULLPushTest(void) {
-    //  after stack was created for 64 objects
+    //  after stack was created with size 512 (64 pointers in it)
+    IDPAutoreleasingStack *stack = IDPAutoreleasingStackCreateWithSize(64 * sizeof(IDPObject*));
     //      stack must be empty
+    assert(true == IDPAutoreleasingStackIsEmpty(stack));
+    
     //      stack must not be full
+    assert(false == IDPAutoreleasingStackIsFull(stack));
     //  after NULL pushed to stack
-    //      stack must not be empty
-    //      stack must not be full
+    IDPAutoreleasingStackPushObject(stack, NULL);
+    
+    //          stack must not be empty
+    assert(false == IDPAutoreleasingStackIsEmpty(stack));
+    
+    //          stack must not be full
+    assert(false == IDPAutoreleasingStackIsFull(stack));
+    
     //  after one object was popped
+    IDPAutoreleasingStackPopType type = IDPAutoreleasingStackPopObject(stack);
+    
     //      pop type must be 'PoppedNULL'
-    //      stack must be empty
-    //      stack must not be full
+    assert(kIDPAutoreleasingStackPoppedNULL == type);
+    
+    //          stack must be empty
+    assert(true == IDPAutoreleasingStackIsEmpty(stack));
+    
+    //          stack must not be full
+    assert(false == IDPAutoreleasingStackIsFull(stack));
 }
 
 void  IDPAutoreleasingStackIsFullTest(void) {

@@ -43,6 +43,7 @@ IDPAutoreleasingStack *IDPAutoreleasingStackCreateWithSize(size_t size) {
     assert(0 != size);
     
     IDPAutoreleasingStack *stack = IDPObjectCreateOfType(IDPAutoreleasingStack);
+    
     IDPAutoreleasingStackSetSize(stack, size);
     IDPAutoreleasingStackSetHead(stack, IDPAutoreleasingStackGetData(stack));
     
@@ -63,16 +64,59 @@ bool IDPAutoreleasingStackIsFull(IDPAutoreleasingStack *stack) {
     
     uint64_t count = IDPAutoreleasingStackGetSize(stack) / sizeof(*data);
     
-    return data[count - 1] <= head;
-//    return data[count - 1] == head;
-//    return (*data - head) >= count;
+    return (void*)(&(data[count - 1])) <= head;
 }
 
-void IDPAutoreleasingStackPushObject(IDPAutoreleasingStack *stack, void *object);
+void IDPAutoreleasingStackPushObject(IDPAutoreleasingStack *stack, void *object) {
+    if (NULL != stack) {
+        assert(false == IDPAutoreleasingStackIsFull(stack));
+        
+        void **head = IDPAutoreleasingStackGetHead(stack);
+        
+        head++;
+        
+        *head = object;
+        
+        IDPAutoreleasingStackSetHead(stack, head);
+    }
+}
 
-IDPAutoreleasingStackPopType IDPAutoreleasingStackPopObject(IDPAutoreleasingStack *stack);
+IDPAutoreleasingStackPopType IDPAutoreleasingStackPopObject(IDPAutoreleasingStack *stack) {
+    if (NULL != stack) {
+        assert(false == IDPAutoreleasingStackIsEmpty(stack));
+        
+        void **head = IDPAutoreleasingStackGetHead(stack);
+        
+        IDPObject *object = *head;
+        head--;
+        IDPAutoreleasingStackSetHead(stack, head);
+        
+        IDPAutoreleasingStackPopType type = (NULL != object
+                                             ? kIDPAutoreleasingStackPoppedObject
+                                             : kIDPAutoreleasingStackPoppedNULL);
+        IDPObjectRelease(object);
+        
+        return type;
+    }
+    
+    return 0;
+}
 
-IDPAutoreleasingStackPopType IDPAutoreleasingStackPopObjectsUntilNULL(IDPAutoreleasingStack *stack);
+IDPAutoreleasingStackPopType IDPAutoreleasingStackPopObjectsUntilNULL(IDPAutoreleasingStack *stack) {
+    if (NULL != stack) {
+        assert(false == IDPAutoreleasingStackIsEmpty(stack));
+
+        IDPAutoreleasingStackPopType type;
+        do {
+            type = IDPAutoreleasingStackPopObject(stack);
+        } while (kIDPAutoreleasingStackPoppedObject == type
+                 && false == IDPAutoreleasingStackIsEmpty(stack));
+        
+        return type;
+    }
+    
+    return 0;
+}
 
 #pragma mark -
 #pragma mark Private Impl
@@ -95,5 +139,21 @@ size_t IDPAutoreleasingStackGetSize(IDPAutoreleasingStack *stack) {
 }
 
 void IDPAutoreleasingStackSetSize(IDPAutoreleasingStack *stack, size_t size) {
-    
+    if (NULL != stack) {
+        size_t previousSize = stack->_size;
+        if (previousSize != size) {
+            if (0 != previousSize) {
+                free(stack->_data);
+                stack->_data = NULL;
+            }
+            
+            if (0 != size) {
+                stack->_data = calloc(size, sizeof(*stack->_data));
+                
+                assert(NULL != stack->_data);
+            }
+            
+            IDPAssignSetter(stack, _size, size);
+        }
+    }
 }
