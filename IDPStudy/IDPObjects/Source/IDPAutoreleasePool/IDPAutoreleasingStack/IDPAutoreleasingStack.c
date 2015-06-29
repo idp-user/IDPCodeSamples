@@ -64,7 +64,7 @@ bool IDPAutoreleasingStackIsFull(IDPAutoreleasingStack *stack) {
     
     uint64_t count = IDPAutoreleasingStackGetSize(stack) / sizeof(*data);
     
-    return (void*)(&(data[count - 1])) <= head;
+    return (void*)(&(data[count])) <= head;
 }
 
 void IDPAutoreleasingStackPushObject(IDPAutoreleasingStack *stack, void *object) {
@@ -73,9 +73,9 @@ void IDPAutoreleasingStackPushObject(IDPAutoreleasingStack *stack, void *object)
         
         void **head = IDPAutoreleasingStackGetHead(stack);
         
-        head++;
-        
         *head = object;
+
+        head++;
         
         IDPAutoreleasingStackSetHead(stack, head);
     }
@@ -86,9 +86,9 @@ IDPAutoreleasingStackPopType IDPAutoreleasingStackPopObject(IDPAutoreleasingStac
         assert(false == IDPAutoreleasingStackIsEmpty(stack));
         
         void **head = IDPAutoreleasingStackGetHead(stack);
-        
+        head--;        
         IDPObject *object = *head;
-        head--;
+
         IDPAutoreleasingStackSetHead(stack, head);
         
         IDPAutoreleasingStackPopType type = (NULL != object
@@ -148,7 +148,7 @@ void IDPAutoreleasingStackSetSize(IDPAutoreleasingStack *stack, size_t size) {
             }
             
             if (0 != size) {
-                stack->_data = calloc(size, sizeof(*stack->_data));
+                stack->_data = realloc(stack->_data, sizeof(*stack->_data));
                 
                 assert(NULL != stack->_data);
             }
