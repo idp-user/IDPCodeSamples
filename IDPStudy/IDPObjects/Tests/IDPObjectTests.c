@@ -18,12 +18,15 @@
 static
 void IDPObjectOneObjectCreationTest();
 
+static
+void IDPSingletonObjectTest();
 
 #pragma mark -
 #pragma mark Public Implementations
 
 void IDPObjectBehaviorTests(void) {
     performTest(IDPObjectOneObjectCreationTest);
+    performTest(IDPSingletonObjectTest);
 }
 
 #pragma mark -
@@ -56,3 +59,33 @@ void IDPObjectOneObjectCreationTest() {
     
     IDPObjectRelease(object);    
 }
+
+void IDPSingletonObjectTest() {
+    static IDPObject * sharedObject;
+    
+    // after singleton object was created
+    IDPObject *object = IDPSingletonObjectCreateOfType(&sharedObject, IDPObject);
+    
+    //  it should not be NULL
+    assert(NULL != object);
+    
+    //  it referenceCount must be 1
+    assert(1 == IDPObjectGetReferenceCount(object));
+    
+    //  sharedObject must be equal to object
+    assert(sharedObject == object);
+    
+    //      after singletonObject was released
+    IDPObjectRelease(object);
+    
+    //          referenceCount must not change
+    assert(1 == IDPObjectGetReferenceCount(object));
+    
+    // while singleton created 5 times
+    //      it maust be equal to sharedObject
+    for (uint8_t iterator = 0; iterator < 5; iterator++) {
+        void *object2 = IDPSingletonObjectCreateOfType(&sharedObject, IDPObject);
+        assert(sharedObject == object2);
+    }
+}
+
