@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <objc/objc-runtime.h>
 
 #import "IDPSyntax.h"
 
@@ -14,7 +15,35 @@ int main(int argc, const char * argv[]) {
     @autoreleasepool {
         // insert code here...
         NSLog(@"Hello, World!");
+        
+        id object = [[[IDPSyntax alloc] init] autorelease];
+        
+        SEL fooSelector = @selector(foo);
+
+        [object foo];
+        [object performSelector:fooSelector withObject:nil];
+
+        
+        objc_msgSend(object, fooSelector, nil);
+        
+        
+        ((IDPSyntax *)object)->_name = "name0";
+        
+        IDPSyntax *syntax = object;
+
+        NSArray *array = @[@"1", @(3)];
+        [syntax protocolFoo];
+        [syntax protocolFooWithArgument:@"NSSTRING_VALUE"
+                         secondArgument:@{@"floatValue" : @(1.2f),
+                                          @"intValue" : @(2)}
+                                  count:[array count]];
+        
+        if (YES == [syntax respondsToSelector:@selector(protocolFooWithArgument:)]) {
+            [syntax protocolFooWithArgument:array];
+        }
     }
+    
+    BOOL boolValue = YES; boolValue = NO;
     /*
     
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
@@ -26,8 +55,7 @@ int main(int argc, const char * argv[]) {
     [pool drain];
     */
     
-    id object = [[IDPSyntax alloc] init];
-    ((IDPSyntax *)object)->_name = "name0";
+
    
     return 0;
 }
