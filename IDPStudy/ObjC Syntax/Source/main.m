@@ -10,13 +10,18 @@
 #import <objc/objc-runtime.h>
 
 #import "IDPSyntax.h"
+#import "IDPSyntaxSubclass.h"
+#import "IDPSyntax+IDPExtensions.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         // insert code here...
         NSLog(@"Hello, World!");
         
-        id object = [[[IDPSyntax alloc] init] autorelease];
+        id object = [IDPSyntax object];
+        
+        IDPSyntaxSubclass *subclass = [IDPSyntaxSubclass syntax];
+        
         
         SEL fooSelector = @selector(foo);
 
@@ -27,7 +32,7 @@ int main(int argc, const char * argv[]) {
         objc_msgSend(object, fooSelector, nil);
         
         
-        ((IDPSyntax *)object)->_name = "name0";
+//        ((IDPSyntax *)object)->_name = "name0";
         
         IDPSyntax *syntax = object;
 
@@ -41,6 +46,8 @@ int main(int argc, const char * argv[]) {
         if (YES == [syntax respondsToSelector:@selector(protocolFooWithArgument:)]) {
             [syntax protocolFooWithArgument:array];
         }
+        
+        [IDPSyntax syntaxTest];
     }
     
     BOOL boolValue = YES; boolValue = NO;

@@ -24,14 +24,18 @@
 
 @end
 
-@interface IDPSyntax : NSObject <IDPObjectSyntax> {
-    @public
-    char *_name;
-}
+@interface IDPSyntax : NSObject <IDPObjectSyntax>
+@property (nonatomic, assign)   int     nonatomicAssignValue;
+@property (atomic, assign)      id      atomicAssignValue;
+@property (nonatomic, retain)   id      retainedObject;
+@property (nonatomic, copy)     id      copiedObject;
+@property (nonatomic, assign)   id      nonretainedObject;
+@property (nonatomic, assign, getter=isMarried)     BOOL    married;
+@property (nonatomic, assign, getter=isValid, setter=makeInvalid:)  BOOL    valid;
+@property (nonatomic, assign, readonly) int publicReadonlyValue;
 
 @property (nonatomic, retain) id value;
 @property (nonatomic, retain) IDPSyntax *nextValue;
-@property (nonatomic, assign, getter=isMarried) BOOL married;
 
 // @property (atomic/nonatomic, readwrite/readonly, retain/assign/copy, setter=setterName, getter=GetterName) ivarType ivar;
 //
@@ -39,7 +43,9 @@
 // -(ivarType)ivar,
 // -(void)setIvar; // if readwrite
 
++ (void)syntaxTest;
 
++ (id)syntax;
 
 - (void)foo;
 
