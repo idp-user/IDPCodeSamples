@@ -24,7 +24,10 @@
 
 @end
 
-@interface IDPSyntax : NSObject <IDPObjectSyntax>
+@interface IDPSyntax : NSObject <IDPObjectSyntax> {
+    @private
+    id _ivar;
+}
 @property (nonatomic, assign)   int     nonatomicAssignValue;
 @property (atomic, assign)      id      atomicAssignValue;
 @property (nonatomic, retain)   id      retainedObject;

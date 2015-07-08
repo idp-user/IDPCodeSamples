@@ -11,7 +11,6 @@
 
 #import "IDPSyntax.h"
 #import "IDPSyntaxSubclass.h"
-#import "IDPSyntax+IDPExtensions.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -22,7 +21,6 @@ int main(int argc, const char * argv[]) {
         
         IDPSyntaxSubclass *subclass = [IDPSyntaxSubclass syntax];
         
-        
         SEL fooSelector = @selector(foo);
 
         [object foo];
@@ -31,8 +29,19 @@ int main(int argc, const char * argv[]) {
         
         objc_msgSend(object, fooSelector, nil);
         
+        NSLog(@"%@", subclass.description);
+
+        subclass.foo;
         
-//        ((IDPSyntax *)object)->_name = "name0";
+        id object2 = NSObject.alloc.init.autorelease; /// BAD BAD BAD to use dot notation for method invocations
+        
+        NSLog(@"%@", [subclass myClassName]);
+        
+        
+//        subclass->_ivar;
+        // access to private ivar via Key-Value-Coding IS POSSIBLE
+        id ivar = [subclass valueForKey:@"_ivar"];
+        [subclass setValue:@(3) forKey:@"ivar"];
         
         IDPSyntax *syntax = object;
 

@@ -8,7 +8,9 @@
 
 #import "IDPSyntax.h"
 
+
 @interface IDPSyntax (IDPExtensions)
+@property (nonatomic, retain, readonly) NSString *myClassName;
 
 + (id)object;
 

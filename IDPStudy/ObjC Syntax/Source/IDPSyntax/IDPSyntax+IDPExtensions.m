@@ -10,8 +10,20 @@
 
 @implementation IDPSyntax (IDPExtensions)
 
+@dynamic myClassName;
+
+#pragma mark -
+#pragma mark Class Methods
+
 + (id)object {
     return [[[self alloc] init] autorelease];
+}
+
+#pragma mark -
+#pragma mark Accessors
+
+- (NSString *)myClassName {
+    return NSStringFromClass([self class]);
 }
 
 @end

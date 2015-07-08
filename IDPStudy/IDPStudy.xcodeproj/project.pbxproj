@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A0583EA1B4D23100046C275 /* IDPSyntaxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A0583E91B4D23100046C275 /* IDPSyntaxTests.m */; };
 		5A5CB65E1B4A74A2002021A8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CB65D1B4A74A2002021A8 /* main.m */; };
 		5A5CB6621B4A7998002021A8 /* IDPSyntax.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CB6611B4A7998002021A8 /* IDPSyntax.m */; };
 		5A6957711AFA0A8100FF2FDB /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A6957701AFA0A8100FF2FDB /* main.c */; };
@@ -59,6 +60,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5A0583E51B4D23100046C275 /* IDPSyntaxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IDPSyntaxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A0583E81B4D23100046C275 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A0583E91B4D23100046C275 /* IDPSyntaxTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IDPSyntaxTests.m; sourceTree = "<group>"; };
 		5A4A7A931AFA11C000CA5A3A /* IDPDefineSamples.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPDefineSamples.h; sourceTree = "<group>"; };
 		5A4A7A951AFA201500CA5A3A /* IDPPrimitiveTypeOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPPrimitiveTypeOutput.h; sourceTree = "<group>"; };
 		5A5CB6541B4A7433002021A8 /* ObjC Syntax */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "ObjC Syntax"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,6 +107,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5A0583E21B4D23100046C275 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5A5CB6511B4A7433002021A8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -127,6 +138,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A0583E61B4D23100046C275 /* IDPSyntaxTests */ = {
+			isa = PBXGroup;
+			children = (
+				5A0583E91B4D23100046C275 /* IDPSyntaxTests.m */,
+				5A0583E71B4D23100046C275 /* Supporting Files */,
+			);
+			path = IDPSyntaxTests;
+			sourceTree = "<group>";
+		};
+		5A0583E71B4D23100046C275 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5A0583E81B4D23100046C275 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		5A4A7A921AFA114A00CA5A3A /* IDPDefineSamples */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +209,7 @@
 				5A6957671AFA05AE00FF2FDB /* IDPStudy */,
 				5A6ABE1E1B021B69003EA6EB /* IDPObjects */,
 				5A5CB6551B4A7433002021A8 /* ObjC Syntax */,
+				5A0583E61B4D23100046C275 /* IDPSyntaxTests */,
 				5A6957661AFA05AE00FF2FDB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -191,6 +220,7 @@
 				5A6957651AFA05AE00FF2FDB /* IDPStudy */,
 				5A6ABE1D1B021B69003EA6EB /* IDPObjects */,
 				5A5CB6541B4A7433002021A8 /* ObjC Syntax */,
+				5A0583E51B4D23100046C275 /* IDPSyntaxTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -337,6 +367,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5A0583E41B4D23100046C275 /* IDPSyntaxTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A0583EB1B4D23100046C275 /* Build configuration list for PBXNativeTarget "IDPSyntaxTests" */;
+			buildPhases = (
+				5A0583E11B4D23100046C275 /* Sources */,
+				5A0583E21B4D23100046C275 /* Frameworks */,
+				5A0583E31B4D23100046C275 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IDPSyntaxTests;
+			productName = IDPSyntaxTests;
+			productReference = 5A0583E51B4D23100046C275 /* IDPSyntaxTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		5A5CB6531B4A7433002021A8 /* ObjC Syntax */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5A5CB65A1B4A7433002021A8 /* Build configuration list for PBXNativeTarget "ObjC Syntax" */;
@@ -398,6 +445,9 @@
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "IDAP College";
 				TargetAttributes = {
+					5A0583E41B4D23100046C275 = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
 					5A5CB6531B4A7433002021A8 = {
 						CreatedOnToolsVersion = 6.3.1;
 					};
@@ -424,11 +474,30 @@
 				5A6957641AFA05AE00FF2FDB /* IDPStudy */,
 				5A6ABE1C1B021B69003EA6EB /* IDPObjects */,
 				5A5CB6531B4A7433002021A8 /* ObjC Syntax */,
+				5A0583E41B4D23100046C275 /* IDPSyntaxTests */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		5A0583E31B4D23100046C275 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		5A0583E11B4D23100046C275 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A0583EA1B4D23100046C275 /* IDPSyntaxTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5A5CB6501B4A7433002021A8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -472,6 +541,38 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		5A0583EC1B4D23100046C275 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = IDPSyntaxTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5A0583ED1B4D23100046C275 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = IDPSyntaxTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		5A5CB6581B4A7433002021A8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -481,6 +582,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -490,6 +592,7 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -606,6 +709,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5A0583EB1B4D23100046C275 /* Build configuration list for PBXNativeTarget "IDPSyntaxTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A0583EC1B4D23100046C275 /* Debug */,
+				5A0583ED1B4D23100046C275 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		5A5CB65A1B4A7433002021A8 /* Build configuration list for PBXNativeTarget "ObjC Syntax" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
