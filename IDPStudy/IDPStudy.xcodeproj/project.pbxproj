@@ -16,6 +16,8 @@
 		5A6ABE2E1B021DAA003EA6EB /* IDPObjectTests.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A6ABE2C1B021DAA003EA6EB /* IDPObjectTests.c */; };
 		5A6ABE321B0220F9003EA6EB /* IDPTestMacros.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A6ABE311B0220F9003EA6EB /* IDPTestMacros.c */; };
 		5A6ABE331B0221BE003EA6EB /* IDPTestMacros.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A6ABE311B0220F9003EA6EB /* IDPTestMacros.c */; };
+		5A9967881B4E86CE000A4E89 /* IDPEqualityObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A9967871B4E86CE000A4E89 /* IDPEqualityObject.m */; };
+		5A9967891B4E8BE7000A4E89 /* IDPEqualityObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A9967871B4E86CE000A4E89 /* IDPEqualityObject.m */; };
 		5A99FE991B09E09D00124722 /* IDPLinkedListNode.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A99FE971B09E09D00124722 /* IDPLinkedListNode.c */; };
 		5ABC95681B00AA43007CBBA5 /* IDPStructures.c in Sources */ = {isa = PBXBuildFile; fileRef = 5ABC95661B00AA43007CBBA5 /* IDPStructures.c */; };
 		5ABC95701B00BFFD007CBBA5 /* IDPBitOutput.c in Sources */ = {isa = PBXBuildFile; fileRef = 5ABC956E1B00BFFD007CBBA5 /* IDPBitOutput.c */; };
@@ -80,6 +82,8 @@
 		5A6ABE2D1B021DAA003EA6EB /* IDPObjectTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPObjectTests.h; sourceTree = "<group>"; };
 		5A6ABE301B021E46003EA6EB /* IDPTestMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPTestMacros.h; sourceTree = "<group>"; };
 		5A6ABE311B0220F9003EA6EB /* IDPTestMacros.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = IDPTestMacros.c; sourceTree = "<group>"; };
+		5A9967861B4E86CE000A4E89 /* IDPEqualityObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPEqualityObject.h; sourceTree = "<group>"; };
+		5A9967871B4E86CE000A4E89 /* IDPEqualityObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDPEqualityObject.m; sourceTree = "<group>"; };
 		5A99FE971B09E09D00124722 /* IDPLinkedListNode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = IDPLinkedListNode.c; sourceTree = "<group>"; };
 		5A99FE981B09E09D00124722 /* IDPLinkedListNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPLinkedListNode.h; sourceTree = "<group>"; };
 		5AA5675F1AFA48240094451F /* IDPStudyPlan */ = {isa = PBXFileReference; lastKnownFileType = text; path = IDPStudyPlan; sourceTree = "<group>"; };
@@ -182,6 +186,7 @@
 		5A5CB65C1B4A747D002021A8 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				5A9967851B4E8677000A4E89 /* IDPEqualityObject */,
 				5A5CB65F1B4A78D6002021A8 /* IDPSyntax */,
 				5A5CB65D1B4A74A2002021A8 /* main.m */,
 			);
@@ -295,6 +300,15 @@
 				5A6ABE311B0220F9003EA6EB /* IDPTestMacros.c */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		5A9967851B4E8677000A4E89 /* IDPEqualityObject */ = {
+			isa = PBXGroup;
+			children = (
+				5A9967861B4E86CE000A4E89 /* IDPEqualityObject.h */,
+				5A9967871B4E86CE000A4E89 /* IDPEqualityObject.m */,
+			);
+			path = IDPEqualityObject;
 			sourceTree = "<group>";
 		};
 		5A99FE951B09E06A00124722 /* IDPLinkedList */ = {
@@ -494,6 +508,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A9967891B4E8BE7000A4E89 /* IDPEqualityObject.m in Sources */,
 				5A0583EA1B4D23100046C275 /* IDPSyntaxTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -505,6 +520,7 @@
 				5A5CB6621B4A7998002021A8 /* IDPSyntax.m in Sources */,
 				5AFAEDEC1B4BE6E1008FC781 /* IDPSyntax+IDPExtensions.m in Sources */,
 				5AFAEDEF1B4BEAD0008FC781 /* IDPSyntaxSubclass.m in Sources */,
+				5A9967881B4E86CE000A4E89 /* IDPEqualityObject.m in Sources */,
 				5A5CB65E1B4A74A2002021A8 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -716,6 +732,7 @@
 				5A0583ED1B4D23100046C275 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5A5CB65A1B4A7433002021A8 /* Build configuration list for PBXNativeTarget "ObjC Syntax" */ = {
 			isa = XCConfigurationList;
