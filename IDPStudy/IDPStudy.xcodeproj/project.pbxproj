@@ -23,6 +23,7 @@
 		5ABC95701B00BFFD007CBBA5 /* IDPBitOutput.c in Sources */ = {isa = PBXBuildFile; fileRef = 5ABC956E1B00BFFD007CBBA5 /* IDPBitOutput.c */; };
 		5AE2CE2B1B0DE491001CF5E1 /* IDPArray.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AE2CE291B0DE491001CF5E1 /* IDPArray.c */; };
 		5AE2CE2F1B0DE52D001CF5E1 /* IDPArrayTests.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AE2CE2D1B0DE52D001CF5E1 /* IDPArrayTests.c */; };
+		5AE401A91B5664B5005932C2 /* IDPBlockTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE401A81B5664B5005932C2 /* IDPBlockTests.m */; };
 		5AF430F71B15A5E8001BE26E /* IDPLinkedList.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AF430F51B15A5E8001BE26E /* IDPLinkedList.c */; };
 		5AF430FB1B15A738001BE26E /* IDPLinkedListTests.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AF430F91B15A738001BE26E /* IDPLinkedListTests.c */; };
 		5AF5F56D1B1F0008001608F4 /* IDPLinkedListEnumerator.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AF5F56B1B1F0008001608F4 /* IDPLinkedListEnumerator.c */; };
@@ -95,6 +96,7 @@
 		5AE2CE2A1B0DE491001CF5E1 /* IDPArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPArray.h; sourceTree = "<group>"; };
 		5AE2CE2D1B0DE52D001CF5E1 /* IDPArrayTests.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = IDPArrayTests.c; sourceTree = "<group>"; };
 		5AE2CE2E1B0DE52D001CF5E1 /* IDPArrayTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPArrayTests.h; sourceTree = "<group>"; };
+		5AE401A81B5664B5005932C2 /* IDPBlockTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDPBlockTests.m; sourceTree = "<group>"; };
 		5AF430F51B15A5E8001BE26E /* IDPLinkedList.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = IDPLinkedList.c; sourceTree = "<group>"; };
 		5AF430F61B15A5E8001BE26E /* IDPLinkedList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPLinkedList.h; sourceTree = "<group>"; };
 		5AF430F91B15A738001BE26E /* IDPLinkedListTests.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = IDPLinkedListTests.c; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			children = (
 				5A0583E91B4D23100046C275 /* IDPSyntaxTests.m */,
 				5A0583E71B4D23100046C275 /* Supporting Files */,
+				5AE401A81B5664B5005932C2 /* IDPBlockTests.m */,
 			);
 			path = IDPSyntaxTests;
 			sourceTree = "<group>";
@@ -508,6 +511,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AE401A91B5664B5005932C2 /* IDPBlockTests.m in Sources */,
 				5A9967891B4E8BE7000A4E89 /* IDPEqualityObject.m in Sources */,
 				5A0583EA1B4D23100046C275 /* IDPSyntaxTests.m in Sources */,
 			);
@@ -560,6 +564,7 @@
 		5A0583EC1B4D23100046C275 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
@@ -578,6 +583,7 @@
 		5A0583ED1B4D23100046C275 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
