@@ -11,7 +11,14 @@
 
 #import "IDPSyntax.h"
 #import "IDPSyntaxSubclass.h"
+#import "IDPBlock.h"
 
+int main(int argc, const char * argv[]) {
+    
+    [IDPBlock performTests];
+    
+    
+/*
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         // insert code here...

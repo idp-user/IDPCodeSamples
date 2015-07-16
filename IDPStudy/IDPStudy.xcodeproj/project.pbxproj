@@ -21,6 +21,7 @@
 		5A99FE991B09E09D00124722 /* IDPLinkedListNode.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A99FE971B09E09D00124722 /* IDPLinkedListNode.c */; };
 		5ABC95681B00AA43007CBBA5 /* IDPStructures.c in Sources */ = {isa = PBXBuildFile; fileRef = 5ABC95661B00AA43007CBBA5 /* IDPStructures.c */; };
 		5ABC95701B00BFFD007CBBA5 /* IDPBitOutput.c in Sources */ = {isa = PBXBuildFile; fileRef = 5ABC956E1B00BFFD007CBBA5 /* IDPBitOutput.c */; };
+		5ABC9D3A1B57A3710077D1A4 /* IDPBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ABC9D391B57A3700077D1A4 /* IDPBlock.m */; };
 		5AE2CE2B1B0DE491001CF5E1 /* IDPArray.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AE2CE291B0DE491001CF5E1 /* IDPArray.c */; };
 		5AE2CE2F1B0DE52D001CF5E1 /* IDPArrayTests.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AE2CE2D1B0DE52D001CF5E1 /* IDPArrayTests.c */; };
 		5AE401A91B5664B5005932C2 /* IDPBlockTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE401A81B5664B5005932C2 /* IDPBlockTests.m */; };
@@ -92,6 +93,8 @@
 		5ABC95671B00AA43007CBBA5 /* IDPStructures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPStructures.h; sourceTree = "<group>"; };
 		5ABC956E1B00BFFD007CBBA5 /* IDPBitOutput.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = IDPBitOutput.c; sourceTree = "<group>"; };
 		5ABC956F1B00BFFD007CBBA5 /* IDPBitOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPBitOutput.h; sourceTree = "<group>"; };
+		5ABC9D381B57A3700077D1A4 /* IDPBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPBlock.h; sourceTree = "<group>"; };
+		5ABC9D391B57A3700077D1A4 /* IDPBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDPBlock.m; sourceTree = "<group>"; };
 		5AE2CE291B0DE491001CF5E1 /* IDPArray.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = IDPArray.c; sourceTree = "<group>"; };
 		5AE2CE2A1B0DE491001CF5E1 /* IDPArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPArray.h; sourceTree = "<group>"; };
 		5AE2CE2D1B0DE52D001CF5E1 /* IDPArrayTests.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = IDPArrayTests.c; sourceTree = "<group>"; };
@@ -189,6 +192,7 @@
 		5A5CB65C1B4A747D002021A8 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				5ABC9D371B57A3570077D1A4 /* IDPBlock */,
 				5A9967851B4E8677000A4E89 /* IDPEqualityObject */,
 				5A5CB65F1B4A78D6002021A8 /* IDPSyntax */,
 				5A5CB65D1B4A74A2002021A8 /* main.m */,
@@ -351,6 +355,15 @@
 				5ABC956F1B00BFFD007CBBA5 /* IDPBitOutput.h */,
 			);
 			path = IDPBitOutput;
+			sourceTree = "<group>";
+		};
+		5ABC9D371B57A3570077D1A4 /* IDPBlock */ = {
+			isa = PBXGroup;
+			children = (
+				5ABC9D381B57A3700077D1A4 /* IDPBlock.h */,
+				5ABC9D391B57A3700077D1A4 /* IDPBlock.m */,
+			);
+			path = IDPBlock;
 			sourceTree = "<group>";
 		};
 		5AE2CE2C1B0DE503001CF5E1 /* IDPArrayTests */ = {
@@ -524,6 +537,7 @@
 				5A5CB6621B4A7998002021A8 /* IDPSyntax.m in Sources */,
 				5AFAEDEC1B4BE6E1008FC781 /* IDPSyntax+IDPExtensions.m in Sources */,
 				5AFAEDEF1B4BEAD0008FC781 /* IDPSyntaxSubclass.m in Sources */,
+				5ABC9D3A1B57A3710077D1A4 /* IDPBlock.m in Sources */,
 				5A9967881B4E86CE000A4E89 /* IDPEqualityObject.m in Sources */,
 				5A5CB65E1B4A74A2002021A8 /* main.m in Sources */,
 			);
