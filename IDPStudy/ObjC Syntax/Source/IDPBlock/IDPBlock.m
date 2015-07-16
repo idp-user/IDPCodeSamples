@@ -179,7 +179,6 @@ typedef void(^IDPVoidBlock)(void);
     
     NSLog(@"copiedBlock -> %@", object2.copiedBlock);
     object2.copiedBlock();
-    
     [object release];
 }
 
@@ -197,6 +196,7 @@ typedef void(^IDPVoidBlock)(void);
         NSLog(@"%@, retainCount = %lu", weakObject, [weakObject retainCount]);
     };
     
+#warning wrong object retainCount. shouldn't increment
     NSLog(@"%@, retainCount = %lu", object, [object retainCount]);
     
     object.copiedBlock = block;
