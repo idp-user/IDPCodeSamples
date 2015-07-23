@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5A0583EA1B4D23100046C275 /* IDPSyntaxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A0583E91B4D23100046C275 /* IDPSyntaxTests.m */; };
+		5A5446091B5FAF9F002DFB8B /* IDPKiwiTestExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5446081B5FAF9F002DFB8B /* IDPKiwiTestExample.m */; };
 		5A5CB65E1B4A74A2002021A8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CB65D1B4A74A2002021A8 /* main.m */; };
 		5A5CB6621B4A7998002021A8 /* IDPSyntax.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CB6611B4A7998002021A8 /* IDPSyntax.m */; };
 		5A6957711AFA0A8100FF2FDB /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A6957701AFA0A8100FF2FDB /* main.c */; };
@@ -30,6 +31,7 @@
 		5AF5F5701B1F071D001608F4 /* IDPObjectMacros.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AF5F56E1B1F071D001608F4 /* IDPObjectMacros.c */; };
 		5AFAEDEC1B4BE6E1008FC781 /* IDPSyntax+IDPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AFAEDEB1B4BE6E1008FC781 /* IDPSyntax+IDPExtensions.m */; };
 		5AFAEDEF1B4BEAD0008FC781 /* IDPSyntaxSubclass.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AFAEDEE1B4BEAD0008FC781 /* IDPSyntaxSubclass.m */; };
+		EC39D5B7155537D38BCA56D1 /* libPods-IDPSyntaxTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BDD6A8C1737E0B60E66761A3 /* libPods-IDPSyntaxTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -63,11 +65,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		118EE580668BC2912F21C157 /* Pods-IDPSyntaxTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IDPSyntaxTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IDPSyntaxTests/Pods-IDPSyntaxTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5A0583E51B4D23100046C275 /* IDPSyntaxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IDPSyntaxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A0583E81B4D23100046C275 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A0583E91B4D23100046C275 /* IDPSyntaxTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IDPSyntaxTests.m; sourceTree = "<group>"; };
 		5A4A7A931AFA11C000CA5A3A /* IDPDefineSamples.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPDefineSamples.h; sourceTree = "<group>"; };
 		5A4A7A951AFA201500CA5A3A /* IDPPrimitiveTypeOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPPrimitiveTypeOutput.h; sourceTree = "<group>"; };
+		5A5446081B5FAF9F002DFB8B /* IDPKiwiTestExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDPKiwiTestExample.m; sourceTree = "<group>"; };
 		5A5CB6541B4A7433002021A8 /* ObjC Syntax */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "ObjC Syntax"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A5CB65D1B4A74A2002021A8 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5A5CB6601B4A7998002021A8 /* IDPSyntax.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPSyntax.h; sourceTree = "<group>"; };
@@ -110,6 +114,8 @@
 		5AFAEDEB1B4BE6E1008FC781 /* IDPSyntax+IDPExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IDPSyntax+IDPExtensions.m"; sourceTree = "<group>"; };
 		5AFAEDED1B4BEAD0008FC781 /* IDPSyntaxSubclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPSyntaxSubclass.h; sourceTree = "<group>"; };
 		5AFAEDEE1B4BEAD0008FC781 /* IDPSyntaxSubclass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDPSyntaxSubclass.m; sourceTree = "<group>"; };
+		BDD6A8C1737E0B60E66761A3 /* libPods-IDPSyntaxTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IDPSyntaxTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCDC9BD5261F6E8B8E9013F3 /* Pods-IDPSyntaxTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IDPSyntaxTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-IDPSyntaxTests/Pods-IDPSyntaxTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC39D5B7155537D38BCA56D1 /* libPods-IDPSyntaxTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +157,7 @@
 				5A0583E91B4D23100046C275 /* IDPSyntaxTests.m */,
 				5A0583E71B4D23100046C275 /* Supporting Files */,
 				5AE401A81B5664B5005932C2 /* IDPBlockTests.m */,
+				5A5446081B5FAF9F002DFB8B /* IDPKiwiTestExample.m */,
 			);
 			path = IDPSyntaxTests;
 			sourceTree = "<group>";
@@ -219,6 +227,8 @@
 				5A5CB6551B4A7433002021A8 /* ObjC Syntax */,
 				5A0583E61B4D23100046C275 /* IDPSyntaxTests */,
 				5A6957661AFA05AE00FF2FDB /* Products */,
+				8B868FBAB1CDBF6F9D966C1C /* Pods */,
+				8F476ACB35568EB3F36B6EA4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -381,6 +391,23 @@
 			path = IDPLinkedListEnumerator;
 			sourceTree = "<group>";
 		};
+		8B868FBAB1CDBF6F9D966C1C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				118EE580668BC2912F21C157 /* Pods-IDPSyntaxTests.debug.xcconfig */,
+				DCDC9BD5261F6E8B8E9013F3 /* Pods-IDPSyntaxTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8F476ACB35568EB3F36B6EA4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BDD6A8C1737E0B60E66761A3 /* libPods-IDPSyntaxTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -388,9 +415,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5A0583EB1B4D23100046C275 /* Build configuration list for PBXNativeTarget "IDPSyntaxTests" */;
 			buildPhases = (
+				520B73654F3989498055DF81 /* Check Pods Manifest.lock */,
 				5A0583E11B4D23100046C275 /* Sources */,
 				5A0583E21B4D23100046C275 /* Frameworks */,
 				5A0583E31B4D23100046C275 /* Resources */,
+				0692BE130372AE763D7084CC /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -506,11 +535,45 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0692BE130372AE763D7084CC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IDPSyntaxTests/Pods-IDPSyntaxTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		520B73654F3989498055DF81 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5A0583E11B4D23100046C275 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A5446091B5FAF9F002DFB8B /* IDPKiwiTestExample.m in Sources */,
 				5AE401A91B5664B5005932C2 /* IDPBlockTests.m in Sources */,
 				5A9967891B4E8BE7000A4E89 /* IDPEqualityObject.m in Sources */,
 				5A0583EA1B4D23100046C275 /* IDPSyntaxTests.m in Sources */,
@@ -563,6 +626,7 @@
 /* Begin XCBuildConfiguration section */
 		5A0583EC1B4D23100046C275 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 118EE580668BC2912F21C157 /* Pods-IDPSyntaxTests.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -582,6 +646,7 @@
 		};
 		5A0583ED1B4D23100046C275 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DCDC9BD5261F6E8B8E9013F3 /* Pods-IDPSyntaxTests.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
