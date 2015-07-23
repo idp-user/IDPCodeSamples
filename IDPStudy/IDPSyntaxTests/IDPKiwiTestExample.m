@@ -19,7 +19,7 @@ describe(@"Example description", ^{
         });
         
         it(@"shouldn't be nil", ^{
-            [[object should] beNil];
+            [[object should] beNonNil];
         });
     });
 });
