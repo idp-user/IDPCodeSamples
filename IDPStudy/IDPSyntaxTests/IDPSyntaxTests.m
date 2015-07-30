@@ -67,8 +67,7 @@
     XCTAssertTrue([object isEqual:object2]);
 }
 
-- (void)testTollFreeBridging {
-    
+- (void)testTollFreeBridging {    
     NSDictionary *dictionary = @{@"key" : @"value"};
 
     NSLog(@"%lu", CFGetRetainCount((CFDictionaryRef)dictionary));

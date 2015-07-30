@@ -11,13 +11,19 @@
 
 #import "IDPSyntax.h"
 #import "IDPSyntaxSubclass.h"
+#import "IDPBucket.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
+        
+        IDPBucket *bucket = [[IDPBucket new] autorelease];
+        
         // insert code here...
         NSLog(@"Hello, World!");
         
         id object = [IDPSyntax object];
+        
+        [bucket addObserver:object];
         
         IDPSyntaxSubclass *subclass = [IDPSyntaxSubclass syntax];
         
