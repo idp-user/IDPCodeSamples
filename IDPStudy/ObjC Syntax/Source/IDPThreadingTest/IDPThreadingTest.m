@@ -9,6 +9,7 @@
 #import "IDPThreadingTest.h"
 
 #import "IDPThreadUnsafeObject.h"
+#import "IDPThreadSafeObject.h"
 
 @implementation IDPThreadingTest
 
@@ -16,29 +17,84 @@
 #pragma mark Class Methods
 
 + (void)performTests {
-    NSUInteger operationCount = 100;
+    NSUInteger operationCount = 1000;
     IDPThreadUnsafeObject *object = [[IDPThreadUnsafeObject new] autorelease];
     
     
-    // one thread operations
-    for (NSUInteger iteration = 0; iteration < operationCount; iteration++) {
-        NSObject *value = [[NSObject new] autorelease];
-//        object.object = value;
-        [object performSelector:@selector(setObject:) withObject:value];
-        
+//    // one thread operations
+//    for (NSUInteger iteration = 0; iteration < operationCount; iteration++) {
+//        NSObject *value = [[NSObject new] autorelease];
+////        object.object = value;
+//        [object performSelector:@selector(setObject:) withObject:value];
+//        
+//    }
+//    NSLog(@"FINISHED IN MAIN");
+
+    // Will raise exception
+//    for (NSUInteger iteration = 0; iteration < operationCount; iteration++) {
+//        NSObject *value = [[NSObject new] autorelease];
+//        [object performSelectorInBackground:@selector(setObject:)
+//                                 withObject:value];
+//        
+//    }
+    
+    IDPThreadSafeObject *safeObject = [[IDPThreadSafeObject new] autorelease];
+    
+//    for (NSUInteger iteration = 0; iteration < operationCount; iteration++) {
+//        NSObject *value = [[NSObject new] autorelease];
+//        [safeObject performSelectorInBackground:@selector(setObject:)
+//                                     withObject:value];
+//        
+//        [safeObject performSelectorInBackground:@selector(addObject:)
+//                                     withObject:value];
+//    }
+    
+    
+//    for (NSUInteger iteration = 0; iteration < operationCount; iteration++) {
+//        NSObject *value = [[NSObject new] autorelease];
+//        [safeObject performSelectorInBackground:@selector(setObject:)
+//                                     withObject:value];
+//        
+//        [safeObject performSelectorInBackground:@selector(addObjectWhileSelfSynchronized:)
+//                                     withObject:value];
+//    }
+
+    
+    
+//    for (NSUInteger iteration = 0; iteration < operationCount; iteration++) {
+//        NSObject *value = [[NSObject new] autorelease];
+//
+//        [safeObject.mutableObjects performSelectorInBackground:@selector(addObject:)
+//                                     withObject:value];
+//
+//    }
+//    
+//    for (id object in safeObject.mutableObjects) {
+//        NSLog(@"%@", object);
+//    }
+    
+        for (NSUInteger iteration = 0; iteration < operationCount; iteration++) {
+            NSObject *value = [[NSObject new] autorelease];
+    
+            [safeObject performSelectorInBackground:@selector(addObject:)
+                                         withObject:value];
+    
+        }
+    
+    NSArray *array = safeObject.objects;
+    NSLog(@"%lu", [array count]);
+    
+    for (id object in array) {
+//        NSLog(@"%@", object);
+        usleep(1);
     }
-    NSLog(@"FINISHED IN MAIN");
     
-    // multiple thread operations
-    for (NSUInteger iteration = 0; iteration < operationCount; iteration++) {
-        NSObject *value = [[NSObject new] autorelease];
-        [object performSelectorInBackground:@selector(setObject:) withObject:value];
-    }
-    
-    usleep(200 * 1000);
-    NSLog(@"FINISHED");
-    
+    array = safeObject.objects;
+    NSLog(@"%lu", [array count]);
+
+
     [[NSRunLoop currentRunLoop] run];
+
 }
 
 @end

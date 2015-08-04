@@ -9,41 +9,27 @@
 #import "IDPThreadUnsafeObject.h"
 
 @interface IDPThreadUnsafeObject ()
-@property (nonatomic, retain) NSLock *lockingObject;
 
 @end
 
 @implementation IDPThreadUnsafeObject
 
 - (void)dealloc {
-    self.lockingObject = nil;
-}
-
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        self.lockingObject = [[[NSLock alloc] init] autorelease];
-    }
+    self.object = nil;
     
-    return self;
+    [super dealloc];
 }
-
 
 - (void)setObject:(NSObject *)object {
-    NSLock *lockingObject = self.lockingObject;
-    [lockingObject lock];
-    
     if (_object != object) {
         [_object release];
         _object = [object retain];
         
         usleep(10 * 1000);
         
-        assert(_object == object);
+        NSAssert(_object == object, @"object n\missing");
         NSLog(@"OK");
     }
-    
-    [lockingObject unlock];
 }
 
 @end
