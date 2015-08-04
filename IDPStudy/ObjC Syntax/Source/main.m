@@ -13,56 +13,60 @@
 #import "IDPSyntaxSubclass.h"
 #import "IDPBucket.h"
 
+#import "IDPThreadingTest.h"
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
-        IDPBucket *bucket = [[IDPBucket new] autorelease];
+        [IDPThreadingTest performTests];
         
-        // insert code here...
-        NSLog(@"Hello, World!");
-        
-        id object = [IDPSyntax object];
-        
-        [bucket addObserver:object];
-        
-        IDPSyntaxSubclass *subclass = [IDPSyntaxSubclass syntax];
-        
-        SEL fooSelector = @selector(foo);
-
-        [object foo];
-        [object performSelector:fooSelector withObject:nil];
-
-        
-        objc_msgSend(object, fooSelector, nil);
-        
-        NSLog(@"%@", subclass.description);
-
-        subclass.foo;
-        
-        id object2 = NSObject.alloc.init.autorelease; /// BAD BAD BAD to use dot notation for method invocations
-        
-        NSLog(@"%@", [subclass myClassName]);
-        
-        
-//        subclass->_ivar;
-        // access to private ivar via Key-Value-Coding IS POSSIBLE
-        id ivar = [subclass valueForKey:@"_ivar"];
-        [subclass setValue:@(3) forKey:@"ivar"];
-        
-        IDPSyntax *syntax = object;
-
-        NSArray *array = @[@"1", @(3)];
-        [syntax protocolFoo];
-        [syntax protocolFooWithArgument:@"NSSTRING_VALUE"
-                         secondArgument:@{@"floatValue" : @(1.2f),
-                                          @"intValue" : @(2)}
-                                  count:[array count]];
-        
-        if (YES == [syntax respondsToSelector:@selector(protocolFooWithArgument:)]) {
-            [syntax protocolFooWithArgument:array];
-        }
-        
-        [IDPSyntax syntaxTest];
+//        IDPBucket *bucket = [[IDPBucket new] autorelease];
+//        
+//        // insert code here...
+//        NSLog(@"Hello, World!");
+//        
+//        id object = [IDPSyntax object];
+//        
+//        [bucket addObserver:object];
+//        
+//        IDPSyntaxSubclass *subclass = [IDPSyntaxSubclass syntax];
+//        
+//        SEL fooSelector = @selector(foo);
+//
+//        [object foo];
+//        [object performSelector:fooSelector withObject:nil];
+//
+//        
+//        objc_msgSend(object, fooSelector, nil);
+//        
+//        NSLog(@"%@", subclass.description);
+//
+//        subclass.foo;
+//        
+//        id object2 = NSObject.alloc.init.autorelease; /// BAD BAD BAD to use dot notation for method invocations
+//        
+//        NSLog(@"%@", [subclass myClassName]);
+//        
+//        
+////        subclass->_ivar;
+//        // access to private ivar via Key-Value-Coding IS POSSIBLE
+//        id ivar = [subclass valueForKey:@"_ivar"];
+//        [subclass setValue:@(3) forKey:@"ivar"];
+//        
+//        IDPSyntax *syntax = object;
+//
+//        NSArray *array = @[@"1", @(3)];
+//        [syntax protocolFoo];
+//        [syntax protocolFooWithArgument:@"NSSTRING_VALUE"
+//                         secondArgument:@{@"floatValue" : @(1.2f),
+//                                          @"intValue" : @(2)}
+//                                  count:[array count]];
+//        
+//        if (YES == [syntax respondsToSelector:@selector(protocolFooWithArgument:)]) {
+//            [syntax protocolFooWithArgument:array];
+//        }
+//        
+//        [IDPSyntax syntaxTest];
     }
     
     BOOL boolValue = YES; boolValue = NO;
