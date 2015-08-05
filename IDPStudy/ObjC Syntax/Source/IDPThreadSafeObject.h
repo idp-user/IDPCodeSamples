@@ -10,6 +10,7 @@
 
 @interface IDPThreadSafeObject : IDPThreadUnsafeObject
 @property (nonatomic, readonly)   NSArray  *objects;
+@property (nonatomic, readonly)   id      lazyObject;
 
 - (void)addObject:(id)object;
 
