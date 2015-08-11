@@ -8,7 +8,8 @@
 
 #import "IDPMessagingObject.h"
 
-
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation IDPMessagingObject
 
@@ -65,3 +66,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

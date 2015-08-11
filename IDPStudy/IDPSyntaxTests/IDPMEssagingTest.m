@@ -31,25 +31,47 @@
     NSObject *parameter = [NSObject new];
     
     id object = self.object;
-    SEL selectors[] = { kIDPMessagingVirtualSelector, kIDPMessagingActualSelector};
-    
+    SEL selectors[] = { @selector(description),
+                        kIDPMessagingVirtualSelector,
+                        kIDPMessagingActualSelector};
     NSUInteger selectorsCount = sizeof(selectors) / sizeof(SEL);
-    for (NSUInteger index = 0; index < selectorsCount; index++) {
-        SEL selector = selectors[index];
-        NSLog(@"\n\nperforming %@\n\n", NSStringFromSelector(selector));
-        [object performSelector:selector withObject:parameter];
-    }
     
+    NSLog(@"\n\nFirst attempt\n\n");
+    [self object:object performTestSelectors:selectors count:selectorsCount withObject:parameter];
+
     NSLog(@"\n\nSecond attempt\n\n");
-    for (NSUInteger index = 0; index < selectorsCount; index++) {
-        SEL selector = selectors[index];
-        NSLog(@"\n\nperforming %@\n\n", NSStringFromSelector(selector));
-        [object performSelector:selector withObject:parameter];
-    }
+    [self object:object performTestSelectors:selectors count:selectorsCount withObject:parameter];
+    
     // This is an example of a functional test case.
     XCTAssert(YES, @"Pass");
 }
 
+#pragma mark -
+#pragma mark Private
+
+- (void)        object:(id)object
+  performTestSelectors:(SEL[])selectors
+                 count:(NSUInteger)selectorsCount
+            withObject:(id)parameter
+{
+    for (NSUInteger index = 0; index < selectorsCount; index++) {
+        SEL selector = selectors[index];
+        NSString *selectorString = [NSString stringWithFormat:@"@selector(%@)", NSStringFromSelector(selector)];
+        NSLog(@"\n\nPerforming %@\n[object respondsToSelector:%@] %@\n\n",
+              selectorString,
+              selectorString,
+              [object respondsToSelector:selector] ? @"YES" : @"NO");
+        
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+        
+        [object performSelector:selector withObject:parameter];
+        
+#pragma clang diagnostic pop
+
+        
+    }
+}
 
 
 @end

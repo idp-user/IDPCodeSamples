@@ -13,5 +13,8 @@
 
 @interface IDPMessagingObject : NSObject
 
+// removes warning messages
+- (void)foo:(id)object;
+- (void)privateFoo:(id)object;
 
 @end
