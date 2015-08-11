@@ -38,6 +38,9 @@
 		5A9967881B4E86CE000A4E89 /* IDPEqualityObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A9967871B4E86CE000A4E89 /* IDPEqualityObject.m */; };
 		5A9967891B4E8BE7000A4E89 /* IDPEqualityObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A9967871B4E86CE000A4E89 /* IDPEqualityObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5A99FE991B09E09D00124722 /* IDPLinkedListNode.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A99FE971B09E09D00124722 /* IDPLinkedListNode.c */; };
+		5AA94B411B79C3D700A6329D /* IDPMessagingObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA94B401B79C3D700A6329D /* IDPMessagingObject.m */; };
+		5AA94B421B79C3D700A6329D /* IDPMessagingObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA94B401B79C3D700A6329D /* IDPMessagingObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5AA94B441B79C51F00A6329D /* IDPMEssagingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA94B431B79C51F00A6329D /* IDPMEssagingTest.m */; };
 		5AB9201A1B60D80F007BF181 /* IDPAlphabet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AB920171B60D80F007BF181 /* IDPAlphabet.m */; };
 		5AB9201B1B60D80F007BF181 /* NSString+IDPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AB920191B60D80F007BF181 /* NSString+IDPExtensions.m */; };
 		5AB920231B60D84F007BF181 /* IDPClusterAlphabet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AB9201E1B60D84F007BF181 /* IDPClusterAlphabet.m */; };
@@ -145,6 +148,9 @@
 		5A99FE971B09E09D00124722 /* IDPLinkedListNode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = IDPLinkedListNode.c; sourceTree = "<group>"; };
 		5A99FE981B09E09D00124722 /* IDPLinkedListNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPLinkedListNode.h; sourceTree = "<group>"; };
 		5AA5675F1AFA48240094451F /* IDPStudyPlan */ = {isa = PBXFileReference; lastKnownFileType = text; path = IDPStudyPlan; sourceTree = "<group>"; };
+		5AA94B3F1B79C3D700A6329D /* IDPMessagingObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPMessagingObject.h; sourceTree = "<group>"; };
+		5AA94B401B79C3D700A6329D /* IDPMessagingObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDPMessagingObject.m; sourceTree = "<group>"; };
+		5AA94B431B79C51F00A6329D /* IDPMEssagingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDPMEssagingTest.m; sourceTree = "<group>"; };
 		5AB920161B60D80F007BF181 /* IDPAlphabet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IDPAlphabet.h; path = "../../../../../Archive/StudyProject/ObjC/Source/Categories/NSString+IDPExtensions/IDPAlphabet.h"; sourceTree = "<group>"; };
 		5AB920171B60D80F007BF181 /* IDPAlphabet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IDPAlphabet.m; path = "../../../../../Archive/StudyProject/ObjC/Source/Categories/NSString+IDPExtensions/IDPAlphabet.m"; sourceTree = "<group>"; };
 		5AB920181B60D80F007BF181 /* NSString+IDPExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+IDPExtensions.h"; path = "../../../../../Archive/StudyProject/ObjC/Source/Categories/NSString+IDPExtensions/NSString+IDPExtensions.h"; sourceTree = "<group>"; };
@@ -244,6 +250,7 @@
 				5A03FDFB1B6A194D00659248 /* IDPBucketTests.m */,
 				5A03FE061B6A31ED00659248 /* IDPDelegationTest.m */,
 				5A7BBE551B73696E00946E4D /* IDPMultipleBackgroundTasks.m */,
+				5AA94B431B79C51F00A6329D /* IDPMEssagingTest.m */,
 			);
 			path = IDPSyntaxTests;
 			sourceTree = "<group>";
@@ -313,6 +320,7 @@
 		5A5CB65C1B4A747D002021A8 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				5AA94B3E1B79C3B600A6329D /* IDPMessaging */,
 				5A31ACBB1B6F793F00B78BFA /* IDPThreadingTest */,
 				5A03FDFE1B6A2CBB00659248 /* IDPDelegation */,
 				5AFAE22F1B68E4A500B6FDB3 /* IDPBucket */,
@@ -470,6 +478,15 @@
 				5A99FE981B09E09D00124722 /* IDPLinkedListNode.h */,
 			);
 			path = IDPLinkedListNode;
+			sourceTree = "<group>";
+		};
+		5AA94B3E1B79C3B600A6329D /* IDPMessaging */ = {
+			isa = PBXGroup;
+			children = (
+				5AA94B3F1B79C3D700A6329D /* IDPMessagingObject.h */,
+				5AA94B401B79C3D700A6329D /* IDPMessagingObject.m */,
+			);
+			path = IDPMessaging;
 			sourceTree = "<group>";
 		};
 		5AB920151B60D7CF007BF181 /* NSString+IDPExtensions */ = {
@@ -750,12 +767,14 @@
 				5A03FDFD1B6A196600659248 /* IDPBucket.m in Sources */,
 				5A03FDFC1B6A194D00659248 /* IDPBucketTests.m in Sources */,
 				5AB920321B60F1B5007BF181 /* IDPAlphabet.m in Sources */,
+				5AA94B421B79C3D700A6329D /* IDPMessagingObject.m in Sources */,
 				5AB920281B60D84F007BF181 /* IDPStringsAlphabet.m in Sources */,
 				5A03FE091B6A31F300659248 /* IDPParentObject.m in Sources */,
 				5A4262211B67908300CA1422 /* IDPObservableObjectSpec.m in Sources */,
 				5AB920311B60F11F007BF181 /* IDPEnumeratedString.m in Sources */,
 				5A03FE081B6A31EF00659248 /* IDPBabyObject.m in Sources */,
 				5AB9202F1B60EF95007BF181 /* IDPEnumeratedString.m in Sources */,
+				5AA94B441B79C51F00A6329D /* IDPMEssagingTest.m in Sources */,
 				5A4262221B6794A400CA1422 /* IDPObservableObject.m in Sources */,
 				5A5446091B5FAF9F002DFB8B /* IDPKiwiTestExample.m in Sources */,
 				5AE401A91B5664B5005932C2 /* IDPBlockTests.m in Sources */,
@@ -777,6 +796,7 @@
 				5AB9201A1B60D80F007BF181 /* IDPAlphabet.m in Sources */,
 				5AB920251B60D84F007BF181 /* IDPRangeAlphabet.m in Sources */,
 				5A31ACBE1B6F795A00B78BFA /* IDPThreadingTest.m in Sources */,
+				5AA94B411B79C3D700A6329D /* IDPMessagingObject.m in Sources */,
 				5AB9202C1B60ECE7007BF181 /* IDPEnumeratedString.m in Sources */,
 				5A5CB6621B4A7998002021A8 /* IDPSyntax.m in Sources */,
 				5A31ACC21B70CB4E00B78BFA /* IDPThreadSafeObject.m in Sources */,
