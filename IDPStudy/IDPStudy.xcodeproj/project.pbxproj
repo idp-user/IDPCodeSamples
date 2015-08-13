@@ -15,6 +15,8 @@
 		5A03FE081B6A31EF00659248 /* IDPBabyObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A03FE001B6A2D1300659248 /* IDPBabyObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5A03FE091B6A31F300659248 /* IDPParentObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A03FE031B6A2D2500659248 /* IDPParentObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5A0583EA1B4D23100046C275 /* IDPSyntaxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A0583E91B4D23100046C275 /* IDPSyntaxTests.m */; };
+		5A1905541B7C9EAC00EE710C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1905531B7C9EAC00EE710C /* main.m */; };
+		5A19055A1B7C9EE900EE710C /* IDPConditionExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1905591B7C9EE900EE710C /* IDPConditionExample.m */; };
 		5A31ACBA1B6F787400B78BFA /* IDPThreadUnsafeObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A31ACB91B6F787400B78BFA /* IDPThreadUnsafeObject.m */; };
 		5A31ACBE1B6F795A00B78BFA /* IDPThreadingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A31ACBD1B6F795A00B78BFA /* IDPThreadingTest.m */; };
 		5A31ACC21B70CB4E00B78BFA /* IDPThreadSafeObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A31ACC11B70CB4E00B78BFA /* IDPThreadSafeObject.m */; };
@@ -66,6 +68,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		5A19054F1B7C9EAC00EE710C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		5A5CB6521B4A7433002021A8 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -107,6 +118,10 @@
 		5A0583E51B4D23100046C275 /* IDPSyntaxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IDPSyntaxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A0583E81B4D23100046C275 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A0583E91B4D23100046C275 /* IDPSyntaxTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IDPSyntaxTests.m; sourceTree = "<group>"; };
+		5A1905511B7C9EAC00EE710C /* NSConditionTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = NSConditionTest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A1905531B7C9EAC00EE710C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5A1905581B7C9EE900EE710C /* IDPConditionExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPConditionExample.h; sourceTree = "<group>"; };
+		5A1905591B7C9EE900EE710C /* IDPConditionExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDPConditionExample.m; sourceTree = "<group>"; };
 		5A31ACB81B6F787400B78BFA /* IDPThreadUnsafeObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPThreadUnsafeObject.h; sourceTree = "<group>"; };
 		5A31ACB91B6F787400B78BFA /* IDPThreadUnsafeObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDPThreadUnsafeObject.m; sourceTree = "<group>"; };
 		5A31ACBC1B6F795A00B78BFA /* IDPThreadingTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPThreadingTest.h; sourceTree = "<group>"; };
@@ -196,6 +211,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5A19054E1B7C9EAC00EE710C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5A5CB6511B4A7433002021A8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -254,6 +276,16 @@
 				5A0583E81B4D23100046C275 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5A1905521B7C9EAC00EE710C /* NSConditionTest */ = {
+			isa = PBXGroup;
+			children = (
+				5A1905531B7C9EAC00EE710C /* main.m */,
+				5A1905581B7C9EE900EE710C /* IDPConditionExample.h */,
+				5A1905591B7C9EE900EE710C /* IDPConditionExample.m */,
+			);
+			path = NSConditionTest;
 			sourceTree = "<group>";
 		};
 		5A31ACBB1B6F793F00B78BFA /* IDPThreadingTest */ = {
@@ -353,6 +385,7 @@
 				5A6ABE1E1B021B69003EA6EB /* IDPObjects */,
 				5A5CB6551B4A7433002021A8 /* ObjC Syntax */,
 				5A0583E61B4D23100046C275 /* IDPSyntaxTests */,
+				5A1905521B7C9EAC00EE710C /* NSConditionTest */,
 				5A6957661AFA05AE00FF2FDB /* Products */,
 				8B868FBAB1CDBF6F9D966C1C /* Pods */,
 				8F476ACB35568EB3F36B6EA4 /* Frameworks */,
@@ -366,6 +399,7 @@
 				5A6ABE1D1B021B69003EA6EB /* IDPObjects */,
 				5A5CB6541B4A7433002021A8 /* ObjC Syntax */,
 				5A0583E51B4D23100046C275 /* IDPSyntaxTests.xctest */,
+				5A1905511B7C9EAC00EE710C /* NSConditionTest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -602,6 +636,23 @@
 			productReference = 5A0583E51B4D23100046C275 /* IDPSyntaxTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		5A1905501B7C9EAC00EE710C /* NSConditionTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A1905571B7C9EAC00EE710C /* Build configuration list for PBXNativeTarget "NSConditionTest" */;
+			buildPhases = (
+				5A19054D1B7C9EAC00EE710C /* Sources */,
+				5A19054E1B7C9EAC00EE710C /* Frameworks */,
+				5A19054F1B7C9EAC00EE710C /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NSConditionTest;
+			productName = NSConditionTest;
+			productReference = 5A1905511B7C9EAC00EE710C /* NSConditionTest */;
+			productType = "com.apple.product-type.tool";
+		};
 		5A5CB6531B4A7433002021A8 /* ObjC Syntax */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5A5CB65A1B4A7433002021A8 /* Build configuration list for PBXNativeTarget "ObjC Syntax" */;
@@ -666,6 +717,9 @@
 					5A0583E41B4D23100046C275 = {
 						CreatedOnToolsVersion = 6.3.1;
 					};
+					5A1905501B7C9EAC00EE710C = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
 					5A5CB6531B4A7433002021A8 = {
 						CreatedOnToolsVersion = 6.3.1;
 					};
@@ -693,6 +747,7 @@
 				5A6ABE1C1B021B69003EA6EB /* IDPObjects */,
 				5A5CB6531B4A7433002021A8 /* ObjC Syntax */,
 				5A0583E41B4D23100046C275 /* IDPSyntaxTests */,
+				5A1905501B7C9EAC00EE710C /* NSConditionTest */,
 			);
 		};
 /* End PBXProject section */
@@ -765,6 +820,15 @@
 				5A0583EA1B4D23100046C275 /* IDPSyntaxTests.m in Sources */,
 				5A7BBE561B73696E00946E4D /* IDPMultipleBackgroundTasks.m in Sources */,
 				5A4262241B6794A900CA1422 /* IDPReference.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A19054D1B7C9EAC00EE710C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A19055A1B7C9EE900EE710C /* IDPConditionExample.m in Sources */,
+				5A1905541B7C9EAC00EE710C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -859,6 +923,26 @@
 				);
 				INFOPLIST_FILE = IDPSyntaxTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		5A1905551B7C9EAC00EE710C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5A1905561B7C9EAC00EE710C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -1007,6 +1091,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		5A1905571B7C9EAC00EE710C /* Build configuration list for PBXNativeTarget "NSConditionTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A1905551B7C9EAC00EE710C /* Debug */,
+				5A1905561B7C9EAC00EE710C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		5A5CB65A1B4A7433002021A8 /* Build configuration list for PBXNativeTarget "ObjC Syntax" */ = {
 			isa = XCConfigurationList;
