@@ -17,4 +17,5 @@
 - (void)foo:(id)object;
 - (void)privateFoo:(id)object;
 
+//[object foo:someArgument];
 @end

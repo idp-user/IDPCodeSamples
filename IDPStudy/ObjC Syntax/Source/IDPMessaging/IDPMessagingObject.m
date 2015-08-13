@@ -8,25 +8,27 @@
 
 #import "IDPMessagingObject.h"
 
+#import <objc/runtime.h>
+
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wincomplete-implementation"
 
 @implementation IDPMessagingObject
 
-+ (BOOL)resolveInstanceMethod:(SEL)sel {
-    NSLog(@"%@ %s - %@", self, __PRETTY_FUNCTION__, NSStringFromSelector(sel));
-    
-    return sel == kIDPMessagingVirtualSelector || [super resolveInstanceMethod:sel];
-}
+//+ (BOOL)resolveInstanceMethod:(SEL)sel {
+//    NSLog(@"%@ %s - %@", self, __PRETTY_FUNCTION__, NSStringFromSelector(sel));
+//    
+//    return sel == kIDPMessagingVirtualSelector || [super resolveInstanceMethod:sel];
+//}
 
-- (id)forwardingTargetForSelector:(SEL)aSelector {
-    NSLog(@"%@ %s - %@", self, __PRETTY_FUNCTION__, NSStringFromSelector(aSelector));
-    if (aSelector == kIDPMessagingVirtualSelector) {
-        return self;
-    }
-    
-    return [super forwardingTargetForSelector:aSelector];
-}
+//- (id)forwardingTargetForSelector:(SEL)aSelector {
+//    NSLog(@"%@ %s - %@", self, __PRETTY_FUNCTION__, NSStringFromSelector(aSelector));
+//    if (aSelector == kIDPMessagingVirtualSelector) {
+//        return self;
+//    }
+//    
+//    return [super forwardingTargetForSelector:aSelector];
+//}
 
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
     NSLog(@"%@ %s - %@", self, __PRETTY_FUNCTION__, NSStringFromSelector(aSelector));
@@ -34,23 +36,27 @@
     NSMethodSignature *signature = [super methodSignatureForSelector:aSelector];
     if (!signature && aSelector == kIDPMessagingVirtualSelector) {
         signature = [self methodSignatureForSelector:@selector(privateFoo:)];
+        
     }
     
     return signature;
 }
 
-
-- (IMP)methodForSelector:(SEL)aSelector {
-    NSLog(@"%@ %s - %@", self, __PRETTY_FUNCTION__, NSStringFromSelector(aSelector));
-    
-    return [super methodForSelector:aSelector];
-}
+//
+//- (IMP)methodForSelector:(SEL)aSelector {
+//    NSLog(@"%@ %s - %@", self, __PRETTY_FUNCTION__, NSStringFromSelector(aSelector));
+//    
+//    IMP result = [super methodForSelector:aSelector];
+//    
+//    return result;
+//}
 
 - (void)forwardInvocation:(NSInvocation *)anInvocation {
     NSLog(@"%@ %s - %@", self, __PRETTY_FUNCTION__, anInvocation);
     if (anInvocation.selector == kIDPMessagingVirtualSelector) {
         anInvocation.selector = @selector(privateFoo:);
-        [anInvocation invokeWithTarget:self];
+        [anInvocation invoke];
+//        [anInvocation invokeWithTarget:self];
         
         return;
     }
