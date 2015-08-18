@@ -1,0 +1,23 @@
+//
+//  ObjC-Syntax.pch
+//  IDPStudy
+//
+//  Created by Alexander Kradenkov on 8/18/15.
+//  Copyright (c) 2015 IDAP College. All rights reserved.
+//
+
+#ifndef IDPStudy_ObjC_Syntax_pch
+#define IDPStudy_ObjC_Syntax_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import <objc/objc-runtime.h>
+
+#import "IDPSyntax.h"
+#import "IDPSyntaxSubclass.h"
+#import "IDPBucket.h"
+
+#import "IDPThreadingTest.h"
+
+#endif

@@ -37,6 +37,11 @@
 		5A6ABE321B0220F9003EA6EB /* IDPTestMacros.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A6ABE311B0220F9003EA6EB /* IDPTestMacros.c */; };
 		5A6ABE331B0221BE003EA6EB /* IDPTestMacros.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A6ABE311B0220F9003EA6EB /* IDPTestMacros.c */; };
 		5A7BBE561B73696E00946E4D /* IDPMultipleBackgroundTasks.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7BBE551B73696E00946E4D /* IDPMultipleBackgroundTasks.m */; };
+		5A92F32B1B83286A0041A244 /* IDPKeyValueObservableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A92F32A1B83286A0041A244 /* IDPKeyValueObservableObject.m */; };
+		5A92F32E1B83287E0041A244 /* IDPKeyValueObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A92F32D1B83287E0041A244 /* IDPKeyValueObserver.m */; };
+		5A92F3301B832E1B0041A244 /* IDPKeyValueObservingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A92F32F1B832E1B0041A244 /* IDPKeyValueObservingTest.m */; };
+		5A92F3311B832E290041A244 /* IDPKeyValueObservableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A92F32A1B83286A0041A244 /* IDPKeyValueObservableObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5A92F3321B832E2C0041A244 /* IDPKeyValueObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A92F32D1B83287E0041A244 /* IDPKeyValueObserver.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5A9967881B4E86CE000A4E89 /* IDPEqualityObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A9967871B4E86CE000A4E89 /* IDPEqualityObject.m */; };
 		5A9967891B4E8BE7000A4E89 /* IDPEqualityObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A9967871B4E86CE000A4E89 /* IDPEqualityObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5A99FE991B09E09D00124722 /* IDPLinkedListNode.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A99FE971B09E09D00124722 /* IDPLinkedListNode.c */; };
@@ -155,6 +160,12 @@
 		5A6ABE301B021E46003EA6EB /* IDPTestMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPTestMacros.h; sourceTree = "<group>"; };
 		5A6ABE311B0220F9003EA6EB /* IDPTestMacros.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = IDPTestMacros.c; sourceTree = "<group>"; };
 		5A7BBE551B73696E00946E4D /* IDPMultipleBackgroundTasks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDPMultipleBackgroundTasks.m; sourceTree = "<group>"; };
+		5A92F3271B8320C70041A244 /* ObjC-Syntax.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjC-Syntax.pch"; sourceTree = "<group>"; };
+		5A92F3291B83286A0041A244 /* IDPKeyValueObservableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPKeyValueObservableObject.h; sourceTree = "<group>"; };
+		5A92F32A1B83286A0041A244 /* IDPKeyValueObservableObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDPKeyValueObservableObject.m; sourceTree = "<group>"; };
+		5A92F32C1B83287E0041A244 /* IDPKeyValueObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPKeyValueObserver.h; sourceTree = "<group>"; };
+		5A92F32D1B83287E0041A244 /* IDPKeyValueObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDPKeyValueObserver.m; sourceTree = "<group>"; };
+		5A92F32F1B832E1B0041A244 /* IDPKeyValueObservingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDPKeyValueObservingTest.m; sourceTree = "<group>"; };
 		5A9967861B4E86CE000A4E89 /* IDPEqualityObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPEqualityObject.h; sourceTree = "<group>"; };
 		5A9967871B4E86CE000A4E89 /* IDPEqualityObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDPEqualityObject.m; sourceTree = "<group>"; };
 		5A99FE971B09E09D00124722 /* IDPLinkedListNode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = IDPLinkedListNode.c; sourceTree = "<group>"; };
@@ -266,6 +277,7 @@
 				5A03FDFB1B6A194D00659248 /* IDPBucketTests.m */,
 				5A03FE061B6A31ED00659248 /* IDPDelegationTest.m */,
 				5A7BBE551B73696E00946E4D /* IDPMultipleBackgroundTasks.m */,
+				5A92F32F1B832E1B0041A244 /* IDPKeyValueObservingTest.m */,
 			);
 			path = IDPSyntaxTests;
 			sourceTree = "<group>";
@@ -345,6 +357,7 @@
 		5A5CB65C1B4A747D002021A8 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				5A92F3281B8327DA0041A244 /* IDPKeyValueObserving */,
 				5A31ACBB1B6F793F00B78BFA /* IDPThreadingTest */,
 				5A03FDFE1B6A2CBB00659248 /* IDPDelegation */,
 				5AFAE22F1B68E4A500B6FDB3 /* IDPBucket */,
@@ -379,6 +392,7 @@
 		5A69575C1AFA05AE00FF2FDB = {
 			isa = PBXGroup;
 			children = (
+				5A92F3271B8320C70041A244 /* ObjC-Syntax.pch */,
 				5AA5675F1AFA48240094451F /* IDPStudyPlan */,
 				5A6ABE2F1B021E0F003EA6EB /* Shared */,
 				5A6957671AFA05AE00FF2FDB /* IDPStudy */,
@@ -474,6 +488,17 @@
 				5A6ABE311B0220F9003EA6EB /* IDPTestMacros.c */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		5A92F3281B8327DA0041A244 /* IDPKeyValueObserving */ = {
+			isa = PBXGroup;
+			children = (
+				5A92F3291B83286A0041A244 /* IDPKeyValueObservableObject.h */,
+				5A92F32A1B83286A0041A244 /* IDPKeyValueObservableObject.m */,
+				5A92F32C1B83287E0041A244 /* IDPKeyValueObserver.h */,
+				5A92F32D1B83287E0041A244 /* IDPKeyValueObserver.m */,
+			);
+			path = IDPKeyValueObserving;
 			sourceTree = "<group>";
 		};
 		5A9967851B4E8677000A4E89 /* IDPEqualityObject */ = {
@@ -807,6 +832,7 @@
 				5AB920321B60F1B5007BF181 /* IDPAlphabet.m in Sources */,
 				5AB920281B60D84F007BF181 /* IDPStringsAlphabet.m in Sources */,
 				5A03FE091B6A31F300659248 /* IDPParentObject.m in Sources */,
+				5A92F3311B832E290041A244 /* IDPKeyValueObservableObject.m in Sources */,
 				5A4262211B67908300CA1422 /* IDPObservableObjectSpec.m in Sources */,
 				5AB920311B60F11F007BF181 /* IDPEnumeratedString.m in Sources */,
 				5A03FE081B6A31EF00659248 /* IDPBabyObject.m in Sources */,
@@ -816,8 +842,10 @@
 				5AE401A91B5664B5005932C2 /* IDPBlockTests.m in Sources */,
 				5A9967891B4E8BE7000A4E89 /* IDPEqualityObject.m in Sources */,
 				5AB920241B60D84F007BF181 /* IDPClusterAlphabet.m in Sources */,
+				5A92F3301B832E1B0041A244 /* IDPKeyValueObservingTest.m in Sources */,
 				5AB920261B60D84F007BF181 /* IDPRangeAlphabet.m in Sources */,
 				5A0583EA1B4D23100046C275 /* IDPSyntaxTests.m in Sources */,
+				5A92F3321B832E2C0041A244 /* IDPKeyValueObserver.m in Sources */,
 				5A7BBE561B73696E00946E4D /* IDPMultipleBackgroundTasks.m in Sources */,
 				5A4262241B6794A900CA1422 /* IDPReference.m in Sources */,
 			);
@@ -844,6 +872,7 @@
 				5AB9202C1B60ECE7007BF181 /* IDPEnumeratedString.m in Sources */,
 				5A5CB6621B4A7998002021A8 /* IDPSyntax.m in Sources */,
 				5A31ACC21B70CB4E00B78BFA /* IDPThreadSafeObject.m in Sources */,
+				5A92F32B1B83286A0041A244 /* IDPKeyValueObservableObject.m in Sources */,
 				5AB9201B1B60D80F007BF181 /* NSString+IDPExtensions.m in Sources */,
 				5A03FE041B6A2D2500659248 /* IDPParentObject.m in Sources */,
 				5A42621C1B678B4000CA1422 /* IDPReference.m in Sources */,
@@ -854,6 +883,7 @@
 				5A9967881B4E86CE000A4E89 /* IDPEqualityObject.m in Sources */,
 				5A03FE011B6A2D1300659248 /* IDPBabyObject.m in Sources */,
 				5A5CB65E1B4A74A2002021A8 /* main.m in Sources */,
+				5A92F32E1B83287E0041A244 /* IDPKeyValueObserver.m in Sources */,
 				5AB920231B60D84F007BF181 /* IDPClusterAlphabet.m in Sources */,
 				5AB920271B60D84F007BF181 /* IDPStringsAlphabet.m in Sources */,
 			);
@@ -952,6 +982,7 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
+				GCC_PREFIX_HEADER = "ObjC-Syntax.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -966,6 +997,7 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
+				GCC_PREFIX_HEADER = "ObjC-Syntax.pch";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1099,6 +1131,7 @@
 				5A1905561B7C9EAC00EE710C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5A5CB65A1B4A7433002021A8 /* Build configuration list for PBXNativeTarget "ObjC Syntax" */ = {
 			isa = XCConfigurationList;

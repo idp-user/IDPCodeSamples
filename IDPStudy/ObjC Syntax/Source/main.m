@@ -7,13 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <objc/objc-runtime.h>
 
-#import "IDPSyntax.h"
-#import "IDPSyntaxSubclass.h"
-#import "IDPBucket.h"
-
-#import "IDPThreadingTest.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {

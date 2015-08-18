@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface IDPThreadUnsafeObject : NSObject
 @property (nonatomic, retain)   NSObject    *object;
 
