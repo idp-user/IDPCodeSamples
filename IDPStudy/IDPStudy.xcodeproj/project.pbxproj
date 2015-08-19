@@ -57,6 +57,8 @@
 		5AB9202F1B60EF95007BF181 /* IDPEnumeratedString.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AB9202E1B60EF95007BF181 /* IDPEnumeratedString.m */; };
 		5AB920311B60F11F007BF181 /* IDPEnumeratedString.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AB9202B1B60ECE7007BF181 /* IDPEnumeratedString.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5AB920321B60F1B5007BF181 /* IDPAlphabet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AB920171B60D80F007BF181 /* IDPAlphabet.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5ABB39BF1B847077004F2F0C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ABB39BE1B847077004F2F0C /* main.m */; };
+		5ABB39C61B8476DB004F2F0C /* IDPGCDWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ABB39C51B8476DB004F2F0C /* IDPGCDWorker.m */; };
 		5ABC95681B00AA43007CBBA5 /* IDPStructures.c in Sources */ = {isa = PBXBuildFile; fileRef = 5ABC95661B00AA43007CBBA5 /* IDPStructures.c */; };
 		5ABC95701B00BFFD007CBBA5 /* IDPBitOutput.c in Sources */ = {isa = PBXBuildFile; fileRef = 5ABC956E1B00BFFD007CBBA5 /* IDPBitOutput.c */; };
 		5AE2CE2B1B0DE491001CF5E1 /* IDPArray.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AE2CE291B0DE491001CF5E1 /* IDPArray.c */; };
@@ -101,6 +103,15 @@
 			runOnlyForDeploymentPostprocessing = 1;
 		};
 		5A6ABE1B1B021B69003EA6EB /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		5ABB39BA1B847077004F2F0C /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -184,6 +195,10 @@
 		5AB9202A1B60ECE7007BF181 /* IDPEnumeratedString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPEnumeratedString.h; sourceTree = "<group>"; };
 		5AB9202B1B60ECE7007BF181 /* IDPEnumeratedString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDPEnumeratedString.m; sourceTree = "<group>"; };
 		5AB9202E1B60EF95007BF181 /* IDPEnumeratedString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDPEnumeratedString.m; sourceTree = "<group>"; };
+		5ABB39BC1B847077004F2F0C /* IDPGCDEnvironment */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = IDPGCDEnvironment; sourceTree = BUILT_PRODUCTS_DIR; };
+		5ABB39BE1B847077004F2F0C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5ABB39C41B8476DB004F2F0C /* IDPGCDWorker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPGCDWorker.h; sourceTree = "<group>"; };
+		5ABB39C51B8476DB004F2F0C /* IDPGCDWorker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDPGCDWorker.m; sourceTree = "<group>"; };
 		5ABC95661B00AA43007CBBA5 /* IDPStructures.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = IDPStructures.c; sourceTree = "<group>"; };
 		5ABC95671B00AA43007CBBA5 /* IDPStructures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPStructures.h; sourceTree = "<group>"; };
 		5ABC956E1B00BFFD007CBBA5 /* IDPBitOutput.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = IDPBitOutput.c; sourceTree = "<group>"; };
@@ -244,6 +259,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		5A6ABE1A1B021B69003EA6EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5ABB39B91B847077004F2F0C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -400,6 +422,7 @@
 				5A5CB6551B4A7433002021A8 /* ObjC Syntax */,
 				5A0583E61B4D23100046C275 /* IDPSyntaxTests */,
 				5A1905521B7C9EAC00EE710C /* NSConditionTest */,
+				5ABB39BD1B847077004F2F0C /* IDPGCDEnvironment */,
 				5A6957661AFA05AE00FF2FDB /* Products */,
 				8B868FBAB1CDBF6F9D966C1C /* Pods */,
 				8F476ACB35568EB3F36B6EA4 /* Frameworks */,
@@ -414,6 +437,7 @@
 				5A5CB6541B4A7433002021A8 /* ObjC Syntax */,
 				5A0583E51B4D23100046C275 /* IDPSyntaxTests.xctest */,
 				5A1905511B7C9EAC00EE710C /* NSConditionTest */,
+				5ABB39BC1B847077004F2F0C /* IDPGCDEnvironment */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -564,6 +588,24 @@
 				5AB9202B1B60ECE7007BF181 /* IDPEnumeratedString.m */,
 			);
 			path = IDPEnumeratedString;
+			sourceTree = "<group>";
+		};
+		5ABB39BD1B847077004F2F0C /* IDPGCDEnvironment */ = {
+			isa = PBXGroup;
+			children = (
+				5ABB39C31B8476B5004F2F0C /* IDPGCDWorker */,
+				5ABB39BE1B847077004F2F0C /* main.m */,
+			);
+			path = IDPGCDEnvironment;
+			sourceTree = "<group>";
+		};
+		5ABB39C31B8476B5004F2F0C /* IDPGCDWorker */ = {
+			isa = PBXGroup;
+			children = (
+				5ABB39C41B8476DB004F2F0C /* IDPGCDWorker.h */,
+				5ABB39C51B8476DB004F2F0C /* IDPGCDWorker.m */,
+			);
+			path = IDPGCDWorker;
 			sourceTree = "<group>";
 		};
 		5ABC95651B00A9E0007CBBA5 /* IDPStructures */ = {
@@ -729,6 +771,23 @@
 			productReference = 5A6ABE1D1B021B69003EA6EB /* IDPObjects */;
 			productType = "com.apple.product-type.tool";
 		};
+		5ABB39BB1B847077004F2F0C /* IDPGCDEnvironment */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5ABB39C21B847077004F2F0C /* Build configuration list for PBXNativeTarget "IDPGCDEnvironment" */;
+			buildPhases = (
+				5ABB39B81B847077004F2F0C /* Sources */,
+				5ABB39B91B847077004F2F0C /* Frameworks */,
+				5ABB39BA1B847077004F2F0C /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IDPGCDEnvironment;
+			productName = IDPGCDEnvironment;
+			productReference = 5ABB39BC1B847077004F2F0C /* IDPGCDEnvironment */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -754,6 +813,9 @@
 					5A6ABE1C1B021B69003EA6EB = {
 						CreatedOnToolsVersion = 6.3.1;
 					};
+					5ABB39BB1B847077004F2F0C = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
 				};
 			};
 			buildConfigurationList = 5A6957601AFA05AE00FF2FDB /* Build configuration list for PBXProject "IDPStudy" */;
@@ -773,6 +835,7 @@
 				5A5CB6531B4A7433002021A8 /* ObjC Syntax */,
 				5A0583E41B4D23100046C275 /* IDPSyntaxTests */,
 				5A1905501B7C9EAC00EE710C /* NSConditionTest */,
+				5ABB39BB1B847077004F2F0C /* IDPGCDEnvironment */,
 			);
 		};
 /* End PBXProject section */
@@ -915,6 +978,15 @@
 				5A99FE991B09E09D00124722 /* IDPLinkedListNode.c in Sources */,
 				5AE2CE2F1B0DE52D001CF5E1 /* IDPArrayTests.c in Sources */,
 				5AF430F71B15A5E8001BE26E /* IDPLinkedList.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5ABB39B81B847077004F2F0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5ABB39C61B8476DB004F2F0C /* IDPGCDWorker.m in Sources */,
+				5ABB39BF1B847077004F2F0C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1112,6 +1184,26 @@
 			};
 			name = Release;
 		};
+		5ABB39C01B847077004F2F0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5ABB39C11B847077004F2F0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1168,6 +1260,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		5ABB39C21B847077004F2F0C /* Build configuration list for PBXNativeTarget "IDPGCDEnvironment" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5ABB39C01B847077004F2F0C /* Debug */,
+				5ABB39C11B847077004F2F0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
