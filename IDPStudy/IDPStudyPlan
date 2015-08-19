@@ -297,6 +297,7 @@ Literature:
 1. http://dev.krzysztofprofic.com/tag/nsconditionlock/
 2. http://cocoasamurai.blogspot.com/2008/04/osspinlock-lock-showdown-posix-locks-vs.html
 3. http://perpendiculo.us/2009/09/synchronized-nslock-pthread-osspinlock-showdown-done-right/
+4. https://developer.apple.com/library/ios/documentation/General/Conceptual/ConcurrencyProgrammingGuide/Introduction/Introduction.html
 
 Задание 7.
 Условие:
@@ -366,6 +367,11 @@ Literature:
 // блок и владение блоком контекста
 // dispatch_queue, dispatch_async, dispatch_sync
 // __block переменная
+
+Literature:
+https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/
+(RU) http://idev.by/ios/21112/
+
 
 Задание 9.
 Условие:
