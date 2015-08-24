@@ -19,4 +19,7 @@
 
 - (void)executeOnce;
 
+- (void)executeApply;
+
+- (void)executeGroup;
 @end

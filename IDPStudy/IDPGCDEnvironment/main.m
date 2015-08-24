@@ -25,22 +25,28 @@ int main(int argc, const char * argv[]) {
         };
         
         
-        [worker executeBarrier];
-        NSLog(@"_________");
+//        [worker executeBarrier];
+//        NSLog(@"_________");
+//        
+//        
+//        worker.backgroundBlock = ^{
+//            NSLog(@"the backgroundBlock2");
+//        };
+//        
+//        worker.completionBlock = ^{
+//            NSLog(@"the completion2");
+//            
+//        };
+//        
+//        [worker executeWithNotificationOnMainQueue];
+//        
+//        NSLog(@"_________");
+//        [worker executeOnce];
+//        
+//        NSLog(@"_________");
+//        [worker executeApply];
         
-        
-        worker.backgroundBlock = ^{
-            NSLog(@"the backgroundBlock2");
-        };
-        
-        worker.completionBlock = ^{
-            NSLog(@"the completion2");
-        };
-        
-        [worker executeWithNotificationOnMainQueue];
-        
-        NSLog(@"_________");
-        [worker executeOnce];
+        [worker executeGroup];
         
         
         [[NSRunLoop currentRunLoop] run];

@@ -79,4 +79,81 @@
     }
 }
 
+- (void)executeApply {
+    dispatch_queue_t queue = dispatch_queue_create("Apply Queue", DISPATCH_QUEUE_SERIAL);
+    
+    dispatch_apply(10, queue, ^(size_t iterator) {
+        NSLog(@"%lu", iterator);
+    });
+    
+    dispatch_release(queue);
+}
+
+
+- (void)executeGroup {
+    dispatch_group_t group = dispatch_group_create();
+    
+    dispatch_queue_t queue = dispatch_queue_create("Apply Queue", DISPATCH_QUEUE_CONCURRENT);
+    
+    dispatch_async(queue, ^{
+        NSLog(@"Async block");
+    });
+    
+    for (NSUInteger iterator = 0 ; iterator < 100; iterator++) {
+        dispatch_group_async(group, queue, ^{
+            usleep(1000);
+            NSLog(@"Group queue #%lu", iterator);
+        });
+        
+        dispatch_async(queue, ^{
+            dispatch_group_enter(group);
+            
+            usleep(1000);
+            NSLog(@"Async block #%lu", iterator);
+
+            dispatch_group_leave(group);
+        });
+    }    
+
+//    dispatch_async(queue, ^{
+//        dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
+//        NSLog(@"Async completion block");
+//    });
+    
+    dispatch_group_notify(group, queue, ^{
+        usleep(1000);
+        //        dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
+        NSLog(@"Notify block");
+    });
+    
+    dispatch_group_notify(group, queue, ^{
+        usleep(1000);
+        //        dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
+        NSLog(@"Notify block1");
+    });
+    
+    dispatch_group_notify(group, queue, ^{
+        usleep(1000);
+        //        dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
+        NSLog(@"Notify block2");
+    });
+    
+    dispatch_group_notify(group, queue, ^{
+        usleep(1000);
+        //        dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
+        NSLog(@"Notify block3");
+    });
+    
+//    dispatch_async(queue, ^{
+//        dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
+//        NSLog(@"Async completion block");
+//    });
+    
+    dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
+    NSLog(@"Async completion block");
+    
+    dispatch_release(queue);
+    dispatch_release(group);
+}
+
 @end
