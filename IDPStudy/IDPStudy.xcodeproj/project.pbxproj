@@ -27,6 +27,9 @@
 		5A4262221B6794A400CA1422 /* IDPObservableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4262121B67832000CA1422 /* IDPObservableObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5A4262231B6794A600CA1422 /* IDPWeakReference.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A42621E1B678E2E00CA1422 /* IDPWeakReference.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5A4262241B6794A900CA1422 /* IDPReference.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A42621B1B678B4000CA1422 /* IDPReference.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5A51C4931B8DC155005AE0F3 /* IDPNegativeValueCountingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A51C4921B8DC155005AE0F3 /* IDPNegativeValueCountingOperation.m */; };
+		5A51C4951B8DC93A005AE0F3 /* IDPOperationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A51C4941B8DC93A005AE0F3 /* IDPOperationTest.m */; };
+		5A51C4961B8DC955005AE0F3 /* IDPNegativeValueCountingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A51C4921B8DC155005AE0F3 /* IDPNegativeValueCountingOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5A5446091B5FAF9F002DFB8B /* IDPKiwiTestExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5446081B5FAF9F002DFB8B /* IDPKiwiTestExample.m */; };
 		5A5CB65E1B4A74A2002021A8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CB65D1B4A74A2002021A8 /* main.m */; };
 		5A5CB6621B4A7998002021A8 /* IDPSyntax.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CB6611B4A7998002021A8 /* IDPSyntax.m */; };
@@ -143,6 +146,9 @@
 		5A4262201B67908300CA1422 /* IDPObservableObjectSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDPObservableObjectSpec.m; sourceTree = "<group>"; };
 		5A4A7A931AFA11C000CA5A3A /* IDPDefineSamples.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPDefineSamples.h; sourceTree = "<group>"; };
 		5A4A7A951AFA201500CA5A3A /* IDPPrimitiveTypeOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPPrimitiveTypeOutput.h; sourceTree = "<group>"; };
+		5A51C4911B8DC155005AE0F3 /* IDPNegativeValueCountingOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPNegativeValueCountingOperation.h; sourceTree = "<group>"; };
+		5A51C4921B8DC155005AE0F3 /* IDPNegativeValueCountingOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDPNegativeValueCountingOperation.m; sourceTree = "<group>"; };
+		5A51C4941B8DC93A005AE0F3 /* IDPOperationTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDPOperationTest.m; sourceTree = "<group>"; };
 		5A5446081B5FAF9F002DFB8B /* IDPKiwiTestExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDPKiwiTestExample.m; sourceTree = "<group>"; };
 		5A5CB6541B4A7433002021A8 /* ObjC Syntax */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "ObjC Syntax"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A5CB65D1B4A74A2002021A8 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -278,6 +284,7 @@
 				5A03FE061B6A31ED00659248 /* IDPDelegationTest.m */,
 				5A7BBE551B73696E00946E4D /* IDPMultipleBackgroundTasks.m */,
 				5A92F32F1B832E1B0041A244 /* IDPKeyValueObservingTest.m */,
+				5A51C4941B8DC93A005AE0F3 /* IDPOperationTest.m */,
 			);
 			path = IDPSyntaxTests;
 			sourceTree = "<group>";
@@ -346,6 +353,15 @@
 			path = IDPPrimitiveTypeOutput;
 			sourceTree = "<group>";
 		};
+		5A51C4901B8DC11A005AE0F3 /* NSOperationQueueExample */ = {
+			isa = PBXGroup;
+			children = (
+				5A51C4911B8DC155005AE0F3 /* IDPNegativeValueCountingOperation.h */,
+				5A51C4921B8DC155005AE0F3 /* IDPNegativeValueCountingOperation.m */,
+			);
+			path = NSOperationQueueExample;
+			sourceTree = "<group>";
+		};
 		5A5CB6551B4A7433002021A8 /* ObjC Syntax */ = {
 			isa = PBXGroup;
 			children = (
@@ -357,6 +373,7 @@
 		5A5CB65C1B4A747D002021A8 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				5A51C4901B8DC11A005AE0F3 /* NSOperationQueueExample */,
 				5A92F3281B8327DA0041A244 /* IDPKeyValueObserving */,
 				5A31ACBB1B6F793F00B78BFA /* IDPThreadingTest */,
 				5A03FDFE1B6A2CBB00659248 /* IDPDelegation */,
@@ -835,6 +852,7 @@
 				5A92F3311B832E290041A244 /* IDPKeyValueObservableObject.m in Sources */,
 				5A4262211B67908300CA1422 /* IDPObservableObjectSpec.m in Sources */,
 				5AB920311B60F11F007BF181 /* IDPEnumeratedString.m in Sources */,
+				5A51C4961B8DC955005AE0F3 /* IDPNegativeValueCountingOperation.m in Sources */,
 				5A03FE081B6A31EF00659248 /* IDPBabyObject.m in Sources */,
 				5AB9202F1B60EF95007BF181 /* IDPEnumeratedString.m in Sources */,
 				5A4262221B6794A400CA1422 /* IDPObservableObject.m in Sources */,
@@ -844,6 +862,7 @@
 				5AB920241B60D84F007BF181 /* IDPClusterAlphabet.m in Sources */,
 				5A92F3301B832E1B0041A244 /* IDPKeyValueObservingTest.m in Sources */,
 				5AB920261B60D84F007BF181 /* IDPRangeAlphabet.m in Sources */,
+				5A51C4951B8DC93A005AE0F3 /* IDPOperationTest.m in Sources */,
 				5A0583EA1B4D23100046C275 /* IDPSyntaxTests.m in Sources */,
 				5A92F3321B832E2C0041A244 /* IDPKeyValueObserver.m in Sources */,
 				5A7BBE561B73696E00946E4D /* IDPMultipleBackgroundTasks.m in Sources */,
@@ -874,6 +893,7 @@
 				5A31ACC21B70CB4E00B78BFA /* IDPThreadSafeObject.m in Sources */,
 				5A92F32B1B83286A0041A244 /* IDPKeyValueObservableObject.m in Sources */,
 				5AB9201B1B60D80F007BF181 /* NSString+IDPExtensions.m in Sources */,
+				5A51C4931B8DC155005AE0F3 /* IDPNegativeValueCountingOperation.m in Sources */,
 				5A03FE041B6A2D2500659248 /* IDPParentObject.m in Sources */,
 				5A42621C1B678B4000CA1422 /* IDPReference.m in Sources */,
 				5A4262131B67832000CA1422 /* IDPObservableObject.m in Sources */,
