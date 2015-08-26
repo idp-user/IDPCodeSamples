@@ -12,42 +12,44 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World!");
-        
+//        // insert code here...
+//        NSLog(@"Hello, World!");
+//        
         IDPGCDWorker *worker = [[IDPGCDWorker new] autorelease];
-        worker.backgroundBlock = ^{
-            NSLog(@"the backgroundBlock");
-        };
-        
-        worker.completionBlock = ^{
-            NSLog(@"the completion");
-        };
-        
-        
-//        [worker executeBarrier];
-//        NSLog(@"_________");
-//        
-//        
 //        worker.backgroundBlock = ^{
-//            NSLog(@"the backgroundBlock2");
+//            NSLog(@"the backgroundBlock");
 //        };
 //        
 //        worker.completionBlock = ^{
-//            NSLog(@"the completion2");
-//            
+//            NSLog(@"the completion");
 //        };
 //        
-//        [worker executeWithNotificationOnMainQueue];
 //        
-//        NSLog(@"_________");
-//        [worker executeOnce];
+////        [worker executeBarrier];
+////        NSLog(@"_________");
+////        
+////        
+////        worker.backgroundBlock = ^{
+////            NSLog(@"the backgroundBlock2");
+////        };
+////        
+////        worker.completionBlock = ^{
+////            NSLog(@"the completion2");
+////            
+////        };
+////        
+////        [worker executeWithNotificationOnMainQueue];
+////        
+////        NSLog(@"_________");
+////        [worker executeOnce];
+////        
+////        NSLog(@"_________");
+////        [worker executeApply];
 //        
-//        NSLog(@"_________");
-//        [worker executeApply];
+//        [worker executeGroup];
         
-        [worker executeGroup];
-        
+        [worker executeSemaphore];
+        [worker executeSemaphoreMultiple];
         
         [[NSRunLoop currentRunLoop] run];
     }

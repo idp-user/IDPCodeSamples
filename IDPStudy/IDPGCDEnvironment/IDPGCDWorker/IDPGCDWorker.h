@@ -22,4 +22,8 @@
 - (void)executeApply;
 
 - (void)executeGroup;
+
+- (void)executeSemaphore;
+
+- (void)executeSemaphoreMultiple;
 @end

@@ -156,4 +156,65 @@
     dispatch_release(group);
 }
 
+- (void)executeSemaphore {
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    dispatch_queue_t queue = dispatch_queue_create("semaphore queue", DISPATCH_QUEUE_CONCURRENT);
+
+//    __block BOOL isDone = NO;
+    
+    [self waitInQueue:queue withCompletion:^{
+        NSLog(@"completion");
+        dispatch_semaphore_signal(semaphore);
+//        isDone = YES;
+    }];
+    
+    NSLog(@"wait for completion");
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    
+//    while (!isDone) {
+//        [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.1]];
+//    }
+    
+    NSLog(@"completion done");
+    
+    dispatch_release(queue);
+    dispatch_release(semaphore);
+}
+
+
+
+- (void)executeSemaphoreMultiple {
+    long workerTasksCount = 20;
+    
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(workerTasksCount - 1);
+    dispatch_queue_t queue = dispatch_queue_create("semaphore queue", DISPATCH_QUEUE_CONCURRENT);
+    
+
+    for (NSUInteger iterator = 0; iterator < 100; iterator++) {
+        [self waitInQueue:queue withCompletion:^{
+            NSLog(@"%lu - completion", iterator);
+            sleep(10);
+            
+            
+            dispatch_semaphore_signal(semaphore);
+        }];
+        
+        NSLog(@"%lu - wait for", iterator);
+        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+        NSLog(@"%lu - completion done", iterator);
+    }
+    
+    dispatch_release(queue);
+    dispatch_release(semaphore);
+}
+
+- (void)waitInQueue:(dispatch_queue_t)queue withCompletion:(void(^)(void))completion {
+    if (completion) {
+        dispatch_async(queue, ^{
+            sleep(1);
+            completion();
+        });
+    }
+}
+
 @end
