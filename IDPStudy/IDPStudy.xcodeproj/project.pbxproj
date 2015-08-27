@@ -30,6 +30,7 @@
 		5A51C4931B8DC155005AE0F3 /* IDPNegativeValueCountingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A51C4921B8DC155005AE0F3 /* IDPNegativeValueCountingOperation.m */; };
 		5A51C4951B8DC93A005AE0F3 /* IDPOperationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A51C4941B8DC93A005AE0F3 /* IDPOperationTest.m */; };
 		5A51C4961B8DC955005AE0F3 /* IDPNegativeValueCountingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A51C4921B8DC155005AE0F3 /* IDPNegativeValueCountingOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5A51C49A1B8EFA30005AE0F3 /* IDPAsynchronousOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A51C4991B8EFA30005AE0F3 /* IDPAsynchronousOperation.m */; };
 		5A5446091B5FAF9F002DFB8B /* IDPKiwiTestExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5446081B5FAF9F002DFB8B /* IDPKiwiTestExample.m */; };
 		5A5CB65E1B4A74A2002021A8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CB65D1B4A74A2002021A8 /* main.m */; };
 		5A5CB6621B4A7998002021A8 /* IDPSyntax.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CB6611B4A7998002021A8 /* IDPSyntax.m */; };
@@ -149,6 +150,8 @@
 		5A51C4911B8DC155005AE0F3 /* IDPNegativeValueCountingOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPNegativeValueCountingOperation.h; sourceTree = "<group>"; };
 		5A51C4921B8DC155005AE0F3 /* IDPNegativeValueCountingOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDPNegativeValueCountingOperation.m; sourceTree = "<group>"; };
 		5A51C4941B8DC93A005AE0F3 /* IDPOperationTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDPOperationTest.m; sourceTree = "<group>"; };
+		5A51C4981B8EFA30005AE0F3 /* IDPAsynchronousOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPAsynchronousOperation.h; sourceTree = "<group>"; };
+		5A51C4991B8EFA30005AE0F3 /* IDPAsynchronousOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDPAsynchronousOperation.m; sourceTree = "<group>"; };
 		5A5446081B5FAF9F002DFB8B /* IDPKiwiTestExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDPKiwiTestExample.m; sourceTree = "<group>"; };
 		5A5CB6541B4A7433002021A8 /* ObjC Syntax */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "ObjC Syntax"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A5CB65D1B4A74A2002021A8 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -362,6 +365,15 @@
 			path = NSOperationQueueExample;
 			sourceTree = "<group>";
 		};
+		5A51C4971B8EFA01005AE0F3 /* IDPAsynchronousOperation */ = {
+			isa = PBXGroup;
+			children = (
+				5A51C4981B8EFA30005AE0F3 /* IDPAsynchronousOperation.h */,
+				5A51C4991B8EFA30005AE0F3 /* IDPAsynchronousOperation.m */,
+			);
+			path = IDPAsynchronousOperation;
+			sourceTree = "<group>";
+		};
 		5A5CB6551B4A7433002021A8 /* ObjC Syntax */ = {
 			isa = PBXGroup;
 			children = (
@@ -373,6 +385,7 @@
 		5A5CB65C1B4A747D002021A8 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				5A51C4971B8EFA01005AE0F3 /* IDPAsynchronousOperation */,
 				5A51C4901B8DC11A005AE0F3 /* NSOperationQueueExample */,
 				5A92F3281B8327DA0041A244 /* IDPKeyValueObserving */,
 				5A31ACBB1B6F793F00B78BFA /* IDPThreadingTest */,
@@ -898,6 +911,7 @@
 				5A42621C1B678B4000CA1422 /* IDPReference.m in Sources */,
 				5A4262131B67832000CA1422 /* IDPObservableObject.m in Sources */,
 				5AFAEDEC1B4BE6E1008FC781 /* IDPSyntax+IDPExtensions.m in Sources */,
+				5A51C49A1B8EFA30005AE0F3 /* IDPAsynchronousOperation.m in Sources */,
 				5AFAEDEF1B4BEAD0008FC781 /* IDPSyntaxSubclass.m in Sources */,
 				5A42621F1B678E2E00CA1422 /* IDPWeakReference.m in Sources */,
 				5A9967881B4E86CE000A4E89 /* IDPEqualityObject.m in Sources */,
