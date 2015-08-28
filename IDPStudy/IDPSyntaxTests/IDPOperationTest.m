@@ -12,11 +12,19 @@
 #import "IDPNegativeValueCountingOperation.h"
 #import "IDPAsyncNegativeValueCountingOperation.h"
 
+
 @interface IDPOperationTest : XCTestCase
+@property (nonatomic, assign)  volatile OSSpinLock spinLock;
 
 @end
 
 @implementation IDPOperationTest
+
+- (void)setUp {
+    [super setUp];
+    
+    self.spinLock = OS_SPINLOCK_INIT;
+}
 
 - (void)testSynchronousOperation {
     NSArray *data = @[@(-1), @(1), @(-3)];
@@ -58,6 +66,7 @@
     queue.maxConcurrentOperationCount = 10;
     
     queue.suspended = YES;
+    
     
     for (NSUInteger iterator = 0; iterator < 10; iterator++) {
         IDPNegativeValueCountingOperation *operation = [[IDPNegativeValueCountingOperation alloc] initWithArray:data];
@@ -146,33 +155,59 @@
 }
 
 - (void)testBlockOperation {
-    __block NSLock *lock = [NSLock new];
+    NSMutableArray *array = [NSMutableArray arrayWithArray:@[@(0)]];
+    NSLock *lock = [NSLock new];
     
-    __block NSNumber *maxValue = @(0);
+    volatile __block int32_t value = 0;
     
-    NSOperationQueue *queue = [NSOperationQueue new];
-    
-    queue.suspended = YES;
-    
-    for (NSUInteger iterator = 0; iterator < 10000; iterator++) {
-        [queue addOperationWithBlock:^{
-            @autoreleasepool {
-                NSUInteger queueCount = [NSOperationQueue currentQueue].operationCount;
-                NSNumber *number = @(queueCount);
-                [lock lock];
-                if (NSOrderedDescending == [number compare:maxValue]) {
-                    maxValue = number;
+    [self measureBlock:^{
+        NSOperationQueue *queue = [NSOperationQueue new];
+        
+        queue.suspended = YES;
+
+        
+        for (NSUInteger iterator = 0; iterator < 10000; iterator++) {
+            [queue addOperationWithBlock:^{
+//                OSSpinLockLock(&_spinLock);
+                
+                
+                OSAtomicIncrement32(&value);
+//                value++;
+//                usleep(10);
+                OSAtomicDecrement32(&value);
+//                value--;
+                
+                while (OSAtomicCompareAndSwap32(value, value++, &value)) {
+                    NSLog(@"weeee");
                 }
-                [lock unlock];
-            }
-        }];
-    }
-    
-    queue.suspended = NO;
-    
-    [queue waitUntilAllOperationsAreFinished];
-    
-    NSLog(@"maximum = %@", maxValue);
+                
+//                OSSpinLockUnlock(&_spinLock);
+                
+                
+//                @autoreleasepool {
+//                    NSNumber *number = [array firstObject];
+//                    
+//                    number = @([number integerValue] + 1);
+//                    
+//                    array[0] = number;
+//
+////                    @synchronized(array) {
+////                    [lock lock];
+//                    OSSpinLockLock(&_spinLock);
+//                    usleep(1);
+//                        [array addObject:number];
+//                    OSSpinLockUnlock(&_spinLock);
+////                    [lock unlock];
+////                    }
+//                }
+            }];
+        }
+        
+        queue.suspended = NO;
+        
+        [queue waitUntilAllOperationsAreFinished];
+        NSLog(@"%lu", value);
+    }];
 }
 
 @end
