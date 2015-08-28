@@ -31,6 +31,9 @@
 		5A51C4951B8DC93A005AE0F3 /* IDPOperationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A51C4941B8DC93A005AE0F3 /* IDPOperationTest.m */; };
 		5A51C4961B8DC955005AE0F3 /* IDPNegativeValueCountingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A51C4921B8DC155005AE0F3 /* IDPNegativeValueCountingOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5A51C49A1B8EFA30005AE0F3 /* IDPAsynchronousOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A51C4991B8EFA30005AE0F3 /* IDPAsynchronousOperation.m */; };
+		5A51C49E1B8F19C6005AE0F3 /* IDPAsyncNegativeValueCountingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A51C49D1B8F19C6005AE0F3 /* IDPAsyncNegativeValueCountingOperation.m */; };
+		5A51C49F1B8F1B06005AE0F3 /* IDPAsyncNegativeValueCountingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A51C49D1B8F19C6005AE0F3 /* IDPAsyncNegativeValueCountingOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5A51C4A01B8F1BA4005AE0F3 /* IDPAsynchronousOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A51C4991B8EFA30005AE0F3 /* IDPAsynchronousOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5A5446091B5FAF9F002DFB8B /* IDPKiwiTestExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5446081B5FAF9F002DFB8B /* IDPKiwiTestExample.m */; };
 		5A5CB65E1B4A74A2002021A8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CB65D1B4A74A2002021A8 /* main.m */; };
 		5A5CB6621B4A7998002021A8 /* IDPSyntax.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5CB6611B4A7998002021A8 /* IDPSyntax.m */; };
@@ -152,6 +155,8 @@
 		5A51C4941B8DC93A005AE0F3 /* IDPOperationTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDPOperationTest.m; sourceTree = "<group>"; };
 		5A51C4981B8EFA30005AE0F3 /* IDPAsynchronousOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPAsynchronousOperation.h; sourceTree = "<group>"; };
 		5A51C4991B8EFA30005AE0F3 /* IDPAsynchronousOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDPAsynchronousOperation.m; sourceTree = "<group>"; };
+		5A51C49C1B8F19C6005AE0F3 /* IDPAsyncNegativeValueCountingOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPAsyncNegativeValueCountingOperation.h; sourceTree = "<group>"; };
+		5A51C49D1B8F19C6005AE0F3 /* IDPAsyncNegativeValueCountingOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDPAsyncNegativeValueCountingOperation.m; sourceTree = "<group>"; };
 		5A5446081B5FAF9F002DFB8B /* IDPKiwiTestExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDPKiwiTestExample.m; sourceTree = "<group>"; };
 		5A5CB6541B4A7433002021A8 /* ObjC Syntax */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "ObjC Syntax"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A5CB65D1B4A74A2002021A8 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -361,6 +366,8 @@
 			children = (
 				5A51C4911B8DC155005AE0F3 /* IDPNegativeValueCountingOperation.h */,
 				5A51C4921B8DC155005AE0F3 /* IDPNegativeValueCountingOperation.m */,
+				5A51C49C1B8F19C6005AE0F3 /* IDPAsyncNegativeValueCountingOperation.h */,
+				5A51C49D1B8F19C6005AE0F3 /* IDPAsyncNegativeValueCountingOperation.m */,
 			);
 			path = NSOperationQueueExample;
 			sourceTree = "<group>";
@@ -861,6 +868,7 @@
 				5A03FDFC1B6A194D00659248 /* IDPBucketTests.m in Sources */,
 				5AB920321B60F1B5007BF181 /* IDPAlphabet.m in Sources */,
 				5AB920281B60D84F007BF181 /* IDPStringsAlphabet.m in Sources */,
+				5A51C4A01B8F1BA4005AE0F3 /* IDPAsynchronousOperation.m in Sources */,
 				5A03FE091B6A31F300659248 /* IDPParentObject.m in Sources */,
 				5A92F3311B832E290041A244 /* IDPKeyValueObservableObject.m in Sources */,
 				5A4262211B67908300CA1422 /* IDPObservableObjectSpec.m in Sources */,
@@ -877,6 +885,7 @@
 				5AB920261B60D84F007BF181 /* IDPRangeAlphabet.m in Sources */,
 				5A51C4951B8DC93A005AE0F3 /* IDPOperationTest.m in Sources */,
 				5A0583EA1B4D23100046C275 /* IDPSyntaxTests.m in Sources */,
+				5A51C49F1B8F1B06005AE0F3 /* IDPAsyncNegativeValueCountingOperation.m in Sources */,
 				5A92F3321B832E2C0041A244 /* IDPKeyValueObserver.m in Sources */,
 				5A7BBE561B73696E00946E4D /* IDPMultipleBackgroundTasks.m in Sources */,
 				5A4262241B6794A900CA1422 /* IDPReference.m in Sources */,
@@ -908,6 +917,7 @@
 				5AB9201B1B60D80F007BF181 /* NSString+IDPExtensions.m in Sources */,
 				5A51C4931B8DC155005AE0F3 /* IDPNegativeValueCountingOperation.m in Sources */,
 				5A03FE041B6A2D2500659248 /* IDPParentObject.m in Sources */,
+				5A51C49E1B8F19C6005AE0F3 /* IDPAsyncNegativeValueCountingOperation.m in Sources */,
 				5A42621C1B678B4000CA1422 /* IDPReference.m in Sources */,
 				5A4262131B67832000CA1422 /* IDPObservableObject.m in Sources */,
 				5AFAEDEC1B4BE6E1008FC781 /* IDPSyntax+IDPExtensions.m in Sources */,
